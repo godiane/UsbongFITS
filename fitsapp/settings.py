@@ -88,9 +88,6 @@ USE_SOUTH = True
 #                ('Full Name', 'anotheremail@example.com'))
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
-    ('Diana Jayne Gonzales', 'di.gonzales@gmail.com'),
-    ('Mia Montayre', 'liwanagmontayre@gmail.com'),
-    ('Michael Syson', 'masarapmabuhay@gmail.com'),
 )
 MANAGERS = ADMINS
 
@@ -101,7 +98,7 @@ MANAGERS = ADMINS
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'Asia/Manila'
+TIME_ZONE = None
 
 # If you set this to True, Django will use timezone-aware datetimes.
 USE_TZ = True
@@ -124,8 +121,9 @@ SITE_ID = 1
 # to load the internationalization machinery.
 USE_I18N = False
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = "fbef7b57-32d5-4762-abad-d53d6ff11eaf3a52128c-0de7-448f-9a58-9ab99afcd216302676e0-b520-4190-814e-dbfc04617fdc"
+# Make these unique, and don't share it with anybody.
+SECRET_KEY = "a07a88da-449b-44cb-b834-5e879e7eea8019a2f883-efa8-454a-9ce6-f3b2540e1e94fa7b02f2-b1e8-4acc-b914-47cfd8c1dfa9"
+NEVERCACHE_KEY = "24c40bd3-f1f2-4f39-85e7-61fd72b56f1e8efc50ec-a596-4776-92d3-61ab262330a8788c4dd2-da6a-4692-8e96-8eee184c22df"
 
 # Tuple of IP addresses, as strings, that:
 #   * See debug comments, when DEBUG is true
@@ -138,10 +136,7 @@ TEMPLATE_LOADERS = (
     "django.template.loaders.app_directories.Loader",
 )
 
-AUTHENTICATION_BACKENDS = (
-    "mezzanine.core.auth_backends.MezzanineBackend", 
-    "allauth.account.auth_backends.AuthenticationBackend"
-)
+AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -150,6 +145,10 @@ STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+
+# The numeric mode to set newly-uploaded files to. The value should be
+# a mode you'd pass directly to os.chmod.
+FILE_UPLOAD_PERMISSIONS = 0644
 
 
 #############
@@ -210,11 +209,6 @@ MEDIA_URL = STATIC_URL + "media/"
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, *MEDIA_URL.strip("/").split("/"))
 
-# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
-# trailing slash.
-# Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
-
 # Package/module name to import the root urlpatterns from for the project.
 ROOT_URLCONF = "%s.urls" % PROJECT_DIRNAME
 
@@ -230,8 +224,6 @@ TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 ################
 
 INSTALLED_APPS = (
-    "grappelli",
-    "filebrowser",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -240,11 +232,6 @@ INSTALLED_APPS = (
     "django.contrib.sites",
     "django.contrib.sitemaps",
     "django.contrib.staticfiles",
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
-    "allauth.socialaccount.providers.facebook",
-    "allauth.socialaccount.providers.google",
     "mezzanine.boot",
     "mezzanine.conf",
     "mezzanine.core",
@@ -256,7 +243,6 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     #"mezzanine.accounts",
     #"mezzanine.mobile",
-    "mezzanine_file_collections"
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -271,8 +257,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.request",
     "django.core.context_processors.tz",
-    "allauth.account.context_processors.account",
-    "allauth.socialaccount.context_processors.socialaccount",
     "mezzanine.conf.context_processors.settings",
 )
 
@@ -283,11 +267,11 @@ MIDDLEWARE_CLASSES = (
     "mezzanine.core.middleware.UpdateCacheMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.redirects.middleware.RedirectFallbackMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "mezzanine.core.request.CurrentRequestMiddleware",
+    "mezzanine.core.middleware.RedirectFallbackMiddleware",
     "mezzanine.core.middleware.TemplateForDeviceMiddleware",
     "mezzanine.core.middleware.TemplateForHostMiddleware",
     "mezzanine.core.middleware.AdminLoginInterfaceSelectorMiddleware",
@@ -302,14 +286,6 @@ MIDDLEWARE_CLASSES = (
 # at the moment we are using custom forks of them.
 PACKAGE_NAME_FILEBROWSER = "filebrowser_safe"
 PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
-
-########################
-### ALLAUTH SETTINGS ###
-########################
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-# Change this after development
-ACCOUNT_EMAIL_REQUIRED = True
-SOCIAL_ACCOUNT_AUTO_SIGNUP = True
 
 #########################
 # OPTIONAL APPLICATIONS #
@@ -347,6 +323,8 @@ DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 #     "REPO_URL": "", # Git or Mercurial remote repo URL for the project
 #     "DB_PASS": "", # Live database password
 #     "ADMIN_PASS": "", # Live admin user password
+#     "SECRET_KEY": SECRET_KEY,
+#     "NEVERCACHE_KEY": NEVERCACHE_KEY,
 # }
 
 
