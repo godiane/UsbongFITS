@@ -9,13 +9,13 @@
       id="tree-menu-home">
     <a href="{% url "home" %}">{% trans "Home" %}</a>
   </li>
-  {% endif %}
   {% if user.is_authenticated %}
   <li class=""><a href="{% url 'account_email' %}">Change Email</a></li>
   <li class=""><a href="{% url 'account_logout' %}">Logout</a></li>
   {% else %}
   <li class=""><a href="{% url 'account_login' %}">Sign In</a></li>
   <li class="last"><a href="{% url 'account_signup' %}">Sign Up</a></li>
+  {% endif %}
   {% endif %}
   {% if page.in_menu %}
   <li class="
