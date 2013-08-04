@@ -1,9 +1,10 @@
-#!/home/usbong/.virtualenvs/django15/bin/python2.7
-# EASY-INSTALL-ENTRY-SCRIPT: 'Mezzanine==1.4.9','console_scripts','mezzanine-project'
-__requires__ = 'Mezzanine==1.4.9'
+#!/home/diane/.virtualenvs/django15/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'Mezzanine==1.4.10','console_scripts','mezzanine-project'
+__requires__ = 'Mezzanine==1.4.10'
 import sys
 from pkg_resources import load_entry_point
 
-sys.exit(
-   load_entry_point('Mezzanine==1.4.9', 'console_scripts', 'mezzanine-project')()
-)
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('Mezzanine==1.4.10', 'console_scripts', 'mezzanine-project')()
+    )

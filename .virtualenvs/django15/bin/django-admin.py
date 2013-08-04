@@ -1,4 +1,4 @@
-#!/home/usbong/.virtualenvs/django15/bin/python2.7
+#!/home/diane/.virtualenvs/django15/bin/python
 from django.core import management
 
 if __name__ == "__main__":

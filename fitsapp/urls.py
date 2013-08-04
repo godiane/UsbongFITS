@@ -1,9 +1,9 @@
-
-from django.conf.urls import patterns, include, url
+from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
+from filebrowser.sites import site
 
 from mezzanine.core.views import direct_to_template
-
+from django.http import HttpResponseRedirect
 
 admin.autodiscover()
 
@@ -12,6 +12,11 @@ admin.autodiscover()
 # to the project's homepage.
 
 urlpatterns = patterns("",
+    url(r'^accounts/profile/', lambda x: HttpResponseRedirect('/')),
+    url(r'^accounts/login/', 'allauth.account.views.login'),
+    url(r'^accounts/', include('allauth.urls')),
+    url(r'^grappelli/', include('grappelli.urls')),
+    url(r'^admin/filebrowser/', include(site.urls)),
 
     # Change the admin prefix here to use an alternate URL for the
     # admin interface, which would be marginally more secure.
@@ -65,7 +70,7 @@ urlpatterns = patterns("",
     # ``mezzanine.urls``, go right ahead and take the parts you want
     # from it, and use them directly below instead of using
     # ``mezzanine.urls``.
-    ("^", include("mezzanine.urls")),
+    ('^', include('mezzanine.urls')),
 
     # MOUNTING MEZZANINE UNDER A PREFIX
     # ---------------------------------
