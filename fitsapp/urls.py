@@ -12,8 +12,8 @@ admin.autodiscover()
 # to the project's homepage.
 
 urlpatterns = patterns("",
-    url(r'^accounts/profile/', lambda x: HttpResponseRedirect('/')),
-    url(r'^accounts/login/', 'allauth.account.views.login'),
+    #url(r'^accounts/profile/', lambda x: HttpResponseRedirect('/')),
+    #url(r'^accounts/login/', 'allauth.account.views.login'),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/filebrowser/', include(site.urls)),
@@ -71,7 +71,7 @@ urlpatterns = patterns("",
     # from it, and use them directly below instead of using
     # ``mezzanine.urls``.
     ('^', include('mezzanine.urls')),
-
+    
     # MOUNTING MEZZANINE UNDER A PREFIX
     # ---------------------------------
     # You can also mount all of Mezzanine's urlpatterns under a
