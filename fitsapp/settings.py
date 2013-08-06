@@ -270,9 +270,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.request",
     "django.core.context_processors.tz",
+    "mezzanine.conf.context_processors.settings",
     "allauth.account.context_processors.account",
     "allauth.socialaccount.context_processors.socialaccount",
-    "mezzanine.conf.context_processors.settings",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,

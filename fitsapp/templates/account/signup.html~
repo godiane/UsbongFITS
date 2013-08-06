@@ -3,9 +3,9 @@
 {% load url from future %}
 {% load i18n %}
 
-{% block meta_title %}{% trans "Signup" %}{% endblock %}
+{% block head_title %}{% trans "Signup" %}{% endblock %}
 
-{% block main %}
+{% block content %}
 <h1>{% trans "Sign Up" %}</h1>
 
 <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
