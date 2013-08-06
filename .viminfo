@@ -22,16 +22,37 @@
 
 # Registers:
 ""1	LINE	0
+	>>>>>>> 0e18e433a63b13e242da805a5edb3370117f1a5e
+"2	LINE	0
+	    "mezzanine.conf.context_processors.settings",
+"3	LINE	0
+	=======
+"4	LINE	0
+	<<<<<<< HEAD
+"5	LINE	0
 	    "mezzanine.conf.context_processors.settings",
 
 # File marks:
-'0  316  0  ~/fitsapp/settings.py
-'1  1  0  ~/fitsapp/templates/account/login.html
-'2  105  46  ~/fitsapp/templates/base.html
+'0  274  4  ~/fitsapp/settings.py
+'1  312  0  ~/fitsapp/settings.py
+'2  1  0  ~/fitsapp/templates/account/login.html
+'3  105  46  ~/fitsapp/templates/base.html
 
 # Jumplist (newest first):
--'  316  0  ~/fitsapp/settings.py
+-'  274  4  ~/fitsapp/settings.py
+-'  312  0  ~/fitsapp/settings.py
 -'  1  0  ~/fitsapp/settings.py
+-'  1  0  ~/fitsapp/templates/account/login.html
+-'  105  46  ~/fitsapp/templates/base.html
+-'  1  0  ~/fitsapp/templates/base.html
+-'  105  46  ~/fitsapp/templates/base.html
+-'  1  0  ~/fitsapp/templates/base.html
+-'  1  0  ~/fitsapp/templates/account/login.html
+-'  105  46  ~/fitsapp/templates/base.html
+-'  1  0  ~/fitsapp/templates/base.html
+-'  105  46  ~/fitsapp/templates/base.html
+-'  1  0  ~/fitsapp/templates/base.html
+-'  316  0  ~/fitsapp/settings.py
 -'  1  0  ~/fitsapp/templates/account/login.html
 -'  105  46  ~/fitsapp/templates/base.html
 -'  1  0  ~/fitsapp/templates/base.html
@@ -46,12 +67,14 @@
 # History of marks within files (newest to oldest):
 
 > ~/fitsapp/settings.py
-	"	316	0
-	.	276	0
+	"	274	4
+	.	274	0
 	+	273	0
-	+	274	3
+	+	273	3
 	+	273	47
-	+	276	0
+	+	274	0
+	+	273	0
+	+	274	0
 
 > ~/fitsapp/templates/account/login.html
 	"	1	0
