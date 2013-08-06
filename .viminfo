@@ -8,6 +8,8 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:wq
+:w
 :q
 
 # Search String History (newest to oldest):
@@ -19,15 +21,40 @@
 # Input Line History (newest to oldest):
 
 # Registers:
+""1	LINE	0
+	    "mezzanine.conf.context_processors.settings",
 
 # File marks:
-'0  105  46  ~/fitsapp/templates/base.html
+'0  316  0  ~/fitsapp/settings.py
+'1  1  0  ~/fitsapp/templates/account/login.html
+'2  105  46  ~/fitsapp/templates/base.html
 
 # Jumplist (newest first):
+-'  316  0  ~/fitsapp/settings.py
+-'  1  0  ~/fitsapp/settings.py
+-'  1  0  ~/fitsapp/templates/account/login.html
+-'  105  46  ~/fitsapp/templates/base.html
+-'  1  0  ~/fitsapp/templates/base.html
+-'  105  46  ~/fitsapp/templates/base.html
+-'  1  0  ~/fitsapp/templates/base.html
+-'  1  0  ~/fitsapp/templates/account/login.html
+-'  105  46  ~/fitsapp/templates/base.html
+-'  1  0  ~/fitsapp/templates/base.html
 -'  105  46  ~/fitsapp/templates/base.html
 -'  1  0  ~/fitsapp/templates/base.html
 
 # History of marks within files (newest to oldest):
+
+> ~/fitsapp/settings.py
+	"	316	0
+	.	276	0
+	+	273	0
+	+	274	3
+	+	273	47
+	+	276	0
+
+> ~/fitsapp/templates/account/login.html
+	"	1	0
 
 > ~/fitsapp/templates/base.html
 	"	105	46
