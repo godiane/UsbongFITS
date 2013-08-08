@@ -14,6 +14,7 @@ admin.autodiscover()
 urlpatterns = patterns("",
     url(r'^accounts/profile/', lambda x: HttpResponseRedirect('/')),
     url(r'^accounts/', include('allauth.urls')),
+    url(r'^upload/', include('upload.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/filebrowser/', include(site.urls)),
 

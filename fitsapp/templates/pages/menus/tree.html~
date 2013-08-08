@@ -9,13 +9,6 @@
       id="tree-menu-home">
     <a href="{% url "home" %}">{% trans "Home" %}</a>
   </li>
-  {% if if not has_home and user.is_authenticated and page.is_primary and forloop.first %}
-  <li class=""><a href="{% url 'account_email' %}">Change Email</a></li>
-  <li class=""><a href="{% url 'account_logout' %}">Logout</a></li>
-  {% else %}
-  <li class=""><a href="{% url 'account_login' %}">Sign In</a></li>
-  <li class="last"><a href="{% url 'account_signup' %}">Sign Up</a></li>
-  {% endif %}
   {% endif %}
   {% if page.in_menu %}
   <li class="
@@ -28,6 +21,16 @@
     {# to only show child pages in the menu for the current page #}
     {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
   </li>
+  {% endif %}
+  {% if not has_home and page.is_primary and forloop.first %}
+  {% if user.is_authenticated %}
+  <li class=""><a href="{% url 'account_email' %}">Change Email</a></li>
+  <li class=""><a href="{% url 'account_email' %}">Change Email</a></li>
+  <li class=""><a href="{% url 'account_logout' %}">Logout</a></li>
+  {% else %}
+  <li class=""><a href="{% url 'account_login' %}">Sign In</a></li>
+  <li class="last"><a href="{% url 'account_signup' %}">Sign Up</a></li>
+  {% endif %}
   {% endif %}
   {% endfor %}
 </ul>
