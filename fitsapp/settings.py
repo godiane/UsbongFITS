@@ -229,8 +229,8 @@ TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 ################
 
 INSTALLED_APPS = (
-    "grappelli",
-    "filebrowser",
+    #"grappelli",
+    #"filebrowser",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -255,7 +255,7 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     #"mezzanine.accounts",
     #"mezzanine.mobile",
-    "mezzanine_file_collections",
+    #"mezzanine_file_collections",
     "upload",   
 )
 
