@@ -298,7 +298,11 @@ MIDDLEWARE_CLASSES = (
     "mezzanine.core.middleware.FetchFromCacheMiddleware",
 )
 
-PAGE_MENU_TEMPLATES = {}
+PAGE_MENU_TEMPLATES = (
+    (1, "Top navigation bar", "pages/menus/dropdown.html"),
+    (2, "Left-hand tree", "pages/menus/tree.html"),
+    (3, "Footer", "pages/menus/footer.html"),
+)
 
 # Store these package names here as they may change in the future since
 # at the moment we are using custom forks of them.
