@@ -138,7 +138,7 @@ TEMPLATE_LOADERS = (
 )
 
 AUTHENTICATION_BACKENDS = (
-    "mezzanine.core.auth_backends.MezzanineBackend", 
+    "mezzanine.core.auth_backends.MezzanineBackend",
     "allauth.account.auth_backends.AuthenticationBackend"
 )
 
@@ -239,6 +239,7 @@ INSTALLED_APPS = (
     "django.contrib.sites",
     "django.contrib.sitemaps",
     "django.contrib.staticfiles",
+    "django.contrib.messages",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
@@ -256,7 +257,7 @@ INSTALLED_APPS = (
     #"mezzanine.accounts",
     #"mezzanine.mobile",
     #"mezzanine_file_collections",
-    "upload",   
+    "upload",
 )
 
 # List of processors used by RequestContext to populate the context.

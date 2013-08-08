@@ -3,6 +3,11 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+#from django.forms import forms
+from django.conf import settings
+#from django.core.exceptions import ValidationError
+from django.contrib import messages
+#from django.utils.translation import ugettext_lazy as _
 
 from fitsapp.upload.models import Document
 from fitsapp.upload.forms import DocumentForm
@@ -12,11 +17,20 @@ def upload(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid() and request.FILES['docfile'].name.lower().endswith(('.xml', '.utree')):
-            newdoc = Document(docfile = request.FILES['docfile'])
-            newdoc.save()
 
-            # Redirect to the document list after POST
-            return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
+            newdoc = Document(docfile = request.FILES['docfile'])
+            if newdoc._size > settings.MAX_UPLOAD_SIZE:
+                messages.error(request, 'File size is too big.')
+            else:
+                newdoc.save()
+
+        else:
+            messages.error(request, 'File type is not supported.')
+            #raise forms.ValidationError(_('File type is not supported'))
+
+        # Redirect to the document list after POST
+        return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
+
     else:
         form = DocumentForm() # A empty, unbound form
 
