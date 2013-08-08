@@ -304,6 +304,8 @@ PAGE_MENU_TEMPLATES = (
     (3, "Footer", "pages/menus/footer.html"),
 )
 
+MAX_UPLOAD_SIZE = "3145728"
+
 # Store these package names here as they may change in the future since
 # at the moment we are using custom forks of them.
 PACKAGE_NAME_FILEBROWSER = "filebrowser_safe"
