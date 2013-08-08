@@ -11,7 +11,7 @@ def upload(request):
     # Handle file upload
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
-        if form.is_valid():
+        if form.is_valid() and request.FILES['docfile'].name.lower().endswith(('.xml', '.utree')):
             newdoc = Document(docfile = request.FILES['docfile'])
             newdoc.save()
 
