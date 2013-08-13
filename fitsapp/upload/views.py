@@ -11,6 +11,7 @@ from django.contrib import messages
 
 from fitsapp.upload.models import Document
 from fitsapp.upload.forms import DocumentForm
+import os
 
 def upload(request):
     # Handle file upload
@@ -18,11 +19,12 @@ def upload(request):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid() and request.FILES['docfile'].name.lower().endswith(('.xml', '.utree')):
 
-            newdoc = Document(docfile = request.FILES['docfile'])
-            if newdoc._size > settings.MAX_UPLOAD_SIZE:
-                messages.error(request, 'File size is too big.')
-            else:
-                newdoc.save()
+            newdoc = Document(docfile = request.FILES['docfile'], uploader = request.user)
+            newdoc.save()
+            #if os.path.getsize(request.FILES['docfile']) > settings.MAX_UPLOAD_SIZE:
+            #    messages.error(request, 'File size is too big.')
+            #else:
+            #    newdoc.save()
 
         else:
             messages.error(request, 'File type is not supported.')

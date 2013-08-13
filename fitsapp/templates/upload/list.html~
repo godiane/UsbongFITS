@@ -9,25 +9,43 @@
 
 <h1>{% trans "Upload" %}</h1>
 		<!-- List of uploaded documents -->
+		<table class="gridtable">
+		    <thead>
+		    <tr>
+		        <th>File Name</th>
+		        <th>Uploader</th>
+		        <th>Description</th>
+		        <th>Date Uploaded</th>
+		    </thead>
 		{% if documents %}
-			<ul>
+		    <tbody>
 			{% for document in documents %}
-				<li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
-			{% endfor %}
-			</ul>
+			<tr>
+				<td><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></td> 
+				<td>{{ document.uploader }}</td>
+				<td>{{ document.description }}</td>
+				<td>{{ document.date_uploaded }}</td>
+			</tr>
+		{% endfor %}
 		{% else %}
-			<p>{% trans "No documents." %}</p>
+		    <tr>
+			<td colspan="4">{% trans "No documents." %}</td>
+			</tr>
+			</tbody>
 		{% endif %}
-
+        </table>
 		<!-- Upload form. Note enctype attribute! -->
 		<form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
 			<p>{{ form.non_field_errors }}</p>
-			<p>{{ form.docfile.label_tag }} {% trans "maximum file size: 3MB" %}</p>
+			<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
 			<p>
 				{{ form.docfile.errors }}
 				{{ form.docfile }}
 			</p>
+
+
+
 			<p><input type="submit" value="{% trans 'Upload' %}" /></p>
 		</form>
 {% endblock %}
