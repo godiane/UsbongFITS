@@ -112,7 +112,7 @@ LANGUAGE_CODE = "en"
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
 # are displayed for error pages. Should always be set to ``False`` in
 # production. Best set to ``True`` in local_settings.py
-DEBUG = False
+DEBUG = True
 
 # Whether a user's session cookie expires when the Web browser is closed.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
@@ -305,7 +305,8 @@ PAGE_MENU_TEMPLATES = (
     (3, "Footer", "pages/menus/footer.html"),
 )
 
-MAX_UPLOAD_SIZE = "3145728"
+#MAX_UPLOAD_SIZE = "3145728"
+FILE_UPLOAD_MAX_MEMORY_SIZE = "55"
 
 # Store these package names here as they may change in the future since
 # at the moment we are using custom forks of them.

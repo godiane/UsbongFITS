@@ -9,8 +9,8 @@
 ~h
 # Command Line History (newest to oldest):
 :q
-:wq
 :w
+:wq
 
 # Search String History (newest to oldest):
 
@@ -33,17 +33,22 @@
 	    "mezzanine.conf.context_processors.settings",
 
 # File marks:
-'0  71  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/page_processors.py
-'1  1  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/fields.py
-'2  1  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/views.py
-'3  16  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/urls.py
-'4  107  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/urls.py
-'5  274  4  ~/fitsapp/settings.py
-'6  312  0  ~/fitsapp/settings.py
-'7  1  0  ~/fitsapp/templates/account/login.html
-'8  105  46  ~/fitsapp/templates/base.html
+'0  22  63  ~/fitsapp/upload/views.py
+'1  8  0  ~/fitsapp/upload/models.py
+'2  71  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/page_processors.py
+'3  1  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/fields.py
+'4  1  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/views.py
+'5  16  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/urls.py
+'6  107  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/urls.py
+'7  274  4  ~/fitsapp/settings.py
+'8  312  0  ~/fitsapp/settings.py
+'9  1  0  ~/fitsapp/templates/account/login.html
 
 # Jumplist (newest first):
+-'  22  63  ~/fitsapp/upload/views.py
+-'  8  0  ~/fitsapp/upload/models.py
+-'  1  0  ~/fitsapp/upload/models.py
+-'  1  0  ~/fitsapp/upload/views.py
 -'  71  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/page_processors.py
 -'  1  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/page_processors.py
 -'  1  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/fields.py
@@ -137,14 +142,17 @@
 -'  1  0  ~/fitsapp/templates/account/login.html
 -'  105  46  ~/fitsapp/templates/base.html
 -'  1  0  ~/fitsapp/templates/base.html
--'  105  46  ~/fitsapp/templates/base.html
--'  1  0  ~/fitsapp/templates/base.html
--'  316  0  ~/fitsapp/settings.py
--'  1  0  ~/fitsapp/templates/account/login.html
--'  105  46  ~/fitsapp/templates/base.html
--'  1  0  ~/fitsapp/templates/base.html
 
 # History of marks within files (newest to oldest):
+
+> ~/fitsapp/upload/views.py
+	"	22	63
+	^	22	64
+	.	22	64
+	+	22	64
+
+> ~/fitsapp/upload/models.py
+	"	8	0
 
 > ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/page_processors.py
 	"	71	0

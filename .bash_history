@@ -236,3 +236,43 @@ cd fitsapp/
 ls
 git rm -f settings (copy).py
 git rm -f settings \(copy\).py
+ls
+cd fitsapp/
+ls
+git pull origin master
+workon django15
+source mkvirtualenv.sh
+source virtualenvwrapper.sh
+workon django15
+git pull origin master
+l
+ls
+cd ..
+git pull origin master
+mv fitsapp/upload/views.py fitsapp/upload/views.py.bak
+git pull origin master
+cd fitsapp
+ls
+python manage.py syncdb
+python manage.py migrate
+python manage.py syncdb
+ls
+cd upload/
+ls
+vi views.py
+ls
+vi models.py
+vi views.py
+ls
+cd ..
+ls
+cat local_settings.py
+mv local_settings.py local_settings.py.bak
+ls
+python manage.py syncdb
+python manage.py migrate
+python manage.py shell
+ls
+cd ..
+ls
+git pull origin master

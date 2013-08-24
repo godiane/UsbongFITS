@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import sys
+
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
@@ -11,7 +13,6 @@ from django.contrib import messages
 
 from fitsapp.upload.models import Document
 from fitsapp.upload.forms import DocumentForm
-import os
 
 def upload(request):
     # Handle file upload
@@ -19,12 +20,14 @@ def upload(request):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid() and request.FILES['docfile'].name.lower().endswith(('.xml', '.utree')):
 
-            newdoc = Document(docfile = request.FILES['docfile'])
-            newdoc.save()
-            #if os.path.getsize(request.FILES['docfile']) > settings.MAX_UPLOAD_SIZE:
-            #    messages.error(request, 'File size is too big.')
-            #else:
-            #    newdoc.save()
+            #blob = request.FILES['docfile'].read()
+            #docsize = len(blob)
+
+            if sys.getsizeof(request.FILES['docfile']) > settings.FILE_UPLOAD_MAX_MEMORY_SIZE:
+                messages.error(request, 'File size is too big.')
+            else:
+                newdoc = Document(docfile = request.FILES['docfile'])
+                newdoc.save()
 
         else:
             messages.error(request, 'File type is not supported.')
