@@ -138,7 +138,7 @@ TEMPLATE_LOADERS = (
 )
 
 AUTHENTICATION_BACKENDS = (
-    "mezzanine.core.auth_backends.MezzanineBackend", 
+    "mezzanine.core.auth_backends.MezzanineBackend",
     "allauth.account.auth_backends.AuthenticationBackend"
 )
 
@@ -239,6 +239,7 @@ INSTALLED_APPS = (
     "django.contrib.sites",
     "django.contrib.sitemaps",
     "django.contrib.staticfiles",
+    "django.contrib.messages",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
@@ -256,7 +257,7 @@ INSTALLED_APPS = (
     #"mezzanine.accounts",
     #"mezzanine.mobile",
     #"mezzanine_file_collections",
-    "upload",   
+    "upload",
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -304,8 +305,7 @@ PAGE_MENU_TEMPLATES = (
     (3, "Footer", "pages/menus/footer.html"),
 )
 
-#MAX_UPLOAD_SIZE = "3145728"
-MAX_UPLOAD_SIZE = "3"
+MAX_UPLOAD_SIZE = "3145728"
 
 # Store these package names here as they may change in the future since
 # at the moment we are using custom forks of them.
@@ -317,7 +317,7 @@ PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
 ########################
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 # Change this after development
-ACCOUNT_EMAIL_REQUIRED = True
+#ACCOUNT_EMAIL_REQUIRED = True
 SOCIAL_ACCOUNT_AUTO_SIGNUP = True
 
 #########################
