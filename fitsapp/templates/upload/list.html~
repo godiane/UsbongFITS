@@ -9,7 +9,7 @@
 
 <h1>{% trans "Upload" %}</h1>
 		<!-- List of uploaded documents -->
-		<table class="gridtable">
+		<table class="table">
 		    <thead>
 		    <tr>
 		        <th>File Name</th>
