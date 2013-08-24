@@ -19,7 +19,7 @@ def upload(request):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid() and request.FILES['docfile'].name.lower().endswith(('.xml', '.utree')):
 
-            newdoc = Document(docfile = request.FILES['docfile'])
+            newdoc = Document(docfile = request.FILES['docfile'], uploader = request.user)
             newdoc.save()
             #if os.path.getsize(request.FILES['docfile']) > settings.MAX_UPLOAD_SIZE:
             #    messages.error(request, 'File size is too big.')

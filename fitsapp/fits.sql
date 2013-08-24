@@ -41,7 +41,7 @@ CREATE TABLE `account_emailaddress` (
 
 LOCK TABLES `account_emailaddress` WRITE;
 /*!40000 ALTER TABLE `account_emailaddress` DISABLE KEYS */;
-INSERT INTO `account_emailaddress` VALUES (1,1,'usbong.evangelist@gmail.com',0,1),(2,1,'di.gonzales@gmail.com',0,0),(3,9,'masarapmabuhay@gmail.com',1,1),(4,10,'dianarisse@gmail.com',0,1);
+INSERT INTO `account_emailaddress` VALUES (1,1,'di.gonzales@gmail.com',0,0),(2,5,'masarapmabuhay@gmail.com',1,1);
 /*!40000 ALTER TABLE `account_emailaddress` ENABLE KEYS */;
 UNLOCK TABLES;
 
