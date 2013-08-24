@@ -32,7 +32,7 @@
 				<td>{{ document.description }}</td>
 				<td>{{ document.date_uploaded }}</td>
 			</tr>
-		{% endfor %}
+		    {% endfor %}
 		{% else %}
 		    <tr>
 			<td colspan="4">{% trans "No documents." %}</td>
@@ -50,9 +50,10 @@
 				{{ form.docfile }}
 			</p>
 
-
-
+            {% if request.REQUEST.query and request.REQUEST.query.strip %}
+            {% else %}
 			<p><input type="submit" value="{% trans 'Upload' %}" /></p>
+            {% endif %}
 		</form>
 {% endblock %}
 

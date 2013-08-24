@@ -15,7 +15,7 @@ from fitsapp.upload.forms import DocumentSearchForm
 
 import os
 
-def uploadsearch(request):
+def upload_search(request):
     # Handle search
     if request.method == 'GET':
         form = DocumentSearchForm(request.GET)
@@ -25,8 +25,8 @@ def uploadsearch(request):
         else:
             messages.error(request, 'Search error.')
 
-        # Redirect to the document list after POST
-        #return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
+        # Redirect to the document list after GET
+        return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
 
     else:
         form = DocumentSearchForm() # A empty, unbound form

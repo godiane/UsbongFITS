@@ -25,8 +25,8 @@ def upload_search(request):
         else:
             messages.error(request, 'Search error.')
 
-        # Redirect to the document list after POST
-        #return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
+        # Redirect to the document list after GET
+        #return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
 
     else:
         form = DocumentSearchForm() # A empty, unbound form
