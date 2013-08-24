@@ -16,6 +16,7 @@ from fitsapp.upload.forms import DocumentSearchForm
 import os
 
 def upload_search(request):
+    
     # Handle search
     if request.method == 'GET':
         form = DocumentSearchForm(request.GET)
@@ -23,17 +24,15 @@ def upload_search(request):
             query = form.cleaned_data['query']
             messages.info(request, 'Search query: ' + query)
         else:
-            messages.error(request, 'Search error.')
-
-        # Redirect to the document list after GET
-        return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
-
+            query = '';
     else:
         form = DocumentSearchForm() # A empty, unbound form
-
+        
     # Load documents for the list page
-    documents = Document.objects.filter(docfile__contains=query)
-
+    if query:
+        documents = Document.objects.filter(docfile__contains=query)
+    else:
+        documents = Document.objects.all()
     # Render list page with the documents and the form
     return render_to_response(
         'upload/list.html',
@@ -65,7 +64,7 @@ def upload(request):
         form = DocumentForm() # A empty, unbound form
 
     # Load documents for the list page
-    documents = Document.objects.all()
+    documents = Document.objects.filter(uploader=)
 
     # Render list page with the documents and the form
     return render_to_response(

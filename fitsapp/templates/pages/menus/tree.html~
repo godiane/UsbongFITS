@@ -23,8 +23,9 @@
   </li>
   {% endif %}
   {% if not has_home and page.is_primary and forloop.first %}
+  <li class=""><a href="{% url 'upload' %}">Search Trees</a></li>
   {% if user.is_authenticated %}
-  <li class=""><a href="{% url 'account_email' %}">Change Email</a></li>
+  <li class=""><a href="{% url 'upload' %}">My Trees</a></li>
   <li class=""><a href="{% url 'account_email' %}">Change Email</a></li>
   <li class=""><a href="{% url 'account_logout' %}">Logout</a></li>
   {% else %}

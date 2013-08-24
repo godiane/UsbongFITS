@@ -7,7 +7,7 @@
 
 {% block main %}
 
-<h1>{% trans "Upload" %}</h1>
+<h1>{% trans "Trees" %}</h1>
     <div class="nav-collapse collapse">
 	    <form action="{% url "upload_search" %}" class="navbar-search pull-right input-append">
             <input class="search-query" placeholder="{% trans "Search" %}" 
@@ -40,6 +40,7 @@
 			</tbody>
 		{% endif %}
         </table>
+        {% if user.is_authenticated %}
 		<!-- Upload form. Note enctype attribute! -->
 		<form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
@@ -55,5 +56,6 @@
 			<p><input type="submit" value="{% trans 'Upload' %}" /></p>
             {% endif %}
 		</form>
+		{% endif %}
 {% endblock %}
 
