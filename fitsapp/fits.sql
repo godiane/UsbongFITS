@@ -1358,7 +1358,7 @@ CREATE TABLE `upload_document` (
 
 LOCK TABLES `upload_document` WRITE;
 /*!40000 ALTER TABLE `upload_document` DISABLE KEYS */;
-INSERT INTO `upload_document` VALUES (1,'champs.utree',10,'test','2013-08-18');
+INSERT INTO `upload_document` VALUES (1,'champs.utree',1,'test','2013-08-18');
 /*!40000 ALTER TABLE `upload_document` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

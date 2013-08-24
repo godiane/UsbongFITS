@@ -22,7 +22,7 @@
 			{% for document in documents %}
 			<tr>
 				<td><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></td> 
-				<td>{{ document.uploader }} {{ request.user }}</td>
+				<td>{{ document.uploader }}<br/>current user id: {{ request.user }}</td>
 				<td>{{ document.description }}</td>
 				<td>{{ document.date_uploaded }}</td>
 			</tr>
