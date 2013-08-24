@@ -11,7 +11,35 @@ from django.contrib import messages
 
 from fitsapp.upload.models import Document
 from fitsapp.upload.forms import DocumentForm
+from fitsapp.upload.forms import DocumentSearchForm
+
 import os
+
+def search(request):
+    # Handle search
+    if request.method == 'GET':
+        form = DocumentSearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            messages.info(request, 'Search has been done honey ' + query)
+        else:
+            messages.error(request, 'Search error.')
+
+        # Redirect to the document list after POST
+        #return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
+
+    else:
+        form = DocumentSearchForm() # A empty, unbound form
+
+    # Load documents for the list page
+    documents = Document.objects.filter(docfile__contains=query)
+
+    # Render list page with the documents and the form
+    return render_to_response(
+        'upload/list.html',
+        {'documents': documents, 'form': form},
+        context_instance=RequestContext(request)
+    )
 
 def upload(request):
     # Handle file upload
