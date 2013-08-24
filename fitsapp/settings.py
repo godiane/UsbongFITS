@@ -158,17 +158,17 @@ STATICFILES_FINDERS = (
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+        "ENGINE": "django.db.backends.mysql",
         # DB name or path to database file if using sqlite3.
-        "NAME": "",
+        "NAME": "usbong$fits",
         # Not used with sqlite3.
-        "USER": "",
+        "USER": "usbong",
         # Not used with sqlite3.
-        "PASSWORD": "",
+        "PASSWORD": "fits2013",
         # Set to empty string for localhost. Not used with sqlite3.
-        "HOST": "",
+        "HOST": "mysql.server",
         # Set to empty string for default. Not used with sqlite3.
-        "PORT": "",
+        "PORT": "3306",
     }
 }
 
