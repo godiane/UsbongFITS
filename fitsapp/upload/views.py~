@@ -15,13 +15,13 @@ from fitsapp.upload.forms import DocumentSearchForm
 
 import os
 
-def search(request):
+def uploadsearch(request):
     # Handle search
     if request.method == 'GET':
         form = DocumentSearchForm(request.GET)
         if form.is_valid():
             query = form.cleaned_data['query']
-            messages.info(request, 'Search has been done honey ' + query)
+            messages.info(request, 'Search query: ' + query)
         else:
             messages.error(request, 'Search error.')
 

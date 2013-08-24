@@ -15,7 +15,7 @@ from fitsapp.upload.forms import DocumentSearchForm
 
 import os
 
-def search(request):
+def upload_search(request):
     # Handle search
     if request.method == 'GET':
         form = DocumentSearchForm(request.GET)
