@@ -40,7 +40,7 @@
 			</tbody>
 		{% endif %}
         </table>
-        {% if user.is_authenticated %}
+        {% if user.is_authenticated and request.get_full_path = "/upload/" %}
 		<!-- Upload form. Note enctype attribute! -->
 		<form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
@@ -51,10 +51,7 @@
 				{{ form.docfile }}
 			</p>
 
-            {% if request.REQUEST.query and request.REQUEST.query.strip %}
-            {% else %}
-			<p><input type="submit" value="{% trans 'Upload' %}" /></p>
-            {% endif %}
+		    <p><input type="submit" value="{% trans 'Upload' %}" /></p>
 		</form>
 		{% endif %}
 {% endblock %}
