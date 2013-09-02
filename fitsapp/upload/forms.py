@@ -6,7 +6,11 @@ class DocumentForm(forms.Form):
         label='Select a file',
         help_text='max. 3 megabytes'
     )
-    
+    docdesc = forms.CharField(
+        label='Description',
+        widget='forms.TextArea'
+    )
+
 class DocumentSearchForm(forms.Form):
     query = forms.CharField(
         label='Search'

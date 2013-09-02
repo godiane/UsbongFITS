@@ -49,8 +49,9 @@
 			<p>
 				{{ form.docfile.errors }}
 				{{ form.docfile }}
-			</p>
-
+            </p>
+            <p>{{ form.docdesc.label_tag }}</p>
+            <p>{{ form.docdesc }}</p>
 		    <p><input type="submit" value="{% trans 'Upload' %}" /></p>
 		</form>
 		{% endif %}
