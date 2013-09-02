@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load url from future %}
+{% load youtube_embed_url %}
 
 {% block meta_title %}{% trans "Upload" %}{% endblock %}
 
@@ -29,7 +30,7 @@
 			<tr>
 				<td><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></td> 
 				<td>{{ document.uploader }}</td>
-				<td>{{ document.description }}</td>
+				<td>{{ document.description | youtube_embed_url | safe }}</td>
 				<td>{{ document.date_uploaded }}</td>
 			</tr>
 		    {% endfor %}
@@ -50,7 +51,7 @@
 				{{ form.docfile.errors }}
 				{{ form.docfile }}
             </p>
-            <p>{{ form.docdesc.label_tag }}</p>
+            <p>{{ form.docdesc.label_tag }} {{ form.docdesc.help_text }}</p>
             <p>{{ form.docdesc }}</p>
 		    <p><input type="submit" value="{% trans 'Upload' %}" /></p>
 		</form>
