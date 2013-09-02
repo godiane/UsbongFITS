@@ -1,0 +1,9 @@
+#!/home/usbong/.virtualenvs/usbong/bin/python2.7
+# EASY-INSTALL-ENTRY-SCRIPT: 'Mezzanine==1.4.12','console_scripts','mezzanine-project'
+__requires__ = 'Mezzanine==1.4.12'
+import sys
+from pkg_resources import load_entry_point
+
+sys.exit(
+   load_entry_point('Mezzanine==1.4.12', 'console_scripts', 'mezzanine-project')()
+)

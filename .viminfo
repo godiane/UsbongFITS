@@ -8,9 +8,9 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:q
 :wq
 :w
-:q
 
 # Search String History (newest to oldest):
 
@@ -33,18 +33,33 @@
 	    "mezzanine.conf.context_processors.settings",
 
 # File marks:
-'0  171  20  ~/fitsapp/settings.py
-'1  22  63  ~/fitsapp/upload/views.py
-'2  8  0  ~/fitsapp/upload/models.py
-'3  71  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/page_processors.py
-'4  1  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/fields.py
-'5  1  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/views.py
-'6  16  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/pages/urls.py
-'7  107  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/mezzanine/urls.py
-'8  274  4  ~/fitsapp/settings.py
-'9  312  0  ~/fitsapp/settings.py
+'0  46  0  /bin/user_wsgi_wrapper.py
+'1  54  36  ~/fitsapp/templates/upload/list.html
+'2  10  27  ~/fitsapp/upload/forms.py
+'3  8  0  ~/fitsapp/upload/forms.py
+'4  13  0  ~/fitsapp/upload/forms.py
+'5  51  0  ~/fitsapp/templates/upload/list.html
+'6  1  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/upload/urls.py
+'7  7  0  ~/fitsapp/upload/urls.py
+'8  20  0  ~/fitsapp/urls.py
+'9  163  28  ~/fitsapp/settings.py
 
 # Jumplist (newest first):
+-'  46  0  /bin/user_wsgi_wrapper.py
+-'  1  0  /bin/user_wsgi_wrapper.py
+-'  54  36  ~/fitsapp/templates/upload/list.html
+-'  51  0  ~/fitsapp/templates/upload/list.html
+-'  10  27  ~/fitsapp/upload/forms.py
+-'  8  0  ~/fitsapp/upload/forms.py
+-'  13  0  ~/fitsapp/upload/forms.py
+-'  1  0  ~/fitsapp/upload/forms.py
+-'  1  0  ~/fitsapp/templates/upload/list.html
+-'  1  0  ~/.virtualenvs/django15/lib/python2.7/site-packages/upload/urls.py
+-'  7  0  ~/fitsapp/upload/urls.py
+-'  1  0  ~/fitsapp/upload/urls.py
+-'  20  0  ~/fitsapp/urls.py
+-'  1  0  ~/fitsapp/urls.py
+-'  163  28  ~/fitsapp/settings.py
 -'  171  20  ~/fitsapp/settings.py
 -'  274  4  ~/fitsapp/settings.py
 -'  22  63  ~/fitsapp/upload/views.py
@@ -129,16 +144,45 @@
 -'  1  0  ~/fitsapp/templates/base.html
 -'  105  46  ~/fitsapp/templates/base.html
 -'  1  0  ~/fitsapp/templates/base.html
--'  1  0  ~/fitsapp/templates/account/login.html
--'  105  46  ~/fitsapp/templates/base.html
--'  1  0  ~/fitsapp/templates/base.html
 
 # History of marks within files (newest to oldest):
 
+> /bin/user_wsgi_wrapper.py
+	"	46	0
+
+> ~/fitsapp/templates/upload/list.html
+	"	54	36
+	^	54	37
+	.	55	0
+	+	53	0
+	+	52	12
+	+	53	47
+	+	54	37
+	+	55	0
+
+> ~/fitsapp/upload/forms.py
+	"	10	27
+	^	10	28
+	.	10	27
+	+	9	30
+	+	12	4
+	+	11	29
+	+	13	0
+	+	10	27
+
+> ~/.virtualenvs/django15/lib/python2.7/site-packages/upload/urls.py
+	"	1	0
+
+> ~/fitsapp/upload/urls.py
+	"	7	0
+
+> ~/fitsapp/urls.py
+	"	20	0
+
 > ~/fitsapp/settings.py
-	"	171	20
-	^	171	21
-	.	171	20
+	"	163	28
+	^	163	29
+	.	163	29
 	+	273	0
 	+	273	3
 	+	273	47
@@ -153,6 +197,7 @@
 	+	163	27
 	+	169	28
 	+	171	20
+	+	163	29
 
 > ~/fitsapp/upload/views.py
 	"	22	63
