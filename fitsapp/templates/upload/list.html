@@ -28,7 +28,7 @@
 		    <tbody>
 			{% for document in documents %}
 			<tr>
-				<td><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></td> 
+				<td><a href="{{ document.docfile.url }}">{{ document.docfile.name | clean_file_name }}</a></td> 
 				<td>{{ document.uploader }}</td>
 				<td>{{ document.description | youtube_embed_url | safe }}</td>
 				<td>{{ document.date_uploaded }}</td>

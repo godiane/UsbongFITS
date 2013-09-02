@@ -20,3 +20,9 @@ def youtube_embed_url(value):
     return value
 
 youtube_embed_url.is_safe = True
+
+@register.filter(name='clean_file_name')
+@stringfilter
+def clean_file_name(value):
+    return value.rpartition('/')[2]
+
