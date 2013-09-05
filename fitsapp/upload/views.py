@@ -10,6 +10,7 @@ from django.contrib import messages
 #from django.utils.translation import ugettext_lazy as _
 
 from fitsapp.upload.models import Document
+from fitsapp.upload.models import DownloadCount
 from fitsapp.upload.forms import DocumentForm
 from fitsapp.upload.forms import DocumentSearchForm
 
@@ -52,14 +53,6 @@ def upload(request):
             #    messages.error(request, 'File size is too big.')
             #else:
             #    newdoc.save()
-
-        else:
-            messages.error(request, 'File type is not supported.')
-            #raise forms.ValidationError(_('File type is not supported'))
-
-        # Redirect to the document list after POST
-        return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
-
     else:
         form = DocumentForm() # A empty, unbound form
 

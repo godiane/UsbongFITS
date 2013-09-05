@@ -112,7 +112,7 @@ LANGUAGE_CODE = "en"
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
 # are displayed for error pages. Should always be set to ``False`` in
 # production. Best set to ``True`` in local_settings.py
-DEBUG = False
+DEBUG = True
 
 # Whether a user's session cookie expires when the Web browser is closed.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
@@ -158,17 +158,17 @@ STATICFILES_FINDERS = (
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+        "ENGINE": "django.db.backends.mysql",
         # DB name or path to database file if using sqlite3.
-        "NAME": "",
+        "NAME": "usbong$fits2",
         # Not used with sqlite3.
-        "USER": "",
+        "USER": "usbong",
         # Not used with sqlite3.
-        "PASSWORD": "",
+        "PASSWORD": "fits2013",
         # Set to empty string for localhost. Not used with sqlite3.
-        "HOST": "",
+        "HOST": "mysql.server",
         # Set to empty string for default. Not used with sqlite3.
-        "PORT": "",
+        "PORT": "3306",
     }
 }
 
@@ -258,6 +258,7 @@ INSTALLED_APPS = (
     #"mezzanine.mobile",
     #"mezzanine_file_collections",
     "upload",
+    'hitcount',
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -305,7 +306,12 @@ PAGE_MENU_TEMPLATES = (
     (3, "Footer", "pages/menus/footer.html"),
 )
 
-MAX_UPLOAD_SIZE = "3145728"
+#MAX_UPLOAD_SIZE = "3145728"
+FILE_UPLOAD_MAX_MEMORY_SIZE = "55"
+
+HITCOUNT_KEEP_HIT_ACTIVE = { 'days': 7 }
+HITCOUNT_HITS_PER_IP_LIMIT = 0
+HITCOUNT_EXCLUDE_USER_GROUP = ( 'Editor', )
 
 # Store these package names here as they may change in the future since
 # at the moment we are using custom forks of them.

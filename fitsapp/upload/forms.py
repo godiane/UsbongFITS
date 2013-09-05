@@ -17,3 +17,8 @@ class DocumentSearchForm(forms.Form):
     query = forms.CharField(
         label='Search'
     )
+    
+class DocumentDownloadForm(forms.Form):
+    docfile = forms.FileField(
+        label='Search'
+    )

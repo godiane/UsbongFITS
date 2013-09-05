@@ -10,26 +10,11 @@ from django.contrib import messages
 #from django.utils.translation import ugettext_lazy as _
 
 from fitsapp.upload.models import Document
+from fitsapp.upload.models import DownloadCount
 from fitsapp.upload.forms import DocumentForm
 from fitsapp.upload.forms import DocumentSearchForm
 
 import os
-
-import re
- 
-from django.template.defaultfilters import stringfilter
-from django import template
-
-register = template.Library()
- 
-YOUTUBE_RE = re.compile(r"^(http://)?(www\.)?(youtube\.com/watch\?v=)?(?P<id>[A-Za-z0-9\-=_]{11})")
-YOUTUBE_EMBED = """
-<object width="425" height="344">
-<param name="movie" value="http://www.youtube.com/v/%s"></param>
-<param name="allowFullScreen" value="true"></param>
-<embed src="http://www.youtube.com/v/%s" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344"></embed>
-</object>
-"""
 
 def upload_search(request):
     
@@ -68,14 +53,6 @@ def upload(request):
             #    messages.error(request, 'File size is too big.')
             #else:
             #    newdoc.save()
-
-        else:
-            messages.error(request, 'File type is not supported.')
-            #raise forms.ValidationError(_('File type is not supported'))
-
-        # Redirect to the document list after POST
-        return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
-
     else:
         form = DocumentForm() # A empty, unbound form
 
@@ -88,3 +65,4 @@ def upload(request):
         {'documents': documents, 'form': form},
         context_instance=RequestContext(request)
     )
+

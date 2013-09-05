@@ -258,6 +258,7 @@ INSTALLED_APPS = (
     #"mezzanine.mobile",
     #"mezzanine_file_collections",
     "upload",
+    'hitcount',
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -307,6 +308,11 @@ PAGE_MENU_TEMPLATES = (
 
 #MAX_UPLOAD_SIZE = "3145728"
 FILE_UPLOAD_MAX_MEMORY_SIZE = "55"
+
+# HITCOUNT
+HITCOUNT_KEEP_HIT_ACTIVE = { 'days': 7 }
+HITCOUNT_HITS_PER_IP_LIMIT = 0
+HITCOUNT_EXCLUDE_USER_GROUP = ( 'Editor', )
 
 # Store these package names here as they may change in the future since
 # at the moment we are using custom forks of them.
