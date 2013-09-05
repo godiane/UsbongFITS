@@ -258,7 +258,7 @@ INSTALLED_APPS = (
     #"mezzanine.mobile",
     #"mezzanine_file_collections",
     "upload",
-    'hitcount',
+    #'hitcount',
 )
 
 # List of processors used by RequestContext to populate the context.
