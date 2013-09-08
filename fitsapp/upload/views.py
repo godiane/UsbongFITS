@@ -37,7 +37,7 @@ def upload_search(request):
     else:
         documents = Document.objects.all()
         
-    paginator = Paginator(documents, 5) # Show 5 documents per page
+    paginator = Paginator(documents, 10) # Show 10 documents per page
 
     page = request.GET.get('page')
     try:
@@ -74,7 +74,7 @@ def upload(request):
     # Load documents for the list page
     documents = Document.objects.filter(uploader=request.user)
     
-    paginator = Paginator(documents, 5) # Show 5 documents per page
+    paginator = Paginator(documents, 10) # Show 10 documents per page
 
     page = request.GET.get('page')
     try:
