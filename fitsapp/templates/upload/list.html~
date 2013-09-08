@@ -65,7 +65,7 @@
         </div>
         
         {% if user.is_authenticated and request.path == "/upload/" %}
-        <h2>Upload a Tree</a>
+        <h2>Upload a Tree</h2>
 		<!-- Upload form. Note enctype attribute! -->
 		<form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
