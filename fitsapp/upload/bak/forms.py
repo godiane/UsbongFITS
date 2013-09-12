@@ -12,13 +12,13 @@ class DocumentForm(forms.Form):
         help_text='300 characters max.',
         widget=forms.Textarea
     )
-    
+
 class DocumentSearchForm(forms.Form):
     query = forms.CharField(
         label='Search'
     )
-
-class DocumentLocateForm(forms.Form):
-    location = forms.CharField(
-        label='Download URL'
+    
+class DocumentDownloadForm(forms.Form):
+    docfile = forms.FileField(
+        label='Search'
     )

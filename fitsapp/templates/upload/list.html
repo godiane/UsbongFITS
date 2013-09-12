@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load url from future %}
 {% load youtube_embed_url %}
+{% load randomize %}
 
 {% block meta_title %}{% trans "Upload" %}{% endblock %}
 
@@ -26,19 +27,21 @@
 		        <th>Uploader</th>
 		        <th>Description</th>
 		        <th>Date Uploaded</th>
+		        <th>Download Count</th>
 		    </thead>
 		{% if documents %}
 		    <tbody>
 			{% for document in documents %}
 			<tr>
 			    {% if user.is_authenticated and user.is_staff or user == document.uploader and request.path == '/upload/' %}
-				<td><a href="{{ document.docfile.url }}">{{ document.docfile.name  }}</a></td>			   
+				<td><a href="{% url 'locate' %}?location={{ document.id | randomize }}">{{ document.docfile.name  }}</a></td>			   
 			    {% else %}
-				<td><a href="{{ document.docfile.url }}">{{ document.docfile.name | clean_file_name }}</a></td>
+				<td><a href="{% url 'locate' %}?location={{ document.id | randomize }}">{{ document.docfile.name | clean_file_name }}</a></td>
 				{% endif %}
 				<td>{{ document.uploader }}</td>
 				<td>{{ document.description | youtube_embed_url | safe }}</td>
 				<td>{{ document.date_uploaded }}</td>
+				<td>{{ document.download_count }}</td>
 			</tr>
 		    {% endfor %}		    
 		{% else %}
