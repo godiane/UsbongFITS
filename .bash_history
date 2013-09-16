@@ -276,3 +276,112 @@ ls
 cd ..
 ls
 git pull origin master
+ls
+cd fitsapp/
+ls
+cd templates/
+ls
+cd upload/
+ls
+vi list.html
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd fitsapp/
+ls
+cd upload/
+ls
+vi forms.py
+ls
+cd ..
+ls
+cd templates/
+ls
+cd upload/
+ls
+vi list.html
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+./update.sh
+cat update.sh
+ls
+cd .virtualenvs/django15/
+ls
+cd bin
+ls
+cat activate_this.py 
+chmod +x activate_this.py 
+ls
+cd activate
+ls
+cat activate
+cat activate_this.py 
+python activate_this.py 
+cd
+ls
+cd /bin/
+ls
+vi user_wsgi_wrapper.py 
+cd
+ls
+source virtualenvwrapper.sh
+rmvirtualenv usbong
+mkvirtualenv usbong
+which pip
+pip install -U django
+ls
+cd fitsapp/
+ls
+python manage.py updatefb
+python manage.py syncdb
+pip install mysqldb
+pip install mysql-python
+python manage.py syncdb
+pip install -U allauth
+pip install -U django-allauth
+pip install -U mezzanine
+git add .
+cd ..
+cd fitsapp/
+ls
+cd ..
+git add .
+cd fitsapp/
+ls
+git add .
+git status
+git commit -m "latest from server"
+git pull origin master
+cd ..
+git pull origin master
+git push origin master
+git add .
+git commit -m "latest from server"
+git reset
+source virtualenvwrapper.sh
+rmvirtualenv usbong
+deactivate
+rmvirtualenv usbong
+use django15
+source virtualenvwrapper.sh
+use django15
+workon django15
+git add .
+ls .virtualenvs/
+git commit -m "latest from server"
+git push origin master
+cd
+git pull origin master
+git commit -a
+git fetch --all
+git reset --hard origin/master
+./update.sh
