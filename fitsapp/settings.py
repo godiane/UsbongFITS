@@ -325,6 +325,7 @@ PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 # Change this after development
 #ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_REQUIRED = True
 SOCIAL_ACCOUNT_AUTO_SIGNUP = True
 
 #########################
