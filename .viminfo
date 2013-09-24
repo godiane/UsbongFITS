@@ -8,9 +8,10 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:q!
+:q
 :wq
 :w
-:q
 
 # Search String History (newest to oldest):
 
@@ -33,23 +34,25 @@
 	    "mezzanine.conf.context_processors.settings",
 
 # File marks:
-'0  86  110  ~/fitsapp/upload/views.py
-'1  81  41  ~/fitsapp/upload/views.py
-'2  10  27  ~/fitsapp/upload/forms.py
-'3  10  0  ~/fitsapp/upload/models.py
-'4  1  14  ~/update.sh
-'5  46  0  /bin/user_wsgi_wrapper.py
-'6  54  36  ~/fitsapp/templates/upload/list.html
-'7  8  0  ~/fitsapp/upload/forms.py
-'8  13  0  ~/fitsapp/upload/forms.py
-'9  51  0  ~/fitsapp/templates/upload/list.html
+'0  22  0  ~/fitsapp/upload/views.py
+'1  12  57  ~/fitsapp/upload/models.py
+'2  89  110  ~/fitsapp/upload/views.py
+'3  84  41  ~/fitsapp/upload/views.py
+'4  10  27  ~/fitsapp/upload/forms.py
+'5  10  0  ~/fitsapp/upload/models.py
+'6  1  14  ~/update.sh
+'7  46  0  /bin/user_wsgi_wrapper.py
+'8  54  36  ~/fitsapp/templates/upload/list.html
+'9  8  0  ~/fitsapp/upload/forms.py
 
 # Jumplist (newest first):
--'  86  110  ~/fitsapp/upload/views.py
--'  81  41  ~/fitsapp/upload/views.py
--'  22  3  ~/fitsapp/upload/views.py
--'  10  27  ~/fitsapp/upload/forms.py
+-'  22  0  ~/fitsapp/upload/views.py
+-'  89  110  ~/fitsapp/upload/views.py
+-'  12  57  ~/fitsapp/upload/models.py
 -'  10  0  ~/fitsapp/upload/models.py
+-'  84  41  ~/fitsapp/upload/views.py
+-'  25  3  ~/fitsapp/upload/views.py
+-'  10  27  ~/fitsapp/upload/forms.py
 -'  8  0  ~/fitsapp/upload/models.py
 -'  1  14  ~/update.sh
 -'  46  0  /bin/user_wsgi_wrapper.py
@@ -141,19 +144,27 @@
 -'  1  0  ~/fitsapp/templates/account/login.html
 -'  105  46  ~/fitsapp/templates/base.html
 -'  1  0  ~/fitsapp/templates/base.html
--'  105  46  ~/fitsapp/templates/base.html
 
 # History of marks within files (newest to oldest):
 
 > ~/fitsapp/upload/views.py
-	"	86	110
-	^	86	111
-	.	86	110
-	+	22	64
-	+	81	44
-	+	80	53
-	+	81	51
-	+	86	110
+	"	22	0
+	^	22	0
+	.	22	0
+	+	25	64
+	+	84	44
+	+	83	53
+	+	84	51
+	+	89	110
+	+	20	0
+	+	22	0
+
+> ~/fitsapp/upload/models.py
+	"	12	57
+	^	12	58
+	.	12	57
+	+	11	56
+	+	12	57
 
 > ~/fitsapp/upload/forms.py
 	"	10	27
@@ -164,9 +175,6 @@
 	+	11	29
 	+	13	0
 	+	10	27
-
-> ~/fitsapp/upload/models.py
-	"	10	0
 
 > ~/update.sh
 	"	1	14

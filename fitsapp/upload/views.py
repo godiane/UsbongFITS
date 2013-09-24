@@ -4,22 +4,18 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.core.urlresolvers import reverse
-from django.conf import settings
 from django.contrib import messages
 
 
 from fitsapp.upload.models import Document
-from fitsapp.upload.forms import DocumentForm
-from fitsapp.upload.forms import DocumentSearchForm
-from fitsapp.upload.forms import DocumentLocateForm
+from fitsapp.upload.forms import DocumentForm, DocumentSearchForm, DocumentLocateForm, DocumentVoteForm
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.servers.basehttp import FileWrapper
 
-import os, mimetypes, urllib
+import os, mimetypes
 
 def upload_search(request):
-    
     # Handle search
     if request.method == 'GET':
         form = DocumentSearchForm(request.GET)
@@ -30,7 +26,7 @@ def upload_search(request):
             query = '';
     else:
         form = DocumentSearchForm() # A empty, unbound form
-        
+
     # Load documents for the list page
     if query:
         documents = Document.objects.filter(docfile__contains=query)
@@ -58,12 +54,11 @@ def upload_search(request):
 
 
 def locate(request):
-    
-    # Handle search
+    # Handle locate
     if request.method == 'GET':
         form = DocumentLocateForm(request.GET)
         if form.is_valid():
-            # remove first 3 and last 3 characters of location, 
+            # remove first 3 and last 3 characters of location,
             # which is a randomized string
             location = form.cleaned_data['location'][3:-3]
         else:
@@ -71,7 +66,7 @@ def locate(request):
             messages.error(request, 'Invalid utree/xml file.')
     else:
         form = DocumentLocateForm() # A empty, unbound form
-        
+
     # Download document
     if location:
         document = Document.objects.get(id=location)
@@ -85,15 +80,15 @@ def locate(request):
             response['Content-Length']      = os.path.getsize(filename)
             response['Content-Disposition'] = "attachment; filename=%s"%document.docfile.name.rpartition('/')[2]
 
-            # Update count            
+            # Update count
             document.download_count += 1
             document.save()
             return response
         else:
-		    messages.error(request, 'utree/xml file ' + location + ' not found.')            
+		    messages.error(request, 'utree/xml file ' + location + ' not found.')
     else:
 		messages.error(request, 'utree/xml file is invalid.')
-	
+
 def upload(request):
     # Handle file upload
     if request.method == 'POST':
@@ -118,7 +113,7 @@ def upload(request):
 
     # Load documents for the list page
     documents = Document.objects.filter(uploader=request.user)
-    
+
     paginator = Paginator(documents, 10) # Show 10 documents per page
 
     page = request.GET.get('page')
@@ -137,3 +132,39 @@ def upload(request):
         {'documents': documents, 'form': form},
         context_instance=RequestContext(request)
     )
+
+def vote(request):
+    # Handle locate
+    if request.method == 'GET':
+        form = DocumentVoteForm(request.GET)
+        if form.is_valid():
+            # remove first 3 and last 3 characters of location,
+            # which is a randomized string
+            votee = form.cleaned_data['votee'][3:-3]
+            verdict = form.cleaned_data['verdict']
+        else:
+            votee = ''
+            verdict = ''
+            messages.error(request, 'Invalid vote.')
+    else:
+        form = DocumentVoteForm() # A empty, unbound form
+
+    # Download document
+    if votee and verdict:
+        document = Document.objects.get(id=votee)
+        if (document):
+            if (verdict == 'boo'):
+                # Update upvote
+                document.down_vote -= 1
+                document.save()
+            elif (verdict == 'yeah'):
+                # Update upvote
+                document.up_vote += 1
+                document.save()
+        else:
+            messages.error(request, 'Invalid vote.')
+    else:
+        messages.error(request, 'Invalid vote.')
+
+    # Redirect to the document list after POST
+    return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))

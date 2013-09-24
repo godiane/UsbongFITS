@@ -8,3 +8,5 @@ class Document(models.Model):
     description = models.CharField(max_length=300)
     date_uploaded = models.DateField(auto_now_add=True)
     download_count = models.PositiveIntegerField(max_length=10)
+    up_vote = models.PositiveIntegerField(max_length=10)
+    down_vote = models.PositiveIntegerField(max_length=10)

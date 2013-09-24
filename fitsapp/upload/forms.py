@@ -8,11 +8,11 @@ class DocumentForm(forms.Form):
     )
     docdesc = forms.CharField(
         label='Description',
-        max_length=300, 
+        max_length=300,
         help_text='300 characters max.',
         widget=forms.Textarea
     )
-    
+
 class DocumentSearchForm(forms.Form):
     query = forms.CharField(
         label='Search'
@@ -22,3 +22,12 @@ class DocumentLocateForm(forms.Form):
     location = forms.CharField(
         label='Download URL'
     )
+
+class DocumentVoteForm(forms.Form):
+    votee = forms.CharField(
+        label='Votee'
+    )
+    verdict = forms.CharField(
+        label='Verdict'
+    )
+

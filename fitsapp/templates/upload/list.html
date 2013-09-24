@@ -13,7 +13,7 @@
     {% if request.path == '/upload/search/' %}
     <div class="nav-collapse collapse span8 middle">
 	    <form action="{% url "upload_search" %}" class="navbar-search input-append">
-            <input class="search-query-upload" placeholder="{% trans "Search" %}" 
+            <input class="search-query-upload" placeholder="{% trans "Search" %}"
                     type="text" id="query" name="query" value="{{ request.REQUEST.query }}">
             <input type="submit" class="btn" value="Go">
             </form>
@@ -28,13 +28,14 @@
 		        <th>Description</th>
 		        <th>Date Uploaded</th>
 		        <th>Download Count</th>
+                <th>Vote</th>
 		    </thead>
 		{% if documents %}
 		    <tbody>
 			{% for document in documents %}
 			<tr>
 			    {% if user.is_authenticated and user.is_staff or user == document.uploader and request.path == '/upload/' %}
-				<td><a href="{% url 'locate' %}?location={{ document.id | randomize }}">{{ document.docfile.name  }}</a></td>			   
+				<td><a href="{% url 'locate' %}?location={{ document.id | randomize }}">{{ document.docfile.name  }}</a></td>
 			    {% else %}
 				<td><a href="{% url 'locate' %}?location={{ document.id | randomize }}">{{ document.docfile.name | clean_file_name }}</a></td>
 				{% endif %}
@@ -42,8 +43,9 @@
 				<td>{{ document.description | youtube_embed_url | safe }}</td>
 				<td>{{ document.date_uploaded }}</td>
 				<td>{{ document.download_count }}</td>
+                <td><a href="{% url 'vote' %}?votee={{ document.id | randomize }}&verdict=yeah">Like</a> ({{ document.up_vote }}) | <a href="{% url 'vote' %}?votee={{ document.id | randomize }}&verdict=boo">Dislike</a> ({{ document.down_vote }})</td>
 			</tr>
-		    {% endfor %}		    
+		    {% endfor %}
 		{% else %}
 		    <tr>
 			    <td colspan="4">{% trans "No documents." %}</td>
@@ -51,7 +53,7 @@
 			</tbody>
 		{% endif %}
         </table>
-        
+
         <div class="pagination">
             <span class="step-links">
                 {% if documents.has_previous %}
@@ -66,7 +68,7 @@
                 {% endif %}
              </span>
         </div>
-        
+
         {% if user.is_authenticated and request.path == "/upload/" %}
         <h2>Upload a Tree</h2>
 		<!-- Upload form. Note enctype attribute! -->

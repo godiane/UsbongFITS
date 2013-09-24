@@ -385,3 +385,61 @@ git commit -a
 git fetch --all
 git reset --hard origin/master
 ./update.sh
+ls
+cd fitsapp/
+ls
+cd upload/
+ls
+vi models.py
+ls
+vi forms.py
+vi views.py
+ls
+cd
+ls
+cd /var/www/
+ls
+cd forms/
+ls
+cd ..
+ls
+cd
+ls
+cd fitsapp/
+ls
+cd static/
+ls
+cd me
+cd media/
+ls
+cd documents/
+ls
+cd 2013/
+ls
+cd 09/
+ls
+cd 08
+ls
+cd
+cd fitsapp/
+ls
+cd upload/
+ls
+vi views.py
+ls
+rm -rf bak/
+ls
+cd templatetags/
+ls
+cat youtube_embed_url.py
+s
+ls
+cd ..
+ls
+vi views.py
+ls
+cd
+ls
+git add .
+git commit -m "fixed download count for the server"
+git push origin master
