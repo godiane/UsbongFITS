@@ -1,7 +1,7 @@
 {% extends "account/base.html" %}
 
-{% load i18n %}
-{% load url from future %}
+{% load i18n staticfiles %}
+{% load url from future  %}
 {% load youtube_embed_url %}
 {% load randomize %}
 
@@ -9,7 +9,7 @@
 
 {% block main %}
 
-<h1>{% if request.path == '/upload/' %}{% trans "My Trees" %}{% else %}{% trans "Search Trees" %}{% endif %}</h1>
+<h1>{% if request.path == '/upload/' %}{% trans "Upload Trees" %}{% else %}{% trans "Search Trees" %}{% endif %}</h1>
     {% if request.path == '/upload/search/' %}
     <div class="nav-collapse collapse span8 middle">
 	    <form action="{% url "upload_search" %}" class="navbar-search input-append">
@@ -24,11 +24,11 @@
 		    <thead>
 		    <tr>
 		        <th>File Name</th>
+		        <th>Vote</th>
 		        <th>Uploader</th>
 		        <th>Description</th>
 		        <th>Date Uploaded</th>
 		        <th>Download Count</th>
-                <th>Vote</th>
 		    </thead>
 		{% if documents %}
 		    <tbody>
@@ -39,11 +39,15 @@
 			    {% else %}
 				<td><a href="{% url 'locate' %}?location={{ document.id | randomize }}">{{ document.docfile.name | clean_file_name }}</a></td>
 				{% endif %}
+				<td style="white-space: nowrap;">
+				    <a href="{% url 'vote' %}?votee={{ document.id | randomize }}&verdict=yeah"><img id="like-img-id" src="{% static "img/up.png" %}" width="10" height="20" alt="Vote Up"></a>
+				    {{ document.up_vote|add:document.down_vote }} 
+				    <a href="{% url 'vote' %}?votee={{ document.id | randomize }}&verdict=boo"><img id="like-img-id" src="{% static "img/down.png" %}" width="10" height="20" alt="Vote Down"></a>
+				</td>
 				<td>{{ document.uploader }}</td>
 				<td>{{ document.description | youtube_embed_url | safe }}</td>
 				<td>{{ document.date_uploaded }}</td>
 				<td>{{ document.download_count }}</td>
-                <td><a href="{% url 'vote' %}?votee={{ document.id | randomize }}&verdict=yeah">Like</a> ({{ document.up_vote }}) | <a href="{% url 'vote' %}?votee={{ document.id | randomize }}&verdict=boo">Dislike</a> ({{ document.down_vote }})</td>
 			</tr>
 		    {% endfor %}
 		{% else %}

@@ -94,14 +94,8 @@ def upload(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid() and request.FILES['docfile'].name.lower().endswith(('.xml', '.utree')):
-
-            newdoc = Document(docfile = request.FILES['docfile'], uploader = request.user, description = 'Test description.')
+            newdoc = Document(docfile = request.FILES['docfile'], uploader = request.user, description = request.POST.get('docdesc'))
             newdoc.save()
-            #if os.path.getsize(request.FILES['docfile']) > settings.MAX_UPLOAD_SIZE:
-            #    messages.error(request, 'File size is too big.')
-            #else:
-            #    newdoc.save()
-
         else:
             messages.error(request, 'File type is not supported.')
 
@@ -166,5 +160,21 @@ def vote(request):
     else:
         messages.error(request, 'Invalid vote.')
 
-    # Redirect to the document list after POST
-    return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
+    documents = Document.objects.all()
+    paginator = Paginator(documents, 10) # Show 10 documents per page
+    page = request.GET.get('page')
+    try:
+        documents = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documents = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documents = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render_to_response(
+        'upload/list.html',
+        {'documents': documents, 'form': form},
+        context_instance=RequestContext(request)
+    )

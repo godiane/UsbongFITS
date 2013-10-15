@@ -226,18 +226,18 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
-  color: #333333;
-  background-color: #ffffff;
+  color: #783F04;
+  background-color: #FFFFFF;
 }
 
 a {
-  color: #0088cc;
+  color: #074702;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #005580;
+  color: #556B2F;
   text-decoration: underline;
 }
 
@@ -742,7 +742,7 @@ h6 {
   font-family: inherit;
   font-weight: bold;
   line-height: 20px;
-  color: inherit;
+  color: #6B8E23;
   text-rendering: optimizelegibility;
 }
 
@@ -3950,7 +3950,7 @@ input[type="submit"].btn.btn-mini {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eeeeee;
+  background-color: #90EE90;
 }
 
 .nav > li > a > img {
@@ -3998,7 +3998,7 @@ input[type="submit"].btn.btn-mini {
 .nav-list > .active > a:focus {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-color: #0088cc;
+  background-color: #8FBC8F;
 }
 
 .nav-list [class^="icon-"],
@@ -4364,22 +4364,7 @@ input[type="submit"].btn.btn-mini {
   min-height: 40px;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: #fafafa;
-  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
-  background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
-  background-repeat: repeat-x;
-  border: 1px solid #d4d4d4;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
-  *zoom: 1;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  background-color: #ffffff;
 }
 
 .navbar-inner:before,
@@ -4569,9 +4554,6 @@ input[type="submit"].btn.btn-mini {
 
 .navbar-fixed-top .navbar-inner,
 .navbar-static-top .navbar-inner {
-  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-     -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-fixed-bottom {

@@ -1,0 +1,2 @@
+alter table upload_document modify column down_vote int(10) not null default 0;
+alter table upload_document modify column up_vote int(10) unsigned not null default 0;
