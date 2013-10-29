@@ -2,8 +2,9 @@ from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 from filebrowser.sites import site
 
-from mezzanine.core.views import direct_to_template
 from django.http import HttpResponseRedirect
+from django.views.generic import RedirectView
+from django.views.generic import TemplateView
 
 admin.autodiscover()
 
@@ -15,6 +16,7 @@ urlpatterns = patterns("",
     url(r'^accounts/profile/', lambda x: HttpResponseRedirect('/')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^upload/', include('upload.urls')),
+    url(r'^$', RedirectView.as_view(url='/upload/search/')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/filebrowser/', include(site.urls)),
 
@@ -32,7 +34,8 @@ urlpatterns = patterns("",
     # one homepage pattern, so if you use a different one, comment this
     # one out.
 
-    url("^$", direct_to_template, {"template": "index.html"}, name="home"),
+    #url("^$", direct_to_template, {"template": "index.html"}, name="home"),
+    url(r'^$', TemplateView.as_view(template_name='index.html'), name="home"),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
@@ -71,7 +74,7 @@ urlpatterns = patterns("",
     # from it, and use them directly below instead of using
     # ``mezzanine.urls``.
     ('^', include('mezzanine.urls')),
-    
+
     # MOUNTING MEZZANINE UNDER A PREFIX
     # ---------------------------------
     # You can also mount all of Mezzanine's urlpatterns under a

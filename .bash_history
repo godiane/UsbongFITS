@@ -1,52 +1,3 @@
-ls
-chmod +x update.sh 
-./update.sh 
-ls
-ls -al 
-git add .
-ls
-git pull origin master
-ls
-cd fitsapp/
-ls
-git manage.py syncdb
-python manage.py syncdb
-workon django15
-quit
-exit
-deactivate
-ls
-ls -al
-cd .virtualenvs/
-ls
-cp -rf django15 ../Dropbox/
-cp -rf django15 ../
-git status
-git status -s
-ls
-cd django15
-ls
-git add *
-git reset
-cd ..
-git add django15
-git status
-cd ..
-ls
-rm -rf django15/
-ls
-git pull origin master
-git push origin master
-git pull
-git pull origin master
-git commit -m "added virtualenv" origin master
-git commit -m "added virtualenv"
-git pull origin master
-git push origin master
-ls
-git remove django15
-git rm -r django15
-ls
 git add -A
 git commit -m "delete django15 folder"
 git push origin master
@@ -443,3 +394,107 @@ ls
 git add .
 git commit -m "fixed download count for the server"
 git push origin master
+ls
+./update.sh 
+ls
+cd fitsapp/
+cd upload/
+ls
+cd ..
+ls
+cp -rf upload upload.bak
+ls
+cd upload
+ls
+mv views.py views.py.bak
+cd ..
+ls
+cd ..
+ls
+cd fitsapp/
+ls
+cd templates/
+ls
+rm index_20130924-2007.html 
+rm base_20130908-1131.html 
+ls
+cd upload/
+ls
+mv list.html list.html.bak
+sls
+ls
+cd ..
+ls
+cd pages
+ls
+cd menus/
+ls
+mv tree.html tree.html.bak
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd static
+ls
+cd css
+ls
+mv bootstrap.css bootstrap.css.bak
+mv mezzanine.css mezzanine.css.bak
+cd
+ls
+./update.sh 
+rm -rf fitsapp/import/
+git pull -f origin master
+git reset
+git fetch --all
+git reset --hard origin/master
+./update.sh
+cd
+find . -type f -name "* conflicted *" -exec rm -f {} \;
+cd fitsapp/upload
+ls
+cd
+find . -type f -name "*~" -exec rm -f {} \;
+ls ~/fitsapp/upload
+find . -type f -name "*.bak" -exec rm -f {} \;
+./update.sh 
+git add .
+cd fitsapp/upload
+ls
+rm -rf bak
+ls
+cd ..
+ls
+cd
+find . -type d -name "*bak" -exec rm -f {} \;
+find . -type d -name "*bak" -exec rm -rf {} \;
+git reset
+git add .
+ls
+cd fitsapp/
+ls
+cd ..
+ls
+git add .
+git status -a
+git status
+git commit -m "changes in upload package"
+git add -u
+git status
+git commit -m "project cleanup"
+git push origin master
+quit
+exit
+ls
+cd fitsapp/
+ls
+cd static/
+ls
+cd img/
+ls
+git add .
+git add -f .
+git commit -m "add images"
