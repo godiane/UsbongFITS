@@ -32,7 +32,13 @@ ul.nav li.dropdown:hover ul.dropdown-menu {display:block;}
 .pull-right .dropdown-menu a {text-align:right;}
 .tree {padding:8px;}
 .tree li {margin:3px 0;}
-footer {background:rgba(220,220,220, 0.1); padding:30px 0; text-align:center; margin-top:40px;}
+footer {
+    #background:rgba(220,220,220, 0.1); 
+    background: #fff; 
+    padding:30px 0; 
+    text-align:center; 
+    margin-top:40px;
+}
 footer .container {text-align:left; display:inline-block; width:auto;}
 footer li {float:left; list-style-type:none;}
 footer li li {float:none; clear:both; width:120px; padding:10px 0; margin-right:30px;}
@@ -79,6 +85,18 @@ footer .separator {opacity:0.3; margin:0 10px;}
 	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.65);
 	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.65);
 }
+
+.top-menu li a:hover {
+	background-color: #79b03e!important;
+	text-decoration: underline;
+	/*border: #46c431 1px solid*/
+}
+
+.top-menu li a.current {
+	background-color: #79b03e!important;
+	font-weight: bold;
+}
+
 .cbdb-menu li a:active {
 	background-image: -webkit-gradient(
 	        linear,
@@ -104,11 +122,13 @@ footer .separator {opacity:0.3; margin:0 10px;}
 	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
 }
 .green {
-	background-color: #79b03e!important;
+
+    background-color: #92d050!important;
 	/*border: #46c431 1px solid*/
 }
+
 .green:hover,.green:focus {
-        background-color:#44e329
+        background-color:#44e329;
 }
 
 /* Forms */

@@ -1,4 +1,4 @@
-{% extends "account/base.html" %}
+{% extends "upload/base.html" %}
 
 {% load i18n staticfiles %}
 {% load url from future  %}
@@ -24,7 +24,9 @@
 		    <thead>
 		    <tr>
 		        <th>File Name</th>
+		        {% if user.is_authenticated %}
 		        <th>Vote</th>
+		        {% endif %}
 		        <th>Uploader</th>
 		        <th>Description</th>
 		        <th>Date Uploaded</th>
@@ -39,11 +41,13 @@
 			    {% else %}
 				<td><a href="{% url 'locate' %}?location={{ document.id | randomize }}">{{ document.docfile.name | clean_file_name }}</a></td>
 				{% endif %}
+				{% if user.is_authenticated %}
 				<td style="white-space: nowrap;">
 				    <a href="{% url 'vote' %}?votee={{ document.id | randomize }}&verdict=yeah"><img id="like-img-id" src="{% static "img/up.png" %}" width="10" height="20" alt="Vote Up"></a>
 				    {{ document.up_vote|add:document.down_vote }} 
 				    <a href="{% url 'vote' %}?votee={{ document.id | randomize }}&verdict=boo"><img id="like-img-id" src="{% static "img/down.png" %}" width="10" height="20" alt="Vote Down"></a>
 				</td>
+				{% endif %}
 				<td>{{ document.uploader }}</td>
 				<td>{{ document.description | youtube_embed_url | safe }}</td>
 				<td>{{ document.date_uploaded }}</td>

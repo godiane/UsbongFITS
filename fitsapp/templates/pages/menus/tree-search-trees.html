@@ -1,0 +1,20 @@
+{% load i18n future pages_tags %}
+
+{% spaceless %}
+{% if page_branch_in_menu %}
+<!--<ul class="nav nav-list navlist-menu-level-{{ branch_level }}">-->
+<ul class="top-menu">
+  <li><a href="http://www.usbong.ph/" class="green">Home</a></li>
+  <li><a href="http://www.usbong.ph/about" class="green">About</a></li>
+  <li><a href="http://www.usbong.ph/projects" class="green">Projects</a></li>
+  <li><a href="http://www.usbong.ph/team" class="green">Team</a></li>
+  <li><a href="http://www.usbong.ph/partners" class="green">Partners</a></li>
+  <li><a href="http://www.usbong.ph/dna-code" class="green">DNA Code</a></li>
+  <li><a href="http://www.usbong.ph/downloads" class="green">Downloads</a></li>
+  <li><a href="http://localhost:8000/upload/search/" class="current">Search Trees</a></li>
+  <li><a href="http://www.usbong.ph/guide" class="green">Guide</a></li>
+  <li><a href="http://www.usbong.ph/support" class="green">Support</a></li>
+  <li><a href="http://www.usbong.ph/blog" class="green">Blog</a></li>
+</ul>
+{% endif %}
+{% endspaceless %}

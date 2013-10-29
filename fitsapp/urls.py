@@ -3,8 +3,7 @@ from django.contrib import admin
 from filebrowser.sites import site
 
 from django.http import HttpResponseRedirect
-from django.views.generic import RedirectView
-from django.views.generic import TemplateView
+from django.views.generic import RedirectView, TemplateView
 
 admin.autodiscover()
 
