@@ -8,10 +8,11 @@ from django.contrib import messages
 
 
 from fitsapp.upload.models import Document
-from fitsapp.upload.forms import DocumentForm, DocumentSearchForm, DocumentLocateForm, DocumentVoteForm
+from fitsapp.upload.forms import DocumentForm, DocumentSearchForm, DocumentLocateForm, DocumentVoteForm, DocumentJsonForm
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.servers.basehttp import FileWrapper
+from django.core import serializers
 
 from fitsapp import settings
 
@@ -53,7 +54,6 @@ def upload_search(request):
         {'documents': documents, 'form': form},
         context_instance=RequestContext(request)
     )
-
 
 def locate(request):
     # Handle locate
@@ -184,3 +184,48 @@ def vote(request):
         {'documents': documents, 'form': form},
         context_instance=RequestContext(request)
     )
+
+def send_json(request):
+    # Handle locate
+    if request.method == 'GET':
+        form = DocumentJsonForm(request.GET)
+        if form.is_valid():
+            # remove first 3 and last 3 characters of location,
+            # which is a randomized string
+            row = form.cleaned_data['row'][3:-3]
+            print row
+        else:
+            row = ''
+            messages.error(request, 'Invalid JSON download.')
+    else:
+        form = DocumentVoteForm() # A empty, unbound form
+
+    # Download JSON
+    if row:
+        document = Document.objects.get(id=row)
+        if (document):
+            return HttpResponse(serializers.serialize("json", Document.objects.filter(id=row)))
+        else:
+            messages.error(request, 'Invalid row.')
+    else:
+        messages.error(request, 'Invalid row.')
+
+    documents = Document.objects.all()
+    paginator = Paginator(documents, 10) # Show 10 documents per page
+    page = request.GET.get('page')
+    try:
+        documents = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documents = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documents = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render_to_response(
+        'upload/list.html',
+        {'documents': documents, 'form': form},
+        context_instance=RequestContext(request)
+    )
+

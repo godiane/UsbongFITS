@@ -5,5 +5,6 @@ urlpatterns = patterns('fitsapp.upload.views',
     url(r'^search/', 'upload_search', name='upload_search'),
     url(r'^locate/', 'locate', name='locate'),
     url(r'^vote/', 'vote', name='vote'),
+    url(r'^json/', 'send_json', name='send_json'),
     url(r'^$', 'upload', name='upload'),
 )

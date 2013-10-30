@@ -29,6 +29,7 @@
 		        <th>Description</th>
 		        <th>Date Uploaded</th>
 		        <th>Download Count</th>
+		        <th>JSON</th>
 		    </thead>
 		{% if documents %}
 		    <tbody>
@@ -54,6 +55,7 @@
 				<td>{{ document.description | youtube_embed_url | safe }}</td>
 				<td>{{ document.date_uploaded }}</td>
 				<td>{{ document.download_count }}</td>
+				<td><a href="{% url 'send_json' %}?row={{ document.id | randomize }}">JSON</a></td>
 			</tr>
 		    {% endfor %}
 		{% else %}

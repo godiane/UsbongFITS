@@ -31,3 +31,8 @@ class DocumentVoteForm(forms.Form):
         label='Verdict'
     )
 
+class DocumentJsonForm(forms.Form):
+    row = forms.CharField(
+        label='Row'
+    )
+
