@@ -13,6 +13,8 @@ from fitsapp.upload.forms import DocumentForm, DocumentSearchForm, DocumentLocat
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.servers.basehttp import FileWrapper
 
+from fitsapp import settings
+
 import os, mimetypes
 
 def upload_search(request):
@@ -93,11 +95,15 @@ def upload(request):
     # Handle file upload
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
-        if form.is_valid() and request.FILES['docfile'].name.lower().endswith(('.xml', '.utree')):
+        if form.is_valid() == 0:
+            messages.error(request, 'Invalid input - you might have forgotten to attach an .xml or .utree file. Please try again.')
+        elif form.is_valid() and request.FILES['docfile'].name.lower().endswith(('.xml', '.utree')) == 0:
+            messages.error(request, 'File type is not supported. Please upload only .xml or .utree files.')
+        elif form.is_valid() and request.FILES['docfile'].size > int(settings.MAX_UPLOAD_SIZE):
+            messages.error(request, 'File size for .xml or .utree files should be 3MB or less.')        
+        else:
             newdoc = Document(docfile = request.FILES['docfile'], uploader = request.user, description = request.POST.get('docdesc'))
             newdoc.save()
-        else:
-            messages.error(request, 'File type is not supported.')
 
         # Redirect to the document list after POST
         return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))

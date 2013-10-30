@@ -24,9 +24,7 @@
 		    <thead>
 		    <tr>
 		        <th>File Name</th>
-		        {% if user.is_authenticated %}
-		        <th>Vote</th>
-		        {% endif %}
+		        <th>Rate</th>
 		        <th>Uploader</th>
 		        <th>Description</th>
 		        <th>Date Uploaded</th>
@@ -46,6 +44,10 @@
 				    <a href="{% url 'vote' %}?votee={{ document.id | randomize }}&verdict=yeah"><img id="like-img-id" src="{% static "img/up.png" %}" width="10" height="20" alt="Vote Up"></a>
 				    {{ document.up_vote|add:document.down_vote }} 
 				    <a href="{% url 'vote' %}?votee={{ document.id | randomize }}&verdict=boo"><img id="like-img-id" src="{% static "img/down.png" %}" width="10" height="20" alt="Vote Down"></a>
+				</td>
+				{% else %}
+				<td style="white-space: nowrap;">
+				    {{ document.up_vote|add:document.down_vote }} 
 				</td>
 				{% endif %}
 				<td>{{ document.uploader }}</td>

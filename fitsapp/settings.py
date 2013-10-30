@@ -306,7 +306,7 @@ PAGE_MENU_TEMPLATES = (
     (3, "Footer", "pages/menus/footer.html"),
 )
 
-#MAX_UPLOAD_SIZE = "3145728"
+MAX_UPLOAD_SIZE = "3145728"
 FILE_UPLOAD_MAX_MEMORY_SIZE = "55"
 
 # HITCOUNT
