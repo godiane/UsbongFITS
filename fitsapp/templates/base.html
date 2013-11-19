@@ -63,7 +63,14 @@
 	          <p class="pull-right">You are logged in as {{user}}.<br/>
 	          <a href="{% url 'upload' %}">My Trees</a> | <a href="{% url 'account_email' %}">Change Email</a> | <a href="{% url 'account_logout' %}">Logout</a></p>
           	{% else %}
-	        <form action="{% url 'account_login' %}" method="POST" class="navbar-search pull-right input-append">
+          	  <p class="pull-right">
+          	    {% csrf_token %}
+          	  	<form action="{% url 'account_login' %}" method="POST" class="navbar-search pull-right input-append">
+          	        <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+	            </form>
+          	  </p>
+          	  {% comment %}
+	          <form action="{% url 'account_login' %}" method="POST" class="navbar-search pull-right input-append">
           	    {% csrf_token %}
 	            <input id="id_login" name="login" placeholder="Username or e-mail" type="text" class="search-query">
 	            <input id="id_password" name="password" placeholder="Password" type="password" class="search-query">
@@ -72,7 +79,8 @@
 	            {% endif %}
 	            <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
 	            <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-	        </form>
+	          </form>
+	          {% endcomment %}
 	        {% endif %}
             </div>
         </div>

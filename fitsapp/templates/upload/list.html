@@ -9,7 +9,7 @@
 
 {% block main %}
 
-<h1>{% if request.path == '/upload/' %}{% trans "Upload Trees" %}{% else %}{% trans "Search Trees" %}{% endif %}</h1>
+<h1>{% if request.path == '/upload/' %}{% trans "Uploaded Trees" %}{% else %}{% trans "Search Trees" %}{% endif %}</h1>
     {% if request.path == '/upload/search/' %}
     <div class="nav-collapse collapse span8 middle">
 	    <form action="{% url "upload_search" %}" class="navbar-search input-append">
@@ -29,7 +29,7 @@
 		        <th>Description</th>
 		        <th>Date Uploaded</th>
 		        <th>Download Count</th>
-		        <th>JSON</th>
+		        {% comment %}<th>JSON</th>{% endcomment %}
 		    </thead>
 		{% if documents %}
 		    <tbody>
@@ -55,7 +55,7 @@
 				<td>{{ document.description | youtube_embed_url | safe }}</td>
 				<td>{{ document.date_uploaded }}</td>
 				<td>{{ document.download_count }}</td>
-				<td><a href="{% url 'send_json' %}?row={{ document.id | randomize }}">JSON</a></td>
+				{% comment %}<td><a href="{% url 'send_json' %}?row={{ document.id | randomize }}">JSON</a></td>{% endcomment %}
 			</tr>
 		    {% endfor %}
 		{% else %}

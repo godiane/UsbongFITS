@@ -7,7 +7,7 @@ from django.core.urlresolvers import reverse
 from django.contrib import messages
 
 
-from fitsapp.upload.models import Document
+from fitsapp.upload.models import Document, Vote
 from fitsapp.upload.forms import DocumentForm, DocumentSearchForm, DocumentLocateForm, DocumentVoteForm, DocumentJsonForm
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -152,15 +152,24 @@ def vote(request):
     # Download document
     if votee and verdict:
         document = Document.objects.get(id=votee)
+        voted = Vote.objects.filter(voter=request.user, document=document)
         if (document):
-            if (verdict == 'boo'):
-                # Update upvote
-                document.down_vote -= 1
-                document.save()
-            elif (verdict == 'yeah'):
-                # Update upvote
-                document.up_vote += 1
-                document.save()
+            if (voted):
+                messages.error(request, 'You have already voted for this document.')
+            else:
+                if (verdict == 'boo'):
+                    # Update upvote
+                    document.down_vote -= 1
+                    document.save()
+                elif (verdict == 'yeah'):
+                    # Update upvote
+                    document.up_vote += 1
+                    document.save()
+                newvote = Vote(document = document, voter = request.user)
+                newvote.save()
+                messages.info(request, 'Thanks for voting!')
+                        # Redirect to the document list after POST
+            return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
         else:
             messages.error(request, 'Invalid vote.')
     else:
@@ -193,10 +202,9 @@ def send_json(request):
             # remove first 3 and last 3 characters of location,
             # which is a randomized string
             row = form.cleaned_data['row'][3:-3]
-            print row
         else:
             row = ''
-            messages.error(request, 'Invalid JSON download.')
+        #    messages.error(request, 'Invalid JSON download.')
     else:
         form = DocumentVoteForm() # A empty, unbound form
 
@@ -208,7 +216,7 @@ def send_json(request):
         else:
             messages.error(request, 'Invalid row.')
     else:
-        messages.error(request, 'Invalid row.')
+        return HttpResponse(serializers.serialize("json", Document.objects.all()))
 
     documents = Document.objects.all()
     paginator = Paginator(documents, 10) # Show 10 documents per page
