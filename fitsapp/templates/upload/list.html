@@ -11,7 +11,7 @@
 
 <h1>{% if request.path == '/upload/' %}{% trans "Uploaded Trees" %}{% else %}{% trans "Search Trees" %}{% endif %}</h1>
     {% if request.path == '/upload/search/' %}
-    <div class="nav-collapse collapse span8 middle">
+    <div class="nav-collapse collapse span11">
 	    <form action="{% url "upload_search" %}" class="navbar-search input-append">
             <input class="search-query-upload" placeholder="{% trans "Search" %}"
                     type="text" id="query" name="query" value="{{ request.REQUEST.query }}">

@@ -9,35 +9,59 @@
 {% block main %}
 
 <h1>{% trans "Sign In" %}</h1>
+<div class="span8">
+    {% if socialaccount.providers  %}
+    <p>{% trans "Please sign in with one of your existing third party accounts." %}</p>
 
-{% if socialaccount.providers  %}
-<p>{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a> 
-for a {{site_name}} account and sign in below:{% endblocktrans %}</p>
+    <div class="socialaccount_ballot">
+      <ul class="socialaccount_providers inline">
+        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+      </ul>
+      <br/>
+      <div class="login-or">{% blocktrans with site.name as site_name %} 
+          Or, <a href="{{ signup_url }}">sign up</a> 
+        for a {{site_name}} account and sign in below:{% endblocktrans %}
+      </div>
+    </div>
+    {% include "socialaccount/snippets/login_extra.html" %}
 
-<div class="socialaccount_ballot">
-
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
-
-  <div class="login-or">{% trans 'or' %}</div>
-
+    {% endif %}
+    <br/>
+    <form class="login" method="POST" action="{% url 'account_login' %}">
+      {% csrf_token %}
+      <fieldset>
+          {% for field in form %}
+            {% if field.errors %}
+            <div class="control-group error">
+                <label class="control-label">{{ field.label }}</label> 
+                <div class="controls">{{ field }}
+                    <span class="help-inline">
+                        {% for error in  field.errors %}{{ error }}{% endfor %}
+                    </span>
+                </div>
+            </div>
+            {% else %}
+            <div class="control-group">
+                {% if field.label == 'Remember Me' %}
+                    <label class="control-label">{{ field }} {{ field.label }}</label>
+                {% else %}
+                <label class="control-label">{{ field.label }}</label>
+                <div class="controls">{{ field }}
+                    {% if field.help_text %}
+                    <p class="help-inline"><small>{{ field.help_text }}</small></p>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+          {% endfor %}
+      </fieldset>
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+      <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+    </form>
 </div>
-
-{% include "socialaccount/snippets/login_extra.html" %}
-
-{% endif %}
-
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-</form>
-
 {% endblock %}
 

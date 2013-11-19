@@ -13,7 +13,7 @@
 {% endif %}
 <li>
   <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}" 
-     href="{% provider_login_url provider.id process=process %}">{{provider.name}}</a>
+     href="{% provider_login_url provider.id process=process %}">{% if provider.name == 'Facebook' %}<img src="/static/img/fb.png">{% elif provider.name == 'Google' %}<img src="/static/img/gplus.png">{% endif %}</a>
 </li>
 {% endfor %}
 
