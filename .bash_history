@@ -1,14 +1,3 @@
-git add -A
-git commit -m "delete django15 folder"
-git push origin master
-ls
-cd .virtualenvs/
-ls
-cd django15
-ls
-cd ..
-ls
-cd ..
 ls
 cd
 ls
@@ -498,3 +487,14 @@ ls
 git add .
 git add -f .
 git commit -m "add images"
+source /usr/local/bin/virtualenvwrapper.sh
+workon django15
+python manage.py collectstatic
+ls
+cd fitsapp/
+python manage.py collectstatic
+ls
+cd ..
+ls
+./update.sh 
+git add .

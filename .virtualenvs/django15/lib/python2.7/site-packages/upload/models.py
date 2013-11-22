@@ -10,4 +10,10 @@ class Document(models.Model):
     date_uploaded = models.DateField(auto_now_add=True)
     download_count = models.PositiveIntegerField(max_length=10, default=0)
     up_vote = models.PositiveIntegerField(max_length=10, default=0)
-    down_vote = models.PositiveIntegerField(max_length=10, default=0)
+    down_vote = models.FloatField(max_length=10, default=0)
+    
+class Vote(models.Model):
+    document = models.ForeignKey('Document')
+    voter = models.ForeignKey(app_settings.USER_MODEL)
+    date = models.DateField(auto_now_add=True)
+

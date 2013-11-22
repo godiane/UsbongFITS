@@ -6,7 +6,6 @@ from django.http import HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 
-
 from fitsapp.upload.models import Document, Vote
 from fitsapp.upload.forms import DocumentForm, DocumentSearchForm, DocumentLocateForm, DocumentVoteForm, DocumentJsonForm
 
@@ -100,7 +99,7 @@ def upload(request):
         elif form.is_valid() and request.FILES['docfile'].name.lower().endswith(('.xml', '.utree')) == 0:
             messages.error(request, 'File type is not supported. Please upload only .xml or .utree files.')
         elif form.is_valid() and request.FILES['docfile'].size > int(settings.MAX_UPLOAD_SIZE):
-            messages.error(request, 'File size for .xml or .utree files should be 3MB or less.')        
+            messages.error(request, 'File size for .xml or .utree files should be 3MB or less.')
         else:
             newdoc = Document(docfile = request.FILES['docfile'], uploader = request.user, description = request.POST.get('docdesc'))
             newdoc.save()
@@ -167,7 +166,7 @@ def vote(request):
                     document.save()
                 newvote = Vote(document = document, voter = request.user)
                 newvote.save()
-                messages.info(request, 'Thanks for voting!')
+                messages.info(request, 'You have voted ' + document.docfile.name.split('/')[-1] + '. Thanks for voting!')
                         # Redirect to the document list after POST
             return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
         else:
