@@ -152,6 +152,7 @@ def upload_edit(request, editee):
             # If page is out of range (e.g. 9999), deliver last page of results.
             documents = paginator.page(paginator.num_pages)
 
+        form = DocumentForm()
         # Render list page with the documents and the form
         return render_to_response(
             'upload/list.html',
@@ -184,6 +185,7 @@ def upload_delete(request, deletee):
         # If page is out of range (e.g. 9999), deliver last page of results.
         documents = paginator.page(paginator.num_pages)
 
+    form = DocumentForm()
     # Render list page with the documents and the form
     return render_to_response(
         'upload/list.html',
