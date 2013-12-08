@@ -11,7 +11,8 @@ from fitsapp.upload.forms import DocumentForm, DocumentSearchForm, DocumentLocat
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.servers.basehttp import FileWrapper
-from django.core import serializers
+import json as simplejson
+
 
 from fitsapp import settings
 
@@ -219,45 +220,19 @@ def vote(request):
     )
 
 def send_json(request):
-    # Handle locate
-    if request.method == 'GET':
-        form = DocumentJsonForm(request.GET)
-        if form.is_valid():
-            # remove first 3 and last 3 characters of location,
-            # which is a randomized string
-            row = form.cleaned_data['row'][3:-3]
-        else:
-            row = ''
-        #    messages.error(request, 'Invalid JSON download.')
-    else:
-        form = DocumentVoteForm() # A empty, unbound form
-
-    # Download JSON
-    if row:
-        document = Document.objects.get(id=row)
-        if (document):
-            return HttpResponse(serializers.serialize("json", Document.objects.filter(id=row)))
-        else:
-            messages.error(request, 'Invalid row.')
-    else:
-        return HttpResponse(serializers.serialize("json", Document.objects.all()))
-
     documents = Document.objects.all()
-    paginator = Paginator(documents, 10) # Show 10 documents per page
-    page = request.GET.get('page')
-    try:
-        documents = paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
-        documents = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
-        documents = paginator.page(paginator.num_pages)
+    results = []
+    for document in documents:
+        results.append({
+            'id': document.id,
+            'description': document.description, 
+            'up_vote': document.up_vote, 
+            'down_vote': document.down_vote, 
+            'docfile': 'http://usbong.pythonanywhere.com/static/media/' + document.docfile.name,
+            'uploader': document.uploader.id,
+            'download_count': document.download_count,
+            'date_uploaded': document.docfile.name.split('/')[1] + '-' + document.docfile.name.split('/')[2] + '-' + document.docfile.name.split('/')[3],
+        })
+    return HttpResponse(simplejson.dumps(results), mimetype='application/json')
 
-    # Render list page with the documents and the form
-    return render_to_response(
-        'upload/list.html',
-        {'documents': documents, 'form': form},
-        context_instance=RequestContext(request)
-    )
 

@@ -1,6 +1,7 @@
 from django.db.models import FileField
 from django.forms import forms
 from django.utils.translation import ugettext_lazy as _
+from django.core.serializers.json import Serializer
 
 class ContentTypeRestrictedFileField(FileField):
     """
@@ -31,3 +32,4 @@ class ContentTypeRestrictedFileField(FileField):
             pass        
             
         return data
+
