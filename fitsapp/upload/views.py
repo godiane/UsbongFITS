@@ -230,7 +230,7 @@ def send_json(request):
             'down_vote': document.down_vote, 
             'docfile': 'http://usbong.pythonanywhere.com/static/media/' + document.docfile.name,
             'uploader': document.uploader.id,
-            'download_count': document.download_count,
+            #'download_count': document.download_count,
             'date_uploaded': document.docfile.name.split('/')[1] + '-' + document.docfile.name.split('/')[2] + '-' + document.docfile.name.split('/')[3],
         })
     return HttpResponse(simplejson.dumps(results), mimetype='application/json')
