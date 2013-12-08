@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django import forms
+from fitsapp.upload.models import Document
 
 class DocumentForm(forms.Form):
     docfile = forms.FileField(
@@ -35,4 +36,9 @@ class DocumentJsonForm(forms.Form):
     row = forms.CharField(
         label='Row'
     )
+
+class DocumentEditForm(forms.ModelForm):
+    class Meta:
+        model = Document
+        fields = ['id', 'description']
 

@@ -7,7 +7,7 @@ from django.core.urlresolvers import reverse
 from django.contrib import messages
 
 from fitsapp.upload.models import Document, Vote
-from fitsapp.upload.forms import DocumentForm, DocumentSearchForm, DocumentLocateForm, DocumentVoteForm, DocumentJsonForm
+from fitsapp.upload.forms import DocumentForm, DocumentSearchForm, DocumentLocateForm, DocumentVoteForm, DocumentJsonForm, DocumentEditForm
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.servers.basehttp import FileWrapper
@@ -131,6 +131,31 @@ def upload(request):
         {'documents': documents, 'form': form},
         context_instance=RequestContext(request)
     )
+    
+def upload_edit(request, editee):
+    if request.method == 'POST':
+        document = Document.objects.get(id=editee)
+        to_update = DocumentEditForm(request.POST, instance=document)
+        to_update.save()
+        messages.info(request, 'You have edited ' + document.docfile.name.split('/')[-1] + '.')
+        # Redirect to the document list after POST
+        return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
+    else:
+        document = Document.objects.get(id=editee)
+        form = DocumentEditForm(instance=document)
+    # Render list page with the documents and the form
+    return render_to_response(
+        'upload/edit.html',
+        {'document': document, 'form': form},
+        context_instance=RequestContext(request)
+    )
+
+def upload_delete(request, deletee):
+    document = Document.objects.get(id=deletee)
+    document.delete()
+    messages.info(request, 'You have deleted ' + document.docfile.name.split('/')[-1] + '.')
+    # Redirect to the document list after POST
+    return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
 
 def vote(request):
     # Handle locate

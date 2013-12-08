@@ -1,0 +1,24 @@
+{% extends "upload/base.html" %}
+
+{% load i18n staticfiles %}
+{% load url from future  %}
+{% load youtube_embed_url %}
+{% load randomize %}
+
+{% block meta_title %}{% trans "Upload" %}{% endblock %}
+
+{% block main %}
+
+    <h1>{% trans "Edit Tree" %}</h1>
+        <!-- Upload form. Note enctype attribute! -->
+        {% if document %}
+		<form action="{% url 'upload_edit' document.id %}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<p>{{ form.non_field_errors }}</p>
+			{{ form.id.as_hidden }}
+            <p>{{ form.description.label_tag }} {{ form.description.help_text }}</p>
+            <p>{{ form.description }}</p>
+		    <p><input type="submit" value="{% trans 'Save' %}" /></p>
+		</form>
+		{% endif %}
+{% endblock %}

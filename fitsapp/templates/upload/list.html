@@ -29,6 +29,10 @@
 		        <th>Description</th>
 		        <th>Date Uploaded</th>
 		        <th>Download Count</th>
+		        {% if user.is_authenticated and user.is_staff or user == document.uploader and request.path == '/upload/' %}
+		        <th>&nbsp;</th>
+		        <th>&nbsp;</th>
+		        {% endif %}
 		        {% comment %}<th>JSON</th>{% endcomment %}
 		    </thead>
 		{% if documents %}
@@ -55,6 +59,10 @@
 				<td>{{ document.description | youtube_embed_url | safe }}</td>
 				<td>{{ document.date_uploaded }}</td>
 				<td>{{ document.download_count }}</td>
+			    {% if user.is_authenticated and user.is_staff or user == document.uploader and request.path == '/upload/' %}
+				<td><a href="{% url 'upload_edit' document.id  %}">Edit Description</a></td>
+				<td><a href="{% url 'upload_delete' document.id  %}">Delete</a></td>
+				{% endif %}
 				{% comment %}<td><a href="{% url 'send_json' %}?row={{ document.id | randomize }}">JSON</a></td>{% endcomment %}
 			</tr>
 		    {% endfor %}
