@@ -139,24 +139,57 @@ def upload_edit(request, editee):
         to_update = DocumentEditForm(request.POST, instance=document)
         to_update.save()
         messages.info(request, 'You have edited ' + document.docfile.name.split('/')[-1] + '.')
-        # Redirect to the document list after POST
-        return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
+        
+        documents = Document.objects.all()
+        paginator = Paginator(documents, 10) # Show 10 documents per page
+        page = request.GET.get('page')
+        try:
+            documents = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            documents = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            documents = paginator.page(paginator.num_pages)
+
+        # Render list page with the documents and the form
+        return render_to_response(
+            'upload/list.html',
+            {'documents': documents, 'form': form},
+            context_instance=RequestContext(request)
+        )
     else:
         document = Document.objects.get(id=editee)
         form = DocumentEditForm(instance=document)
-    # Render list page with the documents and the form
-    return render_to_response(
-        'upload/edit.html',
-        {'document': document, 'form': form},
-        context_instance=RequestContext(request)
-    )
+        # Render list page with the documents and the form
+        return render_to_response(
+            'upload/edit.html',
+            {'document': document, 'form': form},
+            context_instance=RequestContext(request)
+        )
 
 def upload_delete(request, deletee):
     document = Document.objects.get(id=deletee)
     document.delete()
     messages.info(request, 'You have deleted ' + document.docfile.name.split('/')[-1] + '.')
-    # Redirect to the document list after POST
-    return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
+    documents = Document.objects.all()
+    paginator = Paginator(documents, 10) # Show 10 documents per page
+    page = request.GET.get('page')
+    try:
+        documents = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        documents = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        documents = paginator.page(paginator.num_pages)
+
+    # Render list page with the documents and the form
+    return render_to_response(
+        'upload/list.html',
+        {'documents': documents, 'form': form},
+        context_instance=RequestContext(request)
+    )
 
 def vote(request):
     # Handle locate
