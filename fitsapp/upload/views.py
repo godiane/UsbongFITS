@@ -112,8 +112,11 @@ def upload(request):
         form = DocumentForm() # A empty, unbound form
 
     # Load documents for the list page
-    documents = Document.objects.filter(uploader=request.user)
-
+    if form.is_valid():
+        documents = Document.objects.filter(uploader=request.user)
+    else:
+        documents = Document.objects.all()
+        
     paginator = Paginator(documents, 10) # Show 10 documents per page
 
     page = request.GET.get('page')
