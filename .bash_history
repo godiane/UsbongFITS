@@ -1,41 +1,3 @@
-ls
-cd
-ls
-git pull origin master
-git reset --hard HEAD~1
-git push -f
-git pull
-git pull origin master
-ls
-git rm -r django15
-git status | more
-git commit -m "deleted duplicate directory"
-git config --global user.email di.gonzales@gmail.com
-git config --global user.name "Diana Jayne Gonzales"
-git push origin master
-git add 
-git add .
-git status
-git commit -m "deleted duplicate directory"
-git push origin master
-ls
-git rm -rf django-allauth
-git rm -r django-allauth
-ls
-git pull origin master
-git add .
-git commit -m "latest version"
-ls
-git push origin master
-ls
-cd fitsapp/
-ls
-cd templates/
-ls
-cd account/
-ls
-cd ..
-ls
 cat base.html
 ls
 vi base.html
@@ -498,3 +460,41 @@ cd ..
 ls
 ./update.sh 
 git add .
+ls
+./update.sh 
+git fetch -all
+git fetch --\all
+git fetch --all
+git reset --hard origin/master
+ls
+cd fitsapp/
+ls
+rm -rf local_settings.py*
+ls
+cd ..
+ls
+./update.sh 
+rm fitsapp/*.pyc
+rm fitsapp/upload/*.pyc
+./update.sh 
+git reset fitsapp/templates/upload/list.html
+git checkout fitsapp/templates/upload/list.html
+git checkout fitsapp/upload/extra.py
+git checkout fitsapp/upload/*.py
+git pull origin master
+git reset fitsapp/static/media/documents/2013/11/30/champs.utree
+git checkout fitsapp/static/media/documents/2013/11/30/champs.utree
+git checkout fitsapp/templates/upload/edit.html
+git reset fitsapp/templates/upload/edit.html
+git checkout fitsapp/templates/upload/edit.html
+git pull origin master
+rm fitsapp/templates/upload/edit.html
+rm fitsapp/static/media/documents/2013/11/30/champs.utree
+git pull origin master
+/
+git pull origin master
+ls
+git pull origin master
+rm -rf fitsapp/upload/views.pyc
+git pull origin master
+./update.sh 
