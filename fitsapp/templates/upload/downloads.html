@@ -1,0 +1,58 @@
+{% extends "upload/base.html" %}
+
+{% load i18n staticfiles %}
+{% load url from future  %}
+{% load youtube_embed_url %}
+{% load randomize %}
+
+{% block meta_title %}{% trans "Downloaded Trees" %}{% endblock %}
+
+{% block main %}
+
+<h1>{% trans "Downloaded Trees" %}</h1>
+		<!-- List of downloaded trees -->
+		<table class="table">
+		    <thead>
+		    <tr>
+		        <th>File Name</th>
+		        <th>Rating</th>
+		        <th>Uploader</th>
+		        <th>Description</th>
+		        <th>Date Uploaded</th>
+		        <th>Download Count</th>
+		    </thead>
+		{% if download %}
+		    <tbody>
+			{% for download in downloads %}
+			<tr>
+				<td><a href="{% url 'locate' %}?location={{ document.id | randomize }}">{{ download.document.docfile.name | clean_file_name }}</a></td>
+				<td style="white-space: nowrap;">{{ download.document.up_vote|add:download.document.down_vote }}</td>
+				<td>{{ download.document.uploader }}</td>
+				<td>{{ download.document.description | youtube_embed_url | safe }}</td>
+				<td>{{ download.document.date_uploaded }}</td>
+				<td>{{ download.document.download_count }}</td>
+			</tr>
+		    {% endfor %}
+		{% else %}
+		    <tr>
+			    <td colspan="4">{% trans "No downloads." %}</td>
+			</tr>
+			</tbody>
+		{% endif %}
+        </table>
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if downloads.has_previous %}
+                    <a href="?page={{ downloads.previous_page_number }}"><<</a>
+                {% endif %}
+                <span class="current">
+                    Showing {{ downloads.start_index }} to {{ downloads.end_index }} of {{ downloads.paginator.count }} entries.
+                </span>
+
+                {% if downloads.has_next %}
+                    <a href="?page={{ downloads.next_page_number }}">>></a>
+                {% endif %}
+             </span>
+        </div>
+{% endblock %}

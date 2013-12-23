@@ -6,8 +6,8 @@ from django.http import HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 
-from fitsapp.upload.models import Document, Vote
-from fitsapp.upload.forms import DocumentForm, DocumentSearchForm, DocumentLocateForm, DocumentVoteForm, DocumentJsonForm, DocumentEditForm
+from fitsapp.upload.models import Document, Vote, Download
+from fitsapp.upload.forms import DocumentForm, DocumentSearchForm, DocumentLocateForm, DocumentVoteForm, DocumentEditForm
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.servers.basehttp import FileWrapper
@@ -17,6 +17,29 @@ import json as simplejson
 from fitsapp import settings
 
 import os, mimetypes
+
+def list_download(request):
+    # Load downloads for the list page
+    downloads = Download.objects.filter(downloader=request.user)
+    form = DocumentSearchForm()
+    paginator = Paginator(downloads, 10) # Show 10 downloads per page
+
+    page = request.GET.get('page')
+    try:
+        downloads = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        downloads = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        downloads = paginator.page(paginator.num_pages)
+
+    # Render list page with the downloads and the form
+    return render_to_response(
+        'upload/downloads.html',
+        {'downloads': downloads, 'form': form},
+        context_instance=RequestContext(request)
+    )
 
 def upload_search(request):
     # Handle search
@@ -85,6 +108,8 @@ def locate(request):
             # Update count
             document.download_count += 1
             document.save()
+            newdownload = Download(document = document, downloader = request.user)
+            newdownload.save()
             return response
         else:
 		    messages.error(request, 'utree/xml file ' + location + ' not found.')
@@ -116,7 +141,7 @@ def upload(request):
         documents = Document.objects.filter(uploader=request.user)
     else:
         documents = Document.objects.all()
-        
+
     paginator = Paginator(documents, 10) # Show 10 documents per page
 
     page = request.GET.get('page')
@@ -135,14 +160,14 @@ def upload(request):
         {'documents': documents, 'form': form},
         context_instance=RequestContext(request)
     )
-    
+
 def upload_edit(request, editee):
     if request.method == 'POST':
         document = Document.objects.get(id=editee)
         to_update = DocumentEditForm(request.POST, instance=document)
         to_update.save()
         messages.info(request, 'You have edited ' + document.docfile.name.split('/')[-1] + '.')
-        
+
         documents = Document.objects.all()
         paginator = Paginator(documents, 10) # Show 10 documents per page
         page = request.GET.get('page')
@@ -263,9 +288,9 @@ def send_json(request):
     for document in documents:
         results.append({
             'id': document.id,
-            'description': document.description, 
-            'up_vote': document.up_vote, 
-            'down_vote': document.down_vote, 
+            'description': document.description,
+            'up_vote': document.up_vote,
+            'down_vote': document.down_vote,
             'docfile': 'http://usbong.pythonanywhere.com/static/media/' + document.docfile.name,
             'uploader': document.uploader.id,
             #'download_count': document.download_count,
