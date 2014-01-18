@@ -1,17 +1,3 @@
-cat base.html
-ls
-vi base.html
-cd 
-ls
-git pull origin master
-git pull origin maser
-git pull origin master
-git push origin master
-git commit -m 
-git commit -m "some changes in pythonanyhwere, compiled pyc files"
-git add .
-git commit -m "some changes in pythonanyhwere, compiled pyc files"
-git pull origin master
 git commit -m "some changes in pythonanyhwere, compiled pyc files"
 git push origin master
 ls
@@ -498,3 +484,17 @@ git pull origin master
 rm -rf fitsapp/upload/views.pyc
 git pull origin master
 ./update.sh 
+ls
+cd fitsapp/
+source /usr/local/bin/virtualenvwrapper.sh 
+workon django15
+python manage.py syncdb
+cd ..
+ls
+git add .
+git commit -m "changes so far"
+git push origin master
+ls
+./update.sh 
+ls
+git add .

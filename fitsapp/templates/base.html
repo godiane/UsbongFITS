@@ -60,7 +60,7 @@
             <div class="nav-collapse collapse">
           	{% if user.is_authenticated %}
 	          <p class="pull-right">You are logged in as {{user}}.<br/>
-	          <a href="{% url 'upload' %}">{% trans "Uploaded Trees" %}</a> | <a href="{% url 'upload' %}">{% trans "Downloaded Trees" %}</a> | <a href="{% url 'account_email' %}">{% trans "Change Email" %}</a> | <a href="{% url 'account_logout' %}">{% trans "Logout" %}</a></p>
+	          <a href="{% url 'upload' %}">{% trans "Uploaded Trees" %}</a> | <a href="{% url 'list_download' %}">{% trans "Downloaded Trees" %}</a> | <a href="{% url 'account_email' %}">{% trans "Change Email" %}</a> | <a href="{% url 'account_logout' %}">{% trans "Logout" %}</a></p>
           	{% else %}
           	  	<form action="{% url 'account_login' %}" method="POST" class="navbar-search pull-right input-append">
           	  	    {% csrf_token %}

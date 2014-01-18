@@ -18,10 +18,9 @@
 		        <th>Rating</th>
 		        <th>Uploader</th>
 		        <th>Description</th>
-		        <th>Date Uploaded</th>
-		        <th>Download Count</th>
+		        <th>Date Dowloaded</th>
 		    </thead>
-		{% if download %}
+		{% if downloads %}
 		    <tbody>
 			{% for download in downloads %}
 			<tr>
@@ -29,8 +28,7 @@
 				<td style="white-space: nowrap;">{{ download.document.up_vote|add:download.document.down_vote }}</td>
 				<td>{{ download.document.uploader }}</td>
 				<td>{{ download.document.description | youtube_embed_url | safe }}</td>
-				<td>{{ download.document.date_uploaded }}</td>
-				<td>{{ download.document.download_count }}</td>
+				<td>{{ download.date }}</td>
 			</tr>
 		    {% endfor %}
 		{% else %}
