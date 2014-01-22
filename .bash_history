@@ -1,8 +1,3 @@
-git commit -m "some changes in pythonanyhwere, compiled pyc files"
-git push origin master
-ls
-git rm -rf django-allauth
-git pull origin master
 ls
 cd fitsapp
 ls
@@ -498,3 +493,8 @@ ls
 ./update.sh 
 ls
 git add .
+ls
+git add .
+git status
+git commit -m "latest  in server"
+git push origin master
