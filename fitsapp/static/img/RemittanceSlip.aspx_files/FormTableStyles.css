@@ -1,0 +1,425 @@
+﻿TABLE.form {
+  BORDER-COLLAPSE: collapse;
+  MARGIN-TOP: 5px; 
+  MARGIN-BOTTOM: 5px; 
+  MARGIN-LEFT: 0px; 
+  MARGIN-RIGHT: 0px;  
+}
+
+TABLE.form TD.radio {
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  COLOR : #333333;
+  FONT-SIZE: 8pt;
+  FONT-WEIGHT: normal; 
+}
+TABLE.form TR.hide {
+}
+TABLE.form TD {
+  PADDING-RIGHT: 3px;
+  PADDING-LEFT: 0px;
+  PADDING-BOTTOM: 3px;
+  PADDING-TOP: 3px;
+  FONT-SIZE: 8pt;
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  COLOR: #544F4F;
+}
+TABLE.form TD.header {
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  COLOR : #365965;
+  FONT-WEIGHT: bold; 
+  TEXT-ALIGN: left;
+}
+TABLE.form TD.subheader {
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  COLOR : #AD1151;
+  FONT-WEIGHT: bold; 
+  TEXT-ALIGN: left;
+}
+TABLE.form TD.description {
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  COLOR : #333333;
+  FONT-WEIGHT: normal; 
+ 
+}
+TABLE.form TD.error {
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  COLOR : #BA2969; 
+  FONT-SIZE: 8pt;
+  FONT-WEIGHT: bold; 
+  TEXT-ALIGN: justify;
+  WIDTH: 537;
+}
+TABLE.form TD.label {
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  COLOR : #544F4F;
+  FONT-WEIGHT: bold; 
+  TEXT-ALIGN: left;
+  WIDTH: 220px;
+}
+TABLE.form TD.label2 {
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  COLOR : #666666;
+  FONT-WEIGHT: bold; 
+  TEXT-ALIGN: center;
+  WIDTH: 10px;
+}
+TABLE.form TD.label3 {
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  COLOR : #544F4F;
+  FONT-WEIGHT: bold; 
+  TEXT-ALIGN: left;
+  WIDTH: 2845px;
+}
+TABLE.form TD.value {
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  COLOR : #333333;
+}
+TABLE.form TD.caption {
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  COLOR : #666666;
+}
+TABLE.form TD A {
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  COLOR : #0000FF;
+  TEXT-DECORATION: underline;
+}
+TABLE.form TD.footer {
+  BORDER-RIGHT: #000000 1px solid;
+  BORDER-TOP: #000000 1px solid;
+  BORDER-LEFT: #000000 1px solid;
+  BORDER-BOTTOM: #000000 1px solid;
+  PADDING-RIGHT: 15px;
+  TEXT-ALIGN: right;
+}
+TABLE.form TD.fail {
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  COLOR : #BA2969; 
+  FONT-WEIGHT: bold; 
+  TEXT-ALIGN: justify;
+}
+
+.asterisk {
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  FONT-SIZE: 8pt; 
+  COLOR: #BA2969; 
+}
+TABLE.form TD.radio {
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  COLOR : #333333;
+  FONT-SIZE: 8pt;
+  FONT-WEIGHT: normal; 
+}
+
+table.dash {
+	border-width: 1px 1px 1px 1px;
+	border-spacing: 0px;
+	border-style: dashed dashed dashed dashed;
+	border-color: gray gray gray gray;
+	border-collapse: separate;
+	background-color: #FFC;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	color: #605758;
+	font-weight: bold
+}
+
+.Table_navi { 
+font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #626262; font-weight: normal; text-indent: 1px; background-color: #E4E4E4; height: 30px
+}
+
+table.dash th {
+	border-width: 1px 1px 1px 1px;
+	padding: 3px 3px 3px 3px;
+	/*border-style: none none none none;*/
+	border-color: gray gray gray gray;
+	background-color: #F2F2F2;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+
+table.dash td {
+	border-width: 1px 1px 1px 1px;
+	padding: 5px 5px 5px 5px;
+	/*border-style: none none none none;*/
+	border-color: gray gray gray gray;
+	background-color: #F2F2F2;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+
+.remitHeader{
+	COLOR: #CC3300; FONT-SIZE: 18px; FONT-WEIGHT: bold; TEXT-DECORATION: none; TEXT-TRANSFORM: none
+}
+
+.remitTitle{
+	COLOR: #CC3300; FONT-WEIGHT: bold; TEXT-DECORATION: none; TEXT-TRANSFORM: none
+}
+.ubiHeader{
+	COLOR: #FD802A; FONT-SIZE: 18px; FONT-WEIGHT: bold; TEXT-DECORATION: none; TEXT-TRANSFORM: none
+}
+
+.WhiteBold
+{
+	color: #ffefd5;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #660000;
+}
+.redNormal
+{
+	color: #FF0000;
+	padding-top: 4px;
+	padding-bottom: 6px;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.blackNormal1
+{
+	color: #000000;
+	padding-top: 4px;
+	padding-bottom: 6px;
+	font-weight: bold;
+	font-style: normal;
+	font-variant: normal;
+	font-family: verdana,Tahoma,Arial;
+	font-size: 11px;
+	text-align: left;
+}
+.blackNormal2
+{
+	color: #000000;
+	padding-top: 4px;
+	padding-bottom: 6px;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-family: verdana,Tahoma,Arial;
+	font-size: 11px;
+	text-align: left;
+}
+.blackNormaRdo
+{
+	border-style: dotted none dotted dotted;
+	border-width: 1px;
+	border-color: #CC0000;
+	color: #000000;
+	text-decoration: none;
+	background-color: #990000;
+	vertical-align: middle;
+}
+.blackNormal2 {
+	COLOR: #000000; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.blackNormal3 {
+	COLOR: #000000; FONT-SIZE: 11px; TEXT-DECORATION: none
+}
+.redNormal A
+{
+	color: #0000FF;
+	
+}
+
+.blackNormalLink
+{
+	color: #000066;
+	padding-top: 4px;
+	padding-bottom: 6px;
+	font-weight: bold;
+
+}
+.blackNormalLink a:active
+{
+	color: #663300;
+}
+.blackNormalLink a:visited
+{
+	color: #339966;
+}.blackNormalLink a:hover
+{
+	color: #FF6666;
+	text-decoration: underline;
+}
+
+ .TD-border
+{
+	padding: 2px;
+	margin: 2px;
+	border: 0px;
+}
+/*width="760" border="0" cellspacing="0"   cellpadding="4" align="center" bgcolor="#F5F5F5 */
+
+.TableHead
+{
+	font-style: normal;
+	padding: 5px 0px;
+	border-bottom: 1px dotted #7e0003;
+	color: #FF9933;
+	font-weight: bold;
+	background-color: #990000;
+}
+
+.PageHead
+{
+	font-style: normal;
+	padding: 5px 0px 5px 5px;
+	border-bottom: 1px dotted #7e0003;
+	color: #FF9933;
+	font-weight: bold;
+	background-color: #660000;
+	border-style: ridge none groove none;
+	border-width: 1px;
+	border-color: #CC3300;
+}
+.SubHead
+{
+	background-image: url('../images/SubHeader.jpg' );
+	background-repeat: repeat-y;
+	border-top: .5px outset #FF3300;
+	padding: 5px 0px 5px 10px;
+	border-bottom: 1px solid #FF5050;
+	height: 15px;
+	font-weight: bold;
+	font-family: Verdana, Tahoma, Arial;
+	font-size: 12px;
+	border-top-color: #660000;
+	border-bottom-color: #660000;
+	border-top-style: ridge;
+	border-bottom-style: ridge;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	width: auto !important;
+	color: #660000;
+}
+.TdDot
+{
+	font-style: normal;
+	padding: 5px 0px;
+	border-bottom: 1px dotted #7e0003;
+	font-weight: bold;
+	border-bottom-width: 1px;
+}
+ 
+ .SubHead1
+{
+	background-image: url('../images/SubHeader.jpg' );
+	background-repeat: repeat-y;
+	border-top: .5px outset #FF3300;
+	padding: 5px 0px 5px 10px;
+	border-bottom: 1px solid #FF5050;
+	height: 15px;
+	
+}
+
+.resize {
+width: auto;
+height: auto;
+max-height: 400px;
+max-width: 600px;
+}
+
+
+
+.lblSubHead
+{
+	vertical-align: middle;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	color: #660000;
+}
+
+.ImageBorder
+{
+	border-bottom: #ff0000 0px;
+	border-left: #ff0000 0px;
+	border-top: #ff0000 0px;
+	border-right: #ff0000 0px;
+}
+.Table-border
+{
+	width:760px;
+	border:0;
+	background-color:#F5F5F5;
+ 
+	
+	border-bottom: #ff0000 1px outset;
+	border-left: #ff0000 1px outset;
+	border-top: #ff0000 1px outset;
+	border-right: #ff0000 1px outset;
+	 
+}
+.brdr_LRT
+{
+	border:#CCCCCC solid 1px; 
+	border-bottom:0px;
+}
+.brdr_B
+{
+	border-bottom: #CCCCCC solid 1px;
+}
+
+.brdr_T
+{
+	border-bottom: #CCCCCC solid 1px;
+	border-bottom-color: #990000;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #990000;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+}
+.brdr_R_2
+{
+	border-right: #CCCCCC solid 2px;
+	height: 5px;
+	border-right-color: #FF5050;
+}
+
+.brdr_LRB
+{
+	border:#CCCCCC solid 1px; 
+	border-top:0px;
+}
+
+.brdr_R_B
+{
+	border-bottom: #CCCCCC solid 1px;
+	border-bottom-color: #FF0000;
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+}
+
+.brdr_ErrorMsg
+{
+	margin: 10px;
+	width: 760px;
+	background-color: #FFCCCC;
+	border-bottom: #ff0000 1px outset;
+	border-left: #ff0000 1px outset;
+	border-top: #ff0000 1px outset;
+	border-right: #ff0000 1px outset;
+	color: #FF0000;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: bold;
+	font-family: MS Sans Serif, 'Times New Roman' , Times, serif;
+	border-style: solid;
+	border-width: 1px;
+	border-color: inherit;
+}
+
+.brdr_Msg
+{
+	padding: 50px;
+	margin: 5px;
+	width: 760px;
+	background-color: #E4E4E4;
+	border-bottom: #ff0000 1px outset;
+	border-left: #ff0000 1px outset;
+	border-top: #ff0000 1px outset;
+	border-right: #ff0000 1px outset;
+	color: #660000;
+	border-style: dotted;
+	border-width: 1px;
+	border-color: #993300;
+}

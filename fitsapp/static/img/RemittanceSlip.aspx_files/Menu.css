@@ -1,0 +1,76 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+ 
+nav {
+
+    font-family: Arial,Helvetica "Lucida Grande" , sans-serif;
+    line-height: 1.5;
+    width: 200px;
+    border-style: none none none solid;
+    border-left-color: #990000;
+    border-left-width: 1px;
+
+    -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    border-left-style: solid;
+}
+ 
+.menu-item {
+  background: #990000;
+  width: 200px; 
+}
+
+/*ul Styles*/
+.menu-item ul {
+  background: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 25px;
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0px;
+  
+}
+ 
+.menu-item ul a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #000000;
+  display: block;
+  width: 200px;
+}
+ 
+/*li Styles*/
+.menu-item li {
+  border-bottom: 1px solid #eee;
+}
+ 
+.menu-item li:hover {
+  background: #eee;
+}
+.menu-item h4 a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  width: 200px;
+}
+
+/*Menu Header Styles*/
+.menu-item h4 {
+    border-bottom: 0px solid rgba(0,0,0,0);
+    border-top: 0px solid rgba(255,255,255,0);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 6px; /*Gradient*/
+    background: #800000; /* Old browsers */
+  
+}
+
+.menu-item h4:hover h4:active  {  
+  background: #cc002c;  
+ 
+}
