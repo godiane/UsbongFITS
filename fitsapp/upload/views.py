@@ -298,4 +298,3 @@ def send_json(request):
         })
     return HttpResponse(simplejson.dumps(results), mimetype='application/json')
 
-

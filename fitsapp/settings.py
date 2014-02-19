@@ -258,8 +258,6 @@ INSTALLED_APPS = (
     #"mezzanine.mobile",
     #"mezzanine_file_collections",
     "upload",
-    #"usbong",
-    #"usbong.accounts",
     #'hitcount',
 )
 

@@ -45,4 +45,3 @@ class DocumentEditForm(ModelForm):
         widgets = {
             'description': Textarea(attrs={'cols': 80, 'rows': 20}),
         }
-

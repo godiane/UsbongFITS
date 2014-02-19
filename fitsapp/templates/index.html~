@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %}
+
+{% block main %}
+{% blocktrans %}
+<h2>Usbong</h2>
+<p>
+    Usbong helps you create your own web-mobile systems to digitize and streamline your processes, and make your life, and the lives of the people that matter to you, more meaningful, more peaceful -- HAPPIER. =)
+</p>
+<p>
+   <a href="http://www.usbong.ph/home/architecturalFramework_v3.png?attredirects=0" imageanchor="1"><img border="0" height="269" src="http://www.usbong.ph/_/rsrc/1368070323276/home/architecturalFramework_v3.png?height=269&amp;width=400" width="400"></a>
+</p>
+{% endblocktrans %}
+{% endblock %}

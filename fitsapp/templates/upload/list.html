@@ -54,7 +54,7 @@
 				<td>{{ document.date_uploaded }}</td>
 				<td>{{ document.download_count }}</td>
 			    {% if user.is_authenticated and user.is_staff or user == document.uploader %}
-				<td><a href="{% url 'upload_edit' document.id  %}"><span style="color: green">Edit</span></a></td>
+                <td><a href="{% url 'upload_edit' document.id %}"><span style="color: green">Edit</span></a></td>
 				<td><a href="{% url 'upload_delete' document.id  %}" onclick="return confirm('Are you sure you want to delete?')"><span style="color: red">Delete</span></a></td>
                 {% endif %}
 				{% comment %}<td><a href="{% url 'send_json' %}?row={{ document.id | randomize }}">JSON</a></td>{% endcomment %}
@@ -100,4 +100,3 @@
 		</form>
 		{% endif %}
 {% endblock %}
-

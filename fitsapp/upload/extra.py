@@ -2,6 +2,7 @@ from django.db.models import FileField
 from django.forms import forms
 from django.utils.translation import ugettext_lazy as _
 from django.core.serializers.json import Serializer
+from django.template.defaultfilters import filesizeformat
 
 class ContentTypeRestrictedFileField(FileField):
     """
@@ -21,15 +22,14 @@ class ContentTypeRestrictedFileField(FileField):
 
         super(ContentTypeRestrictedFileField, self).__init__(*args, **kwargs)
 
-    def clean(self, *args, **kwargs):        
+    def clean(self, *args, **kwargs):
         data = super(ContentTypeRestrictedFileField, self).clean(*args, **kwargs)
-        
+
         file = data.file
         try:
             if file._size > self.max_upload_size:
                 raise forms.ValidationError(_('Please keep filesize under %s. Current filesize %s') % (filesizeformat(self.max_upload_size), filesizeformat(file._size)))
         except AttributeError:
-            pass        
-            
-        return data
+            pass
 
+        return data
