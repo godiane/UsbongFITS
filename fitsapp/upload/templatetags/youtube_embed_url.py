@@ -17,8 +17,8 @@ def youtube_embed_url(value):
         if match:
             embed_url = 'http://www.youtube.com/embed/%s' %(match.group(2))
             res = "<iframe width=\"560\" height=\"315\" src=\"%s\" frameborder=\"0\" allowfullscreen></iframe>" %(embed_url)
-            replaced_description = replaced_description + res
-            #re.sub(r'(http|https)\:\/\/www\.youtube\.com\/watch\?v\=(\w*)(\&(.*))?', res, value)
+            #replaced_description = replaced_description + res
+            replaced_description = replaced_description + re.sub(r'(http|https)\:\/\/www\.youtube\.com\/watch\?v\=(\w*)(\&(.*))?', res, description)
         else:
             replaced_description = replaced_description + description
     return replaced_description
