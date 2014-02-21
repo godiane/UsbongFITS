@@ -10,17 +10,19 @@ import re
 @register.filter(name='youtube_embed_url')
 @stringfilter
 def youtube_embed_url(value):
-    descriptions = value.split('|')
+    matches = re.findall(r'(http|https)\:\/\/www\.youtube\.com\/watch\?v\=(\w*)(\&(.*))?', value)
     replaced_description = ''
-    for description in descriptions:
-        match = re.search(r'(http|https)\:\/\/www\.youtube\.com\/watch\?v\=(\w*)(\&(.*))?', description)
-        if match:
-            embed_url = 'http://www.youtube.com/embed/%s' %(match.group(2))
+    
+    if matches:
+        for match in matches:
+            embed_url = 'http://www.youtube.com/embed/%s' % match[1]
             res = "<iframe width=\"560\" height=\"315\" src=\"%s\" frameborder=\"0\" allowfullscreen></iframe>" %(embed_url)
-            #replaced_description = replaced_description + res
-            replaced_description = replaced_description + re.sub(r'(http|https)\:\/\/www\.youtube\.com\/watch\?v\=(\w*)(\&(.*))?', res, description)
-        else:
-            replaced_description = replaced_description + description
+            if replaced_description != '':
+                replaced_description = re.sub(r'(http|https)\:\/\/www\.youtube\.com\/watch\?v\=' + match[1], res, replaced_description)
+                print 'not null: ' + replaced_description
+            else:
+                replaced_description = replaced_description + re.sub(r'(http|https)\:\/\/www\.youtube\.com\/watch\?v\=' + match[1], res, value)
+                print 'null: ' + replaced_description
     return replaced_description
 
 youtube_embed_url.is_safe = True
