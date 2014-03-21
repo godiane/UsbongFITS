@@ -164,7 +164,7 @@ def upload(request):
 def upload_edit(request, editee):
     if request.method == 'POST':
         document = Document.objects.get(id=editee)
-        to_update = DocumentEditForm(request.POST, instance=document)
+        to_update = DocumentEditForm(request.POST, request.FILES, instance=document)
         to_update.save()
         messages.info(request, 'You have edited ' + document.docfile.name.split('/')[-1] + '.')
 

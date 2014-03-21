@@ -16,6 +16,8 @@
 			{% csrf_token %}
 			<p>{{ form.non_field_errors }}</p>
 			{{ form.id.as_hidden }}
+            <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+			<p>{{ form.docfile }}</p>
             <p>{{ form.description.label_tag }} {{ form.description.help_text }}</p>
             <p>{{ form.description }}</p>
 		    <p><input type="submit" value="{% trans 'Save' %}" /></p>
