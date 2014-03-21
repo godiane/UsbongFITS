@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process-definition lang="English" xmlns="urn:jbpm.org:jpdl-3.2" name="Sample">
+<start-state name="start-state1">
+<transition to="textImageDisplay~mark~マルクさん is an international student（りゆうがくせい） who has recently arrived in Sakura University（さくらだいがく）. Today is his first day in school."></transition>
+</start-state>
+<task-node name="textImageDisplay~mark~マルクさん is an international student（りゆうがくせい） who has recently arrived in Sakura University（さくらだいがく）. Today is his first day in school.">
+<transition to="textDisplay~Upon walking towards a man who looks like a teacher（せんせい）, he begins to think what to say to him, but then… he suddenly forgets what to say." name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~Upon walking towards a man who looks like a teacher（せんせい）, he begins to think what to say to him, but then… he suddenly forgets what to say.">
+<transition to="link~1~It’s your time to help him. What must he say?" name="Any"></transition>
+</task-node>
+<task-node name="link~1~It’s your time to help him. What must he say?">
+<task name="textDisplay~The teacher greets him as well with a warm smile.~おはようございます"></task>
+<task name="textDisplay~The teacher nags at him and says 'Have some respect, kid!' Because of the embarrassment he has caused, he leaves and goes home ashamed.~おはよう "></task>
+<transition to="textDisplay~マルクさん arrives in the classroom with butterflies in his stomach. He is very afraid to even say a word because anyone might laugh at him at any moment." name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~The teacher greets him as well with a warm smile.">
+<transition to="textDisplay~マルクさん arrives in the classroom with butterflies in his stomach. He is very afraid to even say a word because anyone might laugh at him at any moment." name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~マルクさん arrives in the classroom with butterflies in his stomach. He is very afraid to even say a word because anyone might laugh at him at any moment.">
+<transition to="textDisplay~He has not noticed his surroundings until… he sees his seatmate, a very かわいい student." name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~He has not noticed his surroundings until… he sees his seatmate, a very かわいい student.">
+<transition to="link~1~Will he talk to her?" name="Any"></transition>
+</task-node>
+<task-node name="link~1~Will he talk to her?">
+<task name="textImageDisplay~karen~マルクさん starts the conversation. He greets this astonishingly beautiful lady with a warm, bright smile. With a quick look on his watch, he then says, 「おはようございます。」~はい"></task>
+<task name="textDisplay~やましたせんせい has now entered the room. The aura is not good. There is reported news that he can make one’s brain explode by just speaking Japanese. マルクさん’s heart is pounding hard.~いいえ"></task> 
+<transition to="textDisplay~The せんせい, seeing that he is a newcomer, greets him with a serious and terrifying face, 「おはよう。おおげんきですか.」マルクさん, with a stream of sweat flowing on his face answers, [げんきです。] やました-scary, er, せんせい, looks even more closely to him as if he intends to take his soul asks again, 「どこからきましたか。」" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~The せんせい, seeing that he is a newcomer, greets him with a serious and terrifying face, 「おはよう。おおげんきですか.」マルクさん, with a stream of sweat flowing on his face answers, [げんきです。] やました-scary, er, せんせい, looks even more closely to him as if he intends to take his soul asks again, 「どこからきましたか。」">
+<transition to="Nervously, he answers, 「フィリピンです。」 「そうですか。」 The professor tells him, then, to take a seat. He begins the class with, 「八時になりましたので。じゅぎょうをはじめます。」" name="Any"></transition>
+</task-node>
+<task-node name="Nervously, he answers, 「フィリピンです。」 「そうですか。」 The professor tells him, then, to take a seat. He begins the class with, 「八時になりましたので。じゅぎょうをはじめます。」">
+<transition to="textDisplay~While listening, he wonders if he should talk to that かわいい lady. But he is too afraid." name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~While listening, he wonders if he should talk to that かわいい lady. But he is too afraid.">
+<transition to="link~1~However, he wants to impress her so he is the first one to introduce. What must he say?" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~karen~マルクさん starts the conversation. He greets this astonishingly beautiful lady with a warm, bright smile. With a quick look on his watch, he then says, 「おはようございます。」">
+<transition to="textImageDisplay~karen~The girl answers back, 「おはようございます。」" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~karen~The girl answers back, 「おはようございます。」">
+<transition to="link~1~However, he wants to impress her so he is the first one to introduce. What must he say?" name="Any"></transition>
+</task-node>
+<task-node name="link~1~However, he wants to impress her so he is the first one to introduce. What must he say?">
+<task name="textDisplay~She responded with 「はじめまして。わたしはかれんです。よろしくおねがいします。」~はじめまして。わたしはマルクです。よろしくおねがいします。"></task>
+<task name="textDisplay~I think not.~はじめま。マルクです。"></task>
+</task-node>
+<task-node name="textDisplay~She responded with 「はじめまして。わたしはかれんです。よろしくおねがいします。」">
+	<transition to="link~1~She’s quite impressed, so she tells マルクさん he’s very good in Japanese. What must he say? Be modest." name="Any"></transition>
+</task-node>
+<task-node name="link~1~She’s quite impressed, so she tells マルクさん he’s very good in Japanese. What must he say? Be modest.">
+<task name="textDisplay~Please have some modesty!~はい、ありがとうございます。"></task>
+<task name="textImageDisplay~sensei~Unfortunately, やましたせんせい has now entered the room. The aura is not good.~いいえ、まだまだです。"></task>
+</task-node>
+<task-node name="textImageDisplay~sensei~Unfortunately, やましたせんせい has now entered the room. The aura is not good.">
+<transition to="There is reported news that he can make one’s brain explode by just speaking Japanese. マルクさん’s heart is pounding hard." name="Any"></transition>
+</task-node>
+<task-node name="There is reported news that he can make one’s brain explode by just speaking Japanese. マルクさん’s heart is pounding hard."> 
+<transition to="textImageDisplay~blackboard~The せんせい, seeing that he is a newcomer, greets him with a serious and terrifying face, 「おはよう。おおげんきですか。」" name="Any"></transition> 
+</task-node>
+<task-node name="textImageDisplay~blackboard~The せんせい, seeing that he is a newcomer, greets him with a serious and terrifying face, 「おはよう。おおげんきですか。」">
+<transition to ="textDisplay~マルクさん, with a stream of sweat flowing on his face answers, 「げんきです。」" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~マルクさん, with a stream of sweat flowing on his face answers, 「げんきです。」">
+<transition to="textImageDisplay~blackboard~やました-scary, er, せんせい, looks even more closely to him as if he intends to take his soul asked again, 「どこからきましたか。」" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~blackboard~やました-scary, er, せんせい, looks even more closely to him as if he intends to take his soul asked again, 「どこからきましたか。」">
+<transition to="textImageDisplay~blackboard~Nervously, he answers, 「フィリピンです。」 「そうですか。」 The professor tells him, then, to take a seat. He begins the class with, 「八時になりましたので。じゅぎょうをはじめます。」" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~blackboard~Nervously, he answers, 「フィリピンです。」 「そうですか。」 The professor tells him, then, to take a seat. He begins the class with, 「八時になりましたので。じゅぎょうをはじめます。」">
+<transition to="textDisplay~He wants to know more about her. 「せんこうはなんですか。」
+「エイゴです。」 She smiles even wider." name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~He wants to know more about her. 「せんこうはなんですか。」
+「エイゴです。」 She smiles even wider.">
+<transition to="textDisplay~マルクさんis stunned. He is trying very hard to speak Japanese, not knowing that かれんちゃん can actually understand English." name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~マルクさんis stunned. He is trying very hard to speak Japanese, not knowing that かれんちゃん can actually understand English.">
+<transition to="textDisplay~かれんちゃん asks, “You?”
+「にほんごです.。」
+やましたせんせい suddenly blurts out, 「きってください、マルクさん。」" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~かれんちゃん asks, “You?”
+「にほんごです.。」
+やましたせんせい suddenly blurts out, 「きってください、マルクさん。」">
+<transition to="link~1~He asks him then if he is actually listening. What will he say?" name="Any"></transition>
+</task-node>
+<task-node name="link~1~He asks him then if he is actually listening. What will he say?">
+<task name="textDisplay~The storm has passed again.~すみません"></task>
+<task name="textDisplay~Are you nuts? Will you answer him directly like that? Think about かれんちゃん’s feelings, as well. Think well before answering.~いいえ"></task>
+<task name="textDisplay~He will ask you to stay for half an hour and answer his horrible quiz. He also gives you a three page assignment. Talk about punishment!~はい"></task>
+</task-node>
+<task-node name="textDisplay~The storm has passed again.">
+	<transition to="link~1~かれんちゃん asks suddenly, 「なんじですか。」 What is his response?" name="Any"></transition>
+</task-node>
+<task-node name="link~1~かれんちゃん asks suddenly, 「なんじですか。」 What is his response?">
+<task name="textDisplay~Make sure you said it right. Go back!~ごご十一時です。"></task>
+<task name="textImageDisplay~karen~かれんちゃん replies, 「そっか。 It’s very boring now.」~ごぜん十一時です。"></task>
+<task name="textDisplay~Please. Really? Will she be impressed with that answer?~わかりません。"></task>
+</task-node>
+<task-node name="textImageDisplay~karen~かれんちゃん replies, 「そっか。 It’s very boring now.」">
+	<transition to="textDisplay~After the brutal class, マルクさん hurriedly goes outside the classroom. He then decides whether he will invite かれんちゃん to have lunch together at the cafe." name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~After the brutal class, マルクさん hurriedly goes outside the classroom. He then decides whether he will invite かれんちゃん to have lunch together at the cafe.">
+<transition to="link~1~Will he?" name="Any"></transition>
+</task-node>
+<task-node name="link~1~Will he?">
+<task name="textDisplay~He asks かれんちゃん, 「きっさてんでひるごはんをたべませんか。」~はい "></task>
+<task name="textDisplay~マルクさん goes home sorrowfully, regretting the chance to spend some time with his かわいい classmate he just met today. Dismayed, tears flow through his face.~いいえ"></task>
+</task-node>
+<task-node name="textDisplay~He asks かれんちゃん, 「きっさてんでひるごはんをたべませんか。」">
+	<transition to="textDisplay~かれんちゃん  answers, 「いいですね。」Together, they go off to the school cafe. Before eating, マルクさん has to say grace, but how?" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~かれんちゃん  answers, 「いいですね。」Together, they go off to the school cafe. Before eating, マルクさん has to say grace, but how?">
+<transition to="link~1~After all, he wants to impress かれんちゃん." name="Any"></transition>
+</task-node>
+<task-node name="link~1~After all, he wants to impress かれんちゃん.">
+<task name="textImageDisplay~karen~Correct! Another smile from　かれんちゃん。~いただきます"></task>
+<task name="textDisplay~Incorrect. It means going away and coming back soon.~いってきます"></task>
+</task-node>
+<task-node name="textImageDisplay~karen~Correct! Another smile from　かれんちゃん。">
+	<transition to="textDisplay~Out of the blue, かれんちゃん begins to ask, 「でんわばんごうはなんばんですか。」" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~Out of the blue, かれんちゃん begins to ask, 「でんわばんごうはなんばんですか。」">
+<transition to="link~1~Flattered, he answers right away. What do you think he said?" name="Any"></transition>
+</task-node>
+<task-node name="link~1~Flattered, he answers right away. What do you think he said?">
+<task name="textImageDisplay~bench~「ありがとうございます。」 'I’ll just call you later!' かれんちゃん says. And they eat their meals happily together.~はちろくいちのよんさんごなな"></task>
+<task name="textDisplay~I'm afraid that's not what he said.~はちろくいちよんさんごなな"></task>
+</task-node>
+<task-node name="textImageDisplay~bench~「ありがとうございます。」 'I’ll just call you later!' かれんちゃん says. And they eat their meals happily together.">
+	<transition to="textDisplay~Thank you very much!
+	Dean Kristian Bardeloza - Evangelist
+Renzo Dumalaog - Artist
+Gemyr Galang - Writer
+Lorenz Noble - Developer" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~He will ask you to stay for half an hour and answer his horrible quiz. He also gives you a three page assignment. Talk about punishment!">
+<transition to="textDisplay~Thank you very much!
+	Dean Kristian Bardeloza - Evangelist
+Renzo Dumalaog - Artist
+Gemyr Galang - Writer
+Lorenz Noble - Developer" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~The teacher nags at him and says 'Have some respect, kid!' Because of the embarrassment he has caused, he leaves and goes home ashamed.">
+	<transition to="textDisplay~Thank you very much!
+	Dean Kristian Bardeloza - Evangelist
+Renzo Dumalaog - Artist
+Gemyr Galang - Writer
+Lorenz Noble - Developer" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~While listening, he wonders if he should talk to that かわいい lady. But he is too afraid.">
+	<transition to="textDisplay~Thank you very much!
+	Dean Kristian Bardeloza - Evangelist
+Renzo Dumalaog - Artist
+Gemyr Galang - Writer
+Lorenz Noble - Developer" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~I think not.">
+<transition to="textDisplay~Thank you very much!
+	Dean Kristian Bardeloza - Evangelist
+Renzo Dumalaog - Artist
+Gemyr Galang - Writer
+Lorenz Noble - Developer" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~Please have some modesty!">
+<transition to="textDisplay~Thank you very much!
+	Dean Kristian Bardeloza - Evangelist
+Renzo Dumalaog - Artist
+Gemyr Galang - Writer
+Lorenz Noble - Developer" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~Are you nuts? Will you answer him directly like that? Think about かれんちゃん’s feelings, as well. Think well before answering.">
+<transition to="textDisplay~Thank you very much!
+	Dean Kristian Bardeloza - Evangelist
+Renzo Dumalaog - Artist
+Gemyr Galang - Writer
+Lorenz Noble - Developer" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~Make sure you said it right. Go back!">
+<transition to="textDisplay~Thank you very much!
+	Dean Kristian Bardeloza - Evangelist
+Renzo Dumalaog - Artist
+Gemyr Galang - Writer
+Lorenz Noble - Developer" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~Please. Really? Will she be impressed with that answer?">
+<transition to="textDisplay~Thank you very much!
+	Dean Kristian Bardeloza - Evangelist
+Renzo Dumalaog - Artist
+Gemyr Galang - Writer
+Lorenz Noble - Developer" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~マルクさん goes home sorrowfully, regretting the chance to spend some time with his かわいい classmate he just met today. Dismayed, tears flow through his face.">
+	<transition to="textDisplay~Thank you very much!
+	Dean Kristian Bardeloza - Evangelist
+Renzo Dumalaog - Artist
+Gemyr Galang - Writer
+Lorenz Noble - Developer" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~Incorrect. It means going away and coming back soon.">
+<transition to="textDisplay~Thank you very much!
+	Dean Kristian Bardeloza - Evangelist
+Renzo Dumalaog - Artist
+Gemyr Galang - Writer
+Lorenz Noble - Developer" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~I'm afraid that's not what he said.">
+<transition to="textDisplay~Thank you very much!
+	Dean Kristian Bardeloza - Evangelist
+Renzo Dumalaog - Artist
+Gemyr Galang - Writer
+Lorenz Noble - Developer" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~Thank you very much!
+	Dean Kristian Bardeloza - Evangelist
+Renzo Dumalaog - Artist
+Gemyr Galang - Writer
+Lorenz Noble - Developer">
+<transition to="end-state1" name="Any"></transition>
+</task-node>
+<end-state name="end-state1"></end-state>
+</process-definition>

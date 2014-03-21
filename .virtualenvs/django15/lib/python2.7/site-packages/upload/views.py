@@ -108,7 +108,7 @@ def locate(request):
             # Update count
             document.download_count += 1
             document.save()
-            newdownload = Download(document = document, downloader = request.user)
+            newdownload = Download(document = document, downloader = document.uploader)
             newdownload.save()
             return response
         else:
