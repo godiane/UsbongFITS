@@ -53,8 +53,7 @@ footer .separator {opacity:0.3; margin:0 10px;}
 	display: block;
 	float: left;
 	/*line-height: 35px;*/
-	/*line-height: 35px;*/
-	line-height: 10px;
+	line-height: 29px;
 	list-style:none;
 	margin: 0 5px;
 }
