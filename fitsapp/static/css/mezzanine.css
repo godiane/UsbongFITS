@@ -48,14 +48,23 @@ footer .separator {opacity:0.3; margin:0 10px;}
 .pagination {margin:40px 0;}
 .pagination p {float:left;}
 .alert {margin-top:15px;}
-.top-menu { margin-top: -10px; margin-bottom: -15px;}
+.top-menu { 
+    overflow: hidden; 
+    margin-left: 1px; 
+    padding: 5px 5px 0; 
+    text-align: left; 
+    margin-top: -30px; 
+    max-width: 100%; 
+    margin-bottom: -15px;
+}
 .top-menu li {
-	display: block;
+	display: inline-block;
 	float: left;
 	/*line-height: 35px;*/
 	line-height: 29px;
 	list-style:none;
-	margin: 0 5px;
+	/*margin: 0 5px;*/
+	margin: 5px 3px;
 }
 .top-menu li a {
         /* This generators the gradient on top of the solid color */
@@ -74,7 +83,8 @@ footer .separator {opacity:0.3; margin:0 10px;}
 	color: #333;
 	display: block;
 	font: bold 18px "Myriad Pro","Lucida Grande",Helvetica,Arial,sans-serif;*/
-	color: #333;
+	/*color: #333;*/
+	color: #444444!important;
 	outline:none;
 	/*padding: 5px 15px;
 	padding: 4px 7px 5px;*/
