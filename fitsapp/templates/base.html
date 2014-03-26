@@ -85,8 +85,9 @@
             <div class="top-menu">
                 {% block left_panel %}
                 <div class="tree-menu">
-                    {% page_menu "pages/menus/tree-search-trees.html" %}
-                    <br/><br/>
+                    <table>
+                        <tbody><tr></tr><td colspan="2">{% page_menu "pages/menus/tree-search-trees.html" %}</td></tbody>
+                    </table>
                 </div>
                 {% endblock %}
             </div>
