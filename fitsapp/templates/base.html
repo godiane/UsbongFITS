@@ -50,8 +50,38 @@
 
 <div class="container">
     <div class="navbar">
+    <table style="width: 100%; table-layout:fixed; display: table;">
+        <tbody>
+        <tr>
+            <td style="vertical-align:middle!important; display:table-cell; width:470px;">
+                <a class="brand" href="http://www.usbong.ph/"><img id="logo-img-id" src="{% static "img/UsbongLogo.png" %}" alt="Logo" class="sites-logo sites-chrome-header-valign-middle"></a>
+            </td>
+            <td style="vertical-align:middle!important; display:table-cell; width:470px;">
+                    {% if user.is_authenticated %}
+                    <p class="pull-right">You are logged in as {{user}}.<br/>
+                    <a href="{% url 'upload' %}">{% trans "Uploaded Trees" %}</a> | <a href="{% url 'list_download' %}">{% trans "Downloaded Trees" %}</a> | <a href="{% url 'account_email' %}">{% trans "Change Email" %}</a> | <a href="{% url 'account_logout' %}">{% trans "Logout" %}</a></p>
+                    {% else %}
+                    <form action="{% url 'account_login' %}" method="POST" class="navbar-search pull-right input-append">
+                        {% csrf_token %}
+                        <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+                    </form>
+                    {% endif %}
+            </td>
+            </tr>
+        <tr>
+            <td colspan="2">
+                <div class="navbar top-menu">
+                {% block left_panel %}
+                {% page_menu "pages/menus/tree-search-trees.html" %}
+                {% endblock %}
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    {% comment %}
         <a class="brand" href="http://www.usbong.ph/"><img id="logo-img-id" src="{% static "img/UsbongLogo.png" %}" alt="Logo" class="sites-logo sites-chrome-header-valign-middle"></a>
-        <div class="nav-collapse collapse">
+        <div style="vertical-align:middle!important;">
             {% if user.is_authenticated %}
                 <p class="pull-right">You are logged in as {{user}}.<br/>
                 <a href="{% url 'upload' %}">{% trans "Uploaded Trees" %}</a> | <a href="{% url 'list_download' %}">{% trans "Downloaded Trees" %}</a> | <a href="{% url 'account_email' %}">{% trans "Change Email" %}</a> | <a href="{% url 'account_logout' %}">{% trans "Logout" %}</a></p>
@@ -67,6 +97,7 @@
         {% page_menu "pages/menus/tree-search-trees.html" %}
         {% endblock %}
         </div>
+        {% endcomment %}
     </div>
     <div class="container">
         {% nevercache %}
