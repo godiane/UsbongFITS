@@ -14,7 +14,7 @@ li {line-height:20px;}
 
 
 /* Navigation */
-body {padding-top:45px;}
+body {padding-top:30px;}
 @media (max-width:979px){
     body {padding-top:0;} .brand {padding-right:20px !important;}}
 .navbar {z-index:500;}
