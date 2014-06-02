@@ -1,154 +1,3 @@
-ls
-cd fitsapp
-ls
-cd templates
-ls
-cd account/
-ls
-vi login.html
-ls
-cat base.html
-cd ..
-ls
-cat base.html
-ls
-cd blog
-ls
-cat blog_post_list.html
-cd ....
-cd ../..
-ls
-vi settings.py
-ls
-cd ..
-ls
-git add .
-git status
-git commit -m "latest server changes"
-git pull origin master
-git push origin master
-git pull origin master
-git push origin master
-ls
-cd fitsapp/
-ls
-vi settings.py
-git add settings.py
-rm -rf .git/index.lock lock
-git add settings.py
-git commit -m "fixing conflict"
-git push origin master
-cd ..
-git push origin master
-git pull origin master
-git commit -a .
-git commit -a\
-git commit -a
-git commit -m "pushing changes from server"
-ls
-cd fitsapp
-git rm settings.py
-git add .
-git commit -m "resolving conflict"
-git push origin master
-cd ..
-git push origin master
-git pull origin master
-ls
-cd fitsapp/
-ls
-cd ..
-ls
-git push origin master
-git pull origin master
-ls
-cd fitsapp
-ls
-git add settings.py
-git add .
-git status
-cd ..
-git add .
-touch fitsapp/settings.py
-git add .
-git pull origin master
-git commit -m "fixing conflicts"
-git push origin master
-git pull origin master
-ls
-cd fitsapp/
-ls
-cat urls.py
-cd ..
-ls
-git add .
-git status
-git commit -m "latest changes from server"
-git pull origin master
-git push origin master
-ls
-cd fitsapp
-ls
-cat urls.py | more
-cd /home/usbong/.virtualenvs/django15/
-ls
-cd lib/
-ls
-cd python2.7/site-packages/mezzanine
-ls
-vi urls.py
-ls
-cd pages/
-ls
-vi urls.py
-ls
-vi views.py
-ls
-vi fields.py
-ls
-vi page_processors.py
-cd /var/www
-ls
-cd forms
-ls
-cd ..
-ls
-cd /home/usbong/
-ls
-cd fitsapp/
-ls
-git rm -f settings (copy).py
-git rm -f settings \(copy\).py
-ls
-cd fitsapp/
-ls
-git pull origin master
-workon django15
-source mkvirtualenv.sh
-source virtualenvwrapper.sh
-workon django15
-git pull origin master
-l
-ls
-cd ..
-git pull origin master
-mv fitsapp/upload/views.py fitsapp/upload/views.py.bak
-git pull origin master
-cd fitsapp
-ls
-python manage.py syncdb
-python manage.py migrate
-python manage.py syncdb
-ls
-cd upload/
-ls
-vi views.py
-ls
-vi models.py
-vi views.py
-ls
-cd ..
-ls
 cat local_settings.py
 mv local_settings.py local_settings.py.bak
 ls
@@ -498,3 +347,154 @@ git add .
 git status
 git commit -m "latest  in server"
 git push origin master
+ls
+git checkout .
+ls
+cd fitsapp/
+git checkout .
+ls
+rm local_settings.py
+ls
+git pull origin master
+source /usr/local/bin/virtualenvwrapper.sh
+workon django15
+cd ..
+ls
+git pull origin master
+rm fitsapp/*.pyc
+rm -rf fitsapp/*.pyc
+git pull origin master
+rm -rf fitsapp/upload/*.pyc
+git pull origin master
+ls
+cd fitsapp/
+ls
+cd static
+ls
+cd ..
+ls
+\
+.
+cd static
+ls
+cd ..
+ls
+cd ..
+ls
+./update.sh 
+ls
+cd ..
+ls
+cd usbong/
+ls
+git pull origin master
+python -m compileall
+ls
+cd fitsapp/
+ls
+cd upload/
+ls
+python -m compile .
+python -m urls.py
+python urls.py
+python extra.py 
+git add .
+git status
+git pull origin master
+cd ..
+ls
+git pull origin master
+ls
+cd ..
+ls
+git pull origin master
+git add .
+git add -A
+git commit -m "latest from repo"
+git push origin master
+git pull origin master
+ls
+cd fitsapp/
+ls
+git add -u .
+git status
+ls
+.update.sh
+./update.sh 
+ls
+./update.sh 
+ls
+cd fitsapp/
+ls
+cd upload/
+ls
+cd templatetags/
+ls
+cd ~/update.sh
+ls
+cd
+ls
+git pull origin master
+rm fitsapp/static/media/documents/2014/02/22/champs.utree 
+rm fitsapp/static/media/documents/2014/02/22/champs_1.utree 
+git pull origin master
+ls
+./update.sh
+git pull origin master
+./update.sh
+rm fitsapp/static/media/documents/2014/02/22/champs_2.utree
+./update.sh
+rm fitsapp/static/media/documents/2014/02/22/champs_2.utree
+./update.sh
+ls
+git add .
+git status
+ls -al
+touch .gitignore
+ls
+ls -al
+vi .gitignore
+git reset
+git reset HEAD
+git add .
+git status
+vi .gitignore
+cp .gitignore .virtualenvs/django15/lib/python2.7/site-packages/upload/
+cp .gitignore fitsapp/
+cp .gitignore fitsapp/upload/
+git reset HEAD
+git add .
+git status
+git reset HEAD .virtualenvs/django15/lib/python2.7/site-packages/upload/*.pyc
+git reset HEAD .virtualenvs/django15/lib/python2.7/site-packages/upload/templatetags/*.pyc
+git reset HEAD .virtualenvs/django15/lib/python2.7/site-packages/upload/*.pyc
+git reset HEAD fitsapp/`*.pyc
+;
+
+\
+;
+git reset HEAD fitsapp/*.pyc
+git status
+git reset HEAD fitsapp/upload/*.pyc
+git status
+git reset HEAD .bash_history
+git reset HEAD .gitignore
+git status
+git reset HEAD .viminfo .virtualenvs/django15/lib/python2.7/site-packages/upload/.gitignore fitsapp/.gitignore fitsapp/upload/.gitignore
+git status
+git push origin master
+git status
+git commit -m "latest changes from server"
+git push origin master
+git pull origin master
+git push origin master
+git pull origin master
+rm fitsapp/upload/*.pyc
+git pull origin master
+ls
+git pull origin master
+ls
+git pull origin master
+ls
+git pull origin master
+exit

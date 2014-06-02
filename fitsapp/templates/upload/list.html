@@ -9,7 +9,26 @@
 
 {% block main %}
 
+
+{% if user.is_authenticated and request.path == "/upload/" %}
+<h1>Upload a Tree</h1>
+<!-- Upload form. Note enctype attribute! -->
+<form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<p>{{ form.non_field_errors }}</p>
+	<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+	<p>
+	    {{ form.docfile.errors }}
+		{{ form.docfile }}
+    </p>
+    <p>{{ form.docdesc.label_tag }} {{ form.docdesc.help_text }}</p>
+    <p>{{ form.docdesc }}</p>
+	<p><input type="submit" value="{% trans 'Upload' %}" /></p>
+</form>
+{% endif %}
+
 <h1>{% if request.path == '/upload/' %}{% trans "Uploaded Trees" %}{% else %}{% trans "Search Trees" %}{% endif %}</h1>
+
     {% if request.path == '/upload/search/' %}
     <div class="nav-collapse collapse span11">
 	    <form action="{% url "upload_search" %}" class="navbar-search input-append">
@@ -82,21 +101,4 @@
                 {% endif %}
              </span>
         </div>
-
-        {% if user.is_authenticated and request.path == "/upload/" %}
-        <h2>Upload a Tree</h2>
-		<!-- Upload form. Note enctype attribute! -->
-		<form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
-			{% csrf_token %}
-			<p>{{ form.non_field_errors }}</p>
-			<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
-			<p>
-				{{ form.docfile.errors }}
-				{{ form.docfile }}
-            </p>
-            <p>{{ form.docdesc.label_tag }} {{ form.docdesc.help_text }}</p>
-            <p>{{ form.docdesc }}</p>
-		    <p><input type="submit" value="{% trans 'Upload' %}" /></p>
-		</form>
-		{% endif %}
 {% endblock %}

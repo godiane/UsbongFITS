@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8bomb"?>
+<process-definition lang="English" xmlns="urn:jbpm.org:jpdl-3.2" name="Ai no Kokuhaku">
+<start-state name="start-state1">
+<transition to="textDisplay~JSP1E: King, Labarentos, Mendez, Reyes, Urbano"></transition>
+</start-state>
+<task-node name="textDisplay~JSP1E: King, Labarentos, Mendez, Reyes, Urbano">
+<transition to="textImageDisplay~01 23 49 walking yukata~Love Confession あいのこくはく" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~01 23 49 walking yukata~Love Confession あいのこくはく">
+<transition to="textImageDisplay~02 mika lost~{small}One bright morning, ミカ・ルイズ「 Mika Ruiz」is very excitedly walking along an unfamiliar street, enjoying her first experience with さくらblossoms. She is a 仙台高校学校「せんだいこうこうがっこう」のりゅうがくせい.  Because she was too distracted with the picturesque view of this Japanese neighborhood, she became lost.{/small}" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~02 mika lost~{small}One bright morning, ミカ・ルイズ「 Mika Ruiz」is very excitedly walking along an unfamiliar street, enjoying her first experience with さくらblossoms. She is a 仙台高校学校「せんだいこうこうがっこう」のりゅうがくせい.  Because she was too distracted with the picturesque view of this Japanese neighborhood, she became lost.{/small}">
+<transition to="textImageDisplay~03 sakura tree~Luckily, as she comes to a corner, a guy who looks approachable and admittedly anいけめん「good-looking man」 passes by. She decides that she will ask this person." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~03 sakura tree~Luckily, as she comes to a corner, a guy who looks approachable and admittedly anいけめん「good-looking man」 passes by. She decides that she will ask this person.">
+<transition to="radioButtonsWithAnswer~Mika: What should ミカ say to politely ask where her school is?Answer=1" name="Any"></transition>
+</task-node>
+<task-node name="radioButtonsWithAnswer~Mika: What should ミカ say to politely ask where her school is?Answer=1">
+<task name="しつれいします。仙台高校学校はだれですか。 "></task>
+<task name="あの、すみません。仙台高校学校はどこですか。 "></task>
+<task name="すみません。仙台高校学校はいくらですか。"></task>
+<transition to="textImageDisplay~05 mh talking~[しらない人]:えと、あそこです。僕はあの高校学校の学生です. (しらない人 gives more directions while ミカintently tries to understand)" name="Yes"></transition>
+<transition to="textDisplay~まちがいです。 Please answer correctly to proceed." name="No"></transition>
+</task-node>
+<task-node name="textDisplay~まちがいです。 Please answer correctly to proceed.">
+<transition to="textDisplay~please press back button and answer again" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~05 mh talking~[しらない人]:えと、あそこです。僕はあの高校学校の学生です. (しらない人 gives more directions while ミカintently tries to understand)">
+<transition to="textImageDisplay~07 21 shy mika~[ミカ]: ありがとうございます。" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~07 21 shy mika~[ミカ]: ありがとうございます。">
+<transition to="radioButtonsWithAnswer~1~しらない人tells her that he is about to go there, and he can go with her if she likes. ミカ considers the situation. Should she go with the しらない人or not?Answer=0" name="Any"></transition>
+</task-node>
+<task-node name="radioButtonsWithAnswer~1~しらない人tells her that he is about to go there, and he can go with her if she likes. ミカ considers the situation. Should she go with the しらない人or not?Answer=0">
+<task name="はい、いいです"></task>
+<task name="いいえ"></task>
+<transition to="radioButtonsWithAnswer~1~To be polite and to apply what she learned in 日本語, ミカshyly asks for じこょうかい. What should ミカ say?Answer=1" name="Yes"></transition>
+<transition to="textImageDisplay~26 mika running~1~ミカ, not wanting to prolong the awkward situation, hurriedly says ‘ありがとうございます’ and sprints away—leaving the puzzled しらない人behind." name="No"></transition>
+</task-node>
+<task-node name="radioButtonsWithAnswer~1~To be polite and to apply what she learned in 日本語, ミカshyly asks for じこょうかい. What should ミカ say?Answer=1">
+<task name="はじめまして。私はミカ です。りゅうがくせいです。フィリピン人です。戦場は三年生です。おひさしぶり。"></task>
+<task name="はじめまして. 私 はルイーズミカ です。仙台大学のりゅうがくせいです。アテネオ大学の学生です。フィリピン人です。今私は三年生です。せんこうはすうがくです。よろしくおねがいします。"></task>
+<transition to="textImageDisplay~08 30 shy haruki~1~[山田晴樹]: はじめまして. 僕は山田晴樹「やまだはるき」です。仙台大学の学生です。せんこうはすうがくです。三年生です。よろしくおねがいします。" name="Yes"></transition>
+<transition to="textDisplay~まちがいです。 Please answer correctly to proceed." name="No"></transition>
+</task-node>
+<task-node name="textDisplay~まちがいです。 Please answer correctly to proceed.">
+<transition to="textDisplay~please press back button and answer again" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~08 30 shy haruki~1~[山田晴樹]: はじめまして. 僕は山田晴樹「やまだはるき」です。仙台大学の学生です。せんこうはすうがくです。三年生です。よろしくおねがいします。">
+<transition to="textImageDisplay~09 31 mh laughing~1~{small}山田adds that her name reminds him of みかずき[crescent moon]. Meanwhile his name has the character 日 [sun] in it. They laugh at the coincidence and because they also have the same first じゅぎょう、they proceeded walking together to school.{/small}" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~09 31 mh laughing~1~{small}山田adds that her name reminds him of みかずき[crescent moon]. Meanwhile his name has the character 日 [sun] in it. They laugh at the coincidence and because they also have the same first じゅぎょう、they proceeded walking together to school.{/small}">
+<transition to="radioButtonsWithAnswer~1~ミカ remembers that her first クラス has the same time as the first class possible in アテネオ. ミカのじゅぎょうはなんじですか。Answer=2" name="Any"></transition>
+</task-node>
+<task-node name="radioButtonsWithAnswer~1~ミカ remembers that her first クラス has the same time as the first class possible in アテネオ. ミカのじゅぎょうはなんじですか。Answer=2">
+<task name="ごごしちじはんです。"></task>
+<task name="ごぜんななじです。"></task>
+<task name="ごぜんしちじはんです。"></task>
+<transition to="textImageDisplay~11 happy together~1~{small}After learning that they have so many similarities, ミカ and 晴樹 secretly grew fond of each other. They continue to meet under the same tree every day and go to class together. They share stories and enjoy the view of the spring.{/small}" name="Yes"></transition>
+<transition to="textDisplay~まちがいです。 Please answer correctly to proceed." name="No"></transition>
+</task-node>
+<task-node name="textDisplay~まちがいです。 Please answer correctly to proceed.">
+<transition to="textDisplay~please press back button and answer again" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~11 happy together~1~{small}After learning that they have so many similarities, ミカ and 晴樹 secretly grew fond of each other. They continue to meet under the same tree every day and go to class together. They share stories and enjoy the view of the spring.{/small}">
+<transition to="textImageDisplay~12 sakura with box~1~One 金曜日, ミカ happily walks to the さくらtree only to find 晴樹unusually おそい. While waiting, she sees a small box under the tree." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~12 sakura with box~1~One 金曜日, ミカ happily walks to the さくらtree only to find 晴樹unusually おそい. While waiting, she sees a small box under the tree.">
+<transition to="radioButtonsWithAnswer~1~Should ミカ look into the box?Answer=0" name="Any"></transition>
+</task-node>
+<task-node name="radioButtonsWithAnswer~1~Should ミカ look into the box?Answer=0">
+<task name="はい"></task>
+<task name="いいえ"></task>
+<transition to="textImageDisplay~14 box under sakura~1~The box has “ミカ へ” written on it. Because 晴樹 seems けっせき and she wants to know more about the mysterious box, she goes alone to がっこうto ask her other ともだち." name="Yes"></transition>
+<transition to="textImageDisplay~15 33 38 mika with friends~1~At school, 錦戸さん and 山下さん invite ミカ to the upcoming たなばたまつり. Since she is a りゅうがくせい, they explain what the まつり and its 7 symbols are about." name="No"></transition>
+</task-node>
+<task-node name="textImageDisplay~14 box under sakura~1~The box has “ミカ へ” written on it. Because 晴樹 seems けっせき and she wants to know more about the mysterious box, she goes alone to がっこうto ask her other ともだち.">
+<transition to="textDisplay~1~At school, ミカ finds her closest 同級生「どうきゅうせい－classmates」錦戸さん「にしきど」 and 山下さん「やました」and asks about the seven objects found in the box. They said that those were miniature たなばたdecorations with symbolical meanings." name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~1~At school, ミカ finds her closest 同級生「どうきゅうせい－classmates」錦戸さん「にしきど」 and 山下さん「やました」and asks about the seven objects found in the box. They said that those were miniature たなばたdecorations with symbolical meanings.">
+<transition to="textImageDisplay~16 tanzaku kamigoromo~1~[錦戸]: これはたんざくです. These are paper strips where handwritten wishes are written. These are hung on the special ささ 「bamboo grass」." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~16 tanzaku kamigoromo~1~[錦戸]: これはたんざくです. These are paper strips where handwritten wishes are written. These are hung on the special ささ 「bamboo grass」.">
+<transition to="textImageDisplay~16 tanzaku kamigoromo~1~[山下]: それはかみごろもです. Those are paper きものdecorations for good sewing skills." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~16 tanzaku kamigoromo~1~[山下]: それはかみごろもです. Those are paper きものdecorations for good sewing skills.">
+<transition to="textImageDisplay~17 orizuru kinchaku~1~[錦戸]: これはおりずるです。一千 of these paper cranes are hung with the hopes that the wishes will come true." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~17 orizuru kinchaku~1~[錦戸]: これはおりずるです。一千 of these paper cranes are hung with the hopes that the wishes will come true.">
+<transition to="textImageDisplay~17 orizuru kinchaku~1~[山下]: それはきんちゃくです. That is a purse that symbolizes good business." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~17 orizuru kinchaku~1~[山下]: それはきんちゃくです. That is a purse that symbolizes good business.">
+<transition to="textImageDisplay~18 toami kuzukago fukinagashi~1~[山下]: それはとあみです。These are paper net decors that symbolize good fishing." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~18 toami kuzukago fukinagashi~1~[山下]: それはとあみです。These are paper net decors that symbolize good fishing.">
+<transition to="textImageDisplay~18 toami kuzukago fukinagashi~1~[錦戸]: それはくずかごです. The paper trash bag decors are for cleanliness.これはふきながしです。This is a paper tubular streamer which is very colorful and attractive in the festival." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~18 toami kuzukago fukinagashi~1~[錦戸]: それはくずかごです. The paper trash bag decors are for cleanliness.これはふきながしです。This is a paper tubular streamer which is very colorful and attractive in the festival.">
+<transition to="imageTextDisplay~tanzaku~1~What do you call this たなばた symbol/decoration?" name="Any"></transition>
+</task-node>
+<task-node name="imageTextDisplay~tanzaku~1~What do you call this たなばた symbol/decoration?">
+<transition to="radioButtonsWithAnswer~1~What do you call that?Answer=1" name="Any"></transition>
+</task-node>
+<task-node name="radioButtonsWithAnswer~1~What do you call that?Answer=1">
+<task name="かみごろも"></task>
+<task name="たんざく"></task>
+<task name="おりずる"></task>
+<transition to="textImageDisplay~orihime and hikoboshi~1~山下さん and 錦戸さん further tell ミカ that たなばた is a まつしり「festival」 about おりひめ and ひこぼし, two star-crossed こいびと「lovers」 separated by the Milky Way and are only allowed to meet each other during たなばた, which will be on the following 月曜日。" name="Yes"></transition>
+<transition to="textDisplay~まちがいです。 Please answer correctly to proceed." name="No"></transition>
+</task-node>
+<task-node name="textDisplay~まちがいです。 Please answer correctly to proceed.">
+<transition to="textDisplay~please press back button and answer again" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~orihime and hikoboshi~1~山下さん and 錦戸さん further tell ミカ that たなばた is a まつしり「festival」 about おりひめ and ひこぼし, two star-crossed こいびと「lovers」 separated by the Milky Way and are only allowed to meet each other during たなばた, which will be on the following 月曜日。">
+<transition to="textImageDisplay~07 21 mika shy~1~The last item in the box is a note saying ―まんてんのほしぞらにあいにおいでよ–日‖ 「Come and meet me under the full starry sky –日」.As a JPOP fan she recognizes the meaning たなばたまつり which is テゴマスのうた. Knowing the kanji 日, she immediately knows who the sender is and blushes." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~07 21 mika shy~1~The last item in the box is a note saying ―まんてんのほしぞらにあいにおいでよ–日‖ 「Come and meet me under the full starry sky –日」.As a JPOP fan she recognizes the meaning たなばたまつり which is テゴマスのうた. Knowing the kanji 日, she immediately knows who the sender is and blushes.">
+<transition to="textImageDisplay~22 42 47 48 both yukata~1~At たなばたまつり, the two meet. They are both a bit shy to see each other in such stylish ゆかた." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~22 42 47 48 both yukata~1~At たなばたまつり, the two meet. They are both a bit shy to see each other in such stylish ゆかた.">
+<transition to="textDisplay~1~They walk around while enjoying the street events and watching people have fun together. They see a lot of beautiful decorations as described earlier by ミカのともだち。" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~1~They walk around while enjoying the street events and watching people have fun together. They see a lot of beautiful decorations as described earlier by ミカのともだち。">
+<transition to="textImageDisplay~24 confession~1~The day turns into night and the streets are laden with wonderful lights—turning the festive mood into a romantic one. As the stars shine brightly above them, 晴樹 suddenly confesses his feelings for ミカ. She blushes and also confesses to a surprised 晴樹." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~24 confession~1~The day turns into night and the streets are laden with wonderful lights—turning the festive mood into a romantic one. As the stars shine brightly above them, 晴樹 suddenly confesses his feelings for ミカ. She blushes and also confesses to a surprised 晴樹.">
+<transition to="imageTextDisplay~25 wish ending~1~They find themselves in front of a bamboo tree, and agree on writing a wish on a たんざく." name="Any"></transition>
+</task-node>
+<task-node name="imageTextDisplay~25 wish ending~1~They find themselves in front of a bamboo tree, and agree on writing a wish on a たんざく.">
+<transition to="end-state1" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~26 mika running~1~ミカ, not wanting to prolong the awkward situation, hurriedly says ‘ありがとうございます’ and sprints away—leaving the puzzled しらない人behind.">
+<transition to="textImageDisplay~27 mika class intro~At the first class, the 先生 asks ミカ to introduce herself in front of class, since she is a new 学生." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~27 mika class intro~At the first class, the 先生 asks ミカ to introduce herself in front of class, since she is a new 学生.">
+<transition to="radioButtonsWithAnswer~Mika introduces herself. What should ミカ say?Answer=0" name="Any"></transition>
+</task-node>
+<task-node name="radioButtonsWithAnswer~Mika introduces herself. What should ミカ say?Answer=0">
+<task name="はじめまして. 私はミカ・ルイズです。フィリピン人です。ミリヤム高校学校の学生です。今私は三年生です。せんこうはすうがくです。よろしくおねがいします。"></task>
+<task name="はじめまして。私はミカです。りゅうがくせいです。フィリピン人です。今は三年生です。おひさしぶり。"></task>
+<transition to="radioButtonsWithAnswer~While talking, she notices the しらない人 from earlier looking at her from the back of the きょうしつ。Their eyes meet. Should she approach the guy after class?Answer=0" name="Yes"></transition>
+<transition to="textDisplay~まちがいです。 Please answer correctly to proceed." name="No"></transition>
+</task-node>
+<task-node name="textDisplay~まちがいです。 Please answer correctly to proceed.">
+<transition to="textDisplay~please press back button and answer again" name="Any"></transition>
+</task-node>
+<task-node name="radioButtonsWithAnswer~While talking, she notices the しらない人 from earlier looking at her from the back of the きょうしつ。Their eyes meet. Should she approach the guy after class?Answer=0">
+<task name="はい、いいです"></task>
+<task name="いいえ"></task>
+<transition to="imageTextDisplay~08 30 shy haruki~After that first class, ミカ approaches the guy and says “すみません” for being rude earlier. The guy says “いえ、いえ、いいです” and introduces himself." name="Yes"></transition>
+<transition to="imageTextDisplay~15 33 38 mika with friends~ミカ surrounds herself with two new ともだち, 錦戸さん「にしきど」 and 山下さん 「やました」, while the still しらない人from earlier looks from a distance." name="No"></transition>
+</task-node>
+<task-node name="imageTextDisplay~08 30 shy haruki~After that first class, ミカ approaches the guy and says “すみません” for being rude earlier. The guy says “いえ、いえ、いいです” and introduces himself.">
+<transition to="textImageDisplay~08 30 shy haruki~[山田晴樹]: はじめまして. 僕は山田晴樹です。せんこうはすうがくです。三年生です。よろしくおねがいします。" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~08 30 shy haruki~[山田晴樹]: はじめまして. 僕は山田晴樹です。せんこうはすうがくです。三年生です。よろしくおねがいします。">
+<transition to="textImageDisplay~09 31 mh laughing~To uplift the awkward mood, 山田 adds that her name reminds him of みかずき「crescent moon」. Meanwhile his name has the character 日「sun」 in it. They laugh at the coincidence. They also have the same first class!" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~09 31 mh laughing~To uplift the awkward mood, 山田 adds that her name reminds him of みかずき「crescent moon」. Meanwhile his name has the character 日「sun」 in it. They laugh at the coincidence. They also have the same first class!">
+<transition to="radioButtonsWithAnswer~2~ミカ remembers that her first クラス has the same time as the first class possible in アテネオ. ミカのじゅぎょうはなんじですか。Answer=2" name="Any"></transition>
+</task-node>
+<task-node name="radioButtonsWithAnswer~2~ミカ remembers that her first クラス has the same time as the first class possible in アテネオ. ミカのじゅぎょうはなんじですか。Answer=2">
+<task name="ごごしちじはんです。"></task>
+<task name="ごぜんななじです。"></task>
+<task name="ごぜんしちじはんです。"></task>
+<transition to="textImageDisplay~11 happy together~2~After learning that they have so many similarities, ミカ and 晴樹 secretly grew fond of each other. They continue to meet under the same tree every day and go to class together. They share stories and enjoy the view of the spring." name="Yes"></transition>
+<transition to="textDisplay~まちがいです。 Please answer correctly to proceed." name="No"></transition>
+</task-node>
+<task-node name="textDisplay~まちがいです。 Please answer correctly to proceed.">
+<transition to="textDisplay~please press back button and answer again" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~11 happy together~2~After learning that they have so many similarities, ミカ and 晴樹 secretly grew fond of each other. They continue to meet under the same tree every day and go to class together. They share stories and enjoy the view of the spring.">
+<transition to="textImageDisplay~12 sakura with box~2~One 金曜日, ミカ happily walks to the さくらtree only to find 晴樹unusually おそい. While waiting, she sees a small box under the tree." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~12 sakura with box~2~One 金曜日, ミカ happily walks to the さくらtree only to find 晴樹unusually おそい. While waiting, she sees a small box under the tree.">
+<transition to="radioButtonsWithAnswer~2~Should ミカ look into the box?Answer=0" name="Any"></transition>
+</task-node>
+<task-node name="radioButtonsWithAnswer~2~Should ミカ look into the box?Answer=0">
+<task name="はい"></task>
+<task name="いいえ"></task>
+<transition to="textImageDisplay~14 box under sakura~2~The box has “ミカ へ” written on it. Because 晴樹 seems けっせき and she wants to know more about the mysterious box, she goes alone to がっこうto ask her other ともだち." name="Yes"></transition>
+<transition to="textImageDisplay~15 33 38 mika with friends~2~At school, 錦戸さん and 山下さん invite ミカ to the upcoming たなばたまつり. Since she is a りゅうがくせい, they explain what the まつり and its 7 symbols are about." name="No"></transition>
+</task-node>
+<task-node name="textImageDisplay~14 box under sakura~2~The box has “ミカ へ” written on it. Because 晴樹 seems けっせき and she wants to know more about the mysterious box, she goes alone to がっこうto ask her other ともだち.">
+<transition to="textDisplay~2~At school, ミカ finds her closest 同級生「どうきゅうせい－classmates」錦戸さん「にしきど」 and 山下さん「やました」and asks about the seven objects found in the box. They say that those were miniature たなばた decorations with symbolical meanings." name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~2~At school, ミカ finds her closest 同級生「どうきゅうせい－classmates」錦戸さん「にしきど」 and 山下さん「やました」and asks about the seven objects found in the box. They say that those were miniature たなばた decorations with symbolical meanings.">
+<transition to="textImageDisplay~16 tanzaku kamigoromo~2~[錦戸]: これはたんざくです. These are paper strips where handwritten wishes are written. These are hung on the special ささ 「bamboo grass」." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~16 tanzaku kamigoromo~2~[錦戸]: これはたんざくです. These are paper strips where handwritten wishes are written. These are hung on the special ささ 「bamboo grass」.">
+<transition to="textImageDisplay~16 tanzaku kamigoromo~2~[山下]: それはかみごろもです. Those are paper きものdecorations for good sewing skills." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~16 tanzaku kamigoromo~2~[山下]: それはかみごろもです. Those are paper きものdecorations for good sewing skills.">
+<transition to="textImageDisplay~17 orizuru kinchaku~2~[錦戸]: これはおりずるです。一千 of these paper cranes are hung with the hopes that the wishes will come true." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~17 orizuru kinchaku~2~[錦戸]: これはおりずるです。一千 of these paper cranes are hung with the hopes that the wishes will come true.">
+<transition to="textImageDisplay~17 orizuru kinchaku~2~[山下]: それはきんちゃくです. That is a purse that symbolizes good business." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~17 orizuru kinchaku~2~[山下]: それはきんちゃくです. That is a purse that symbolizes good business.">
+<transition to="textImageDisplay~18 toami kuzukago fukinagashi~2~[山下]: それはとあみです。These are paper net decors that symbolize good fishing." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~18 toami kuzukago fukinagashi~2~[山下]: それはとあみです。These are paper net decors that symbolize good fishing.">
+<transition to="textImageDisplay~18 toami kuzukago fukinagashi~2~[錦戸]: それはくずかごです. The paper trash bag decors are for cleanliness.これはふきながしです。This is a paper tubular streamer which is very colorful and attractive in the festival." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~18 toami kuzukago fukinagashi~2~[錦戸]: それはくずかごです. The paper trash bag decors are for cleanliness.これはふきながしです。This is a paper tubular streamer which is very colorful and attractive in the festival.">
+<transition to="imageTextDisplay~tanzaku~2~What do you call this たなばた symbol/decoration?" name="Any"></transition>
+</task-node>
+<task-node name="imageTextDisplay~tanzaku~2~What do you call this たなばた symbol/decoration?">
+<transition to="radioButtonsWithAnswer~2~What do you call that?Answer=1" name="Any"></transition>
+</task-node>
+<task-node name="radioButtonsWithAnswer~2~What do you call that?Answer=1">
+<task name="かみごろも"></task>
+<task name="たんざく"></task>
+<task name="おりずる"></task>
+<transition to="textImageDisplay~orihime and hikoboshi~2~山下さん and 錦戸さん further tell ミカ that たなばた is a まつしり「festival」 about おりひめ and ひこぼし, two star-crossed こいびと「lovers」 separated by the Milky Way and are only allowed to meet each other during たなばた, which will be on the following 月曜日。" name="Yes"></transition>
+<transition to="textDisplay~まちがいです。 Please answer correctly to proceed." name="No"></transition>
+</task-node>
+<task-node name="textDisplay~まちがいです。 Please answer correctly to proceed.">
+<transition to="textDisplay~please press back button and answer again" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~orihime and hikoboshi~2~山下さん and 錦戸さん further tell ミカ that たなばた is a まつしり「festival」 about おりひめ and ひこぼし, two star-crossed こいびと「lovers」 separated by the Milky Way and are only allowed to meet each other during たなばた, which will be on the following 月曜日。">
+<transition to="textImageDisplay~07 21 shy mika~2~The last item in the box is a note saying ―まんてんのほしぞらにあいにおいでよ–日‖ 「Come and meet me under the full starry sky –日」.As a JPOP fan she recognizes the meaning たなばたまつり which is テゴマスのうた. Knowing the kanji 日, she immediately knows who the sender is and blushes. " name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~07 21 shy mika~2~The last item in the box is a note saying ―まんてんのほしぞらにあいにおいでよ–日‖ 「Come and meet me under the full starry sky –日」.As a JPOP fan she recognizes the meaning たなばたまつり which is テゴマスのうた. Knowing the kanji 日, she immediately knows who the sender is and blushes. ">
+<transition to="textImageDisplay~22 42 47 48 both yukata~2~At たなばたまつり, the two meet. They are both a bit shy to see each other in such stylish ゆかた." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~22 42 47 48 both yukata~2~At たなばたまつり, the two meet. They are both a bit shy to see each other in such stylish ゆかた.">
+<transition to="textImageDisplay~01 23 49 walking yukata~2~They walk around while enjoying the street events and watching people have fun together. They see a lot of beautiful decorations as described earlier by ミカのともだち。" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~01 23 49 walking yukata~2~They walk around while enjoying the street events and watching people have fun together. They see a lot of beautiful decorations as described earlier by ミカのともだち。">
+<transition to="textImageDisplay~24 confession~2~The day turns into night and the streets are laden with wonderful lights—turning the festive mood into a romantic one. As the stars shine brightly above them, 晴樹 suddenly confesses his feelings for ミカ. She blushes and also confesses to a surprised 晴樹." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~24 confession~2~The day turns into night and the streets are laden with wonderful lights—turning the festive mood into a romantic one. As the stars shine brightly above them, 晴樹 suddenly confesses his feelings for ミカ. She blushes and also confesses to a surprised 晴樹.">
+<transition to="imageTextDisplay~25 wish ending~2~They find themselves in front of a bamboo tree, and agree on writing a wish on a たんざく." name="Any"></transition>
+</task-node>
+<task-node name="imageTextDisplay~25 wish ending~2~They find themselves in front of a bamboo tree, and agree on writing a wish on a たんざく.">
+<transition to="end-state1" name="Any"></transition>
+</task-node>
+<task-node name="imageTextDisplay~15 33 38 mika with friends~ミカ surrounds herself with two new ともだち, 錦戸さん「にしきど」 and 山下さん 「やました」, while the still しらない人from earlier looks from a distance.">
+<transition to="imageTextDisplay~34 apart~For the following days and weeks, ミカ walks alone to school but is aware of しらない人who is also a 同級生「どうきゅうせい－classmate」, riding his じてんしゃ. ミカ still feels very shy and cannot bring herself to befriend him." name="Any"></transition>
+</task-node>
+<task-node name="imageTextDisplay~34 apart~For the following days and weeks, ミカ walks alone to school but is aware of しらない人who is also a 同級生「どうきゅうせい－classmate」, riding his じてんしゃ. ミカ still feels very shy and cannot bring herself to befriend him.">
+<transition to="radioButtonsWithAnswer~One day, ミカ is getting late because she missed the bus and worries about her first クラス. It has the same time as the first class possible in アテネオ. ミカのじゅぎょうはなんじですか. Answer=2" name="Any"></transition>
+</task-node>
+<task-node name="radioButtonsWithAnswer~One day, ミカ is getting late because she missed the bus and worries about her first クラス. It has the same time as the first class possible in アテネオ. ミカのじゅぎょうはなんじですか. Answer=2">
+<task name="ごごしちじはんです。"></task>
+<task name="ごぜんななじです。"></task>
+<task name="ごぜんしちじはんです。"></task>
+<transition to="textImageDisplay~36 bike together~しらない人, who is just behind, insists that she rides with him on his じてんしゃ. Because they have a テスト that day, ミカ shyly complies." name="Yes"></transition>
+<transition to="textDisplay~まちがいです。 Please answer correctly to proceed." name="No"></transition>
+</task-node>
+<task-node name="textDisplay~まちがいです。Please answer correctly to proceed.">
+<transition to="textDisplay~please press back button and answer again" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~36 bike together~しらない人, who is just behind, insists that she rides with him on his じてんしゃ. Because they have a テスト that day, ミカ shyly complies.">
+<transition to="textImageDisplay~37 mika running arigatou~{small}Because ミカ is very shy and awkward, she frantically rushes away to the きょうしつafter bowing and saying “ありがとうございます”. しらない人, her 同級生 is left alone with his じてんしゃ.{/small}" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~37 mika running arigatou~{small}Because ミカ is very shy and awkward, she frantically rushes away to the きょうしつafter bowing and saying “ありがとうございます”. しらない人, her 同級生 is left alone with his じてんしゃ.{/small}">
+<transition to="textImageDisplay~15 33 38 mika with friends~2~At school, 錦戸さん and 山下さん invite ミカ to the upcoming たなばたまつり. Since she is a りゅうがくせい, they explain what the まつり and its 7 symbols are about." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~15 33 38 mika with friends~2~At school, 錦戸さん and 山下さん invite ミカ to the upcoming たなばたまつり. Since she is a りゅうがくせい, they explain what the まつり and its 7 symbols are about.">
+<transition to="textImageDisplay~16 tanzaku kamigoromo~3~[錦戸]: これはたんざくです. These are paper strips where handwritten wishes are written. These are hung on the special ささ 「bamboo grass」." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~16 tanzaku kamigoromo~3~[錦戸]: これはたんざくです. These are paper strips where handwritten wishes are written. These are hung on the special ささ 「bamboo grass」.">
+<transition to="textImageDisplay~16 tanzaku kamigoromo~3~[山下]: それはかみごろもです. Those are paper きものdecorations for good sewing skills." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~16 tanzaku kamigoromo~3~[山下]: それはかみごろもです. Those are paper きものdecorations for good sewing skills.">
+<transition to="textImageDisplay~17 orizuru kinchaku~3~[錦戸]: これはおりずるです。一千 of these paper cranes are hung with the hopes that the wishes will come true." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~17 orizuru kinchaku~3~[錦戸]: これはおりずるです。一千 of these paper cranes are hung with the hopes that the wishes will come true.">
+<transition to="textImageDisplay~17 orizuru kinchaku~3~[山下]: それはきんちゃくです. That is a purse that symbolizes good business." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~17 orizuru kinchaku~3~[山下]: それはきんちゃくです. That is a purse that symbolizes good business.">
+<transition to="textImageDisplay~18 toami kuzukago fukinagashi~3~[山下]: それはとあみです。These are paper net decors that symbolize good fishing." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~18 toami kuzukago fukinagashi~3~[山下]: それはとあみです。These are paper net decors that symbolize good fishing.">
+<transition to="textImageDisplay~18 toami kuzukago fukinagashi~3~[錦戸]: それはくずかごです. The paper trash bag decors are for cleanliness.これはふきながしです。This is a paper tubular streamer which is very colorful and attractive in the festival." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~18 toami kuzukago fukinagashi~3~[錦戸]: それはくずかごです. The paper trash bag decors are for cleanliness.これはふきながしです。This is a paper tubular streamer which is very colorful and attractive in the festival.">
+<transition to="imageTextDisplay~tanzaku~3~What do you call this たなばた symbol/decoration?" name="Any"></transition>
+</task-node>
+<task-node name="imageTextDisplay~tanzaku~3~What do you call this たなばた symbol/decoration?">
+<transition to="radioButtonsWithAnswer~3~What do you call that?Answer=1" name="Any"></transition>
+</task-node>
+<task-node name="radioButtonsWithAnswer~3~What do you call that?Answer=1">
+<task name="かみごろも"></task>
+<task name="たんざく"></task>
+<task name="おりずる"></task>
+<transition to="textImageDisplay~orihime and hikoboshi~3~{small}山下さん and 錦戸さん further tell ミカ that たなばた is a まつしり「festival」 about おりひめ and ひこぼし, two star-crossed こいびと「lovers」 separated by the Milky Way and are only allowed to meet each other during たなばた, which will be on the following 月曜日.{/small}" name="Yes"></transition>
+<transition to="textDisplay~まちがいです。 Please answer correctly to proceed." name="No"></transition>
+</task-node>
+<task-node name="textDisplay~まちがいです。 Please answer correctly to proceed.">
+<transition to="textDisplay~please press back button and answer again" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~orihime and hikoboshi~3~{small}山下さん and 錦戸さん further tell ミカ that たなばた is a まつしり「festival」 about おりひめ and ひこぼし, two star-crossed こいびと「lovers」 separated by the Milky Way and are only allowed to meet each other during たなばた, which will be on the following 月曜日.{/small}">
+<transition to="textDisplay~At たなばたまつり, the three girls are having a good time. Suddenly, a parade passes between them, leaving ミカ lost and separated from the two ともだち." name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~At たなばたまつり, the three girls are having a good time. Suddenly, a parade passes between them, leaving ミカ lost and separated from the two ともだち.">
+<transition to="textDisplay~ミカstarted to worry, but then しらない人approaches her. " name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~ミカstarted to worry, but then しらない人approaches her. ">
+<transition to="textImageDisplay~41 notebook return~しらない人：すみません。ぼくはルイズさんの同級生です. これはルイズさんのノートですか。" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~41 notebook return~しらない人：すみません。ぼくはルイズさんの同級生です. これはルイズさんのノートですか。">
+<transition to="textImageDisplay~41 notebook return~ミカ：はい、それは私のノートです。" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~41 notebook return~ミカ：はい、それは私のノートです。">
+<transition to="textDisplay~ミカ now feels very indebted to しらない人. As he was leaving、she feels that she at least should thank him properly. " name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~ミカ now feels very indebted to しらない人. As he was leaving、she feels that she at least should thank him properly. ">
+<transition to="textImageDisplay~22 42 47 48 both yukata~ミカ: すみません。おなまえは？  " name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~22 42 47 48 both yukata~ミカ: すみません。おなまえは？  ">
+<transition to="textImageDisplay~22 42 47 48 both yukata~しらない人: えと、僕は山田晴樹「やまだはるき」です。" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~22 42 47 48 both yukata~しらない人: えと、僕は山田晴樹「やまだはるき」です。">
+<transition to="textImageDisplay~22 42 47 48 both yukata~ミカ: 山田さん、ほんとにうありがとうございます。 " name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~22 42 47 48 both yukata~ミカ: 山田さん、ほんとにうありがとうございます。 ">
+<transition to="textImageDisplay~22 42 47 48 both yukata~しらない人：どういたしまして。じゃあ。 " name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~22 42 47 48 both yukata~しらない人：どういたしまして。じゃあ。 ">
+<transition to="imageTextDisplay~43 mika alone~Now still lost on the streets, ミカ finds herself in front of a ささ「bamboo grass」. While looking at her ノート, she decides to write a wish." name="Any"></transition>
+</task-node>
+<task-node name="imageTextDisplay~43 mika alone~Now still lost on the streets, ミカ finds herself in front of a ささ「bamboo grass」. While looking at her ノート, she decides to write a wish.">
+<transition to="imageTextDisplay~44 hand nichi~{small}Now alone on the streets, 晴樹 also finds himself in front of a bamboo tree. Lost in his own thoughts, he thinks about ミカ. Her name reminds him of the crescent moon. After writing his wish on a たんざく, he smiles as he writes “日”, the sun, in his name.{/small}" name="Any"></transition>
+</task-node>
+<task-node name="imageTextDisplay~44 hand nichi~{small}Now alone on the streets, 晴樹 also finds himself in front of a bamboo tree. Lost in his own thoughts, he thinks about ミカ. Her name reminds him of the crescent moon. After writing his wish on a たんざく, he smiles as he writes “日”, the sun, in his name.{/small}">
+<transition to="textImageDisplay~45 wish ending~That たなばたまつり, the two who never seemed to speak to each other, write the same wish on their own たんざく" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~45 wish ending~That たなばたまつり, the two who never seemed to speak to each other, write the same wish on their own たんざく">
+<transition to="end-state1" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~15 33 38 mika with friends~1~At school, 錦戸さん and 山下さん invite ミカ to the upcoming たなばたまつり. Since she is a りゅうがくせい, they explain what the まつり and its 7 symbols are about.">
+<transition to="textImageDisplay~16 tanzaku kamigoromo~4~[錦戸]: これはたんざくです. These are paper strips where handwritten wishes are written. These are hung on the special ささ 「bamboo grass」." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~16 tanzaku kamigoromo~4~[錦戸]: これはたんざくです. These are paper strips where handwritten wishes are written. These are hung on the special ささ 「bamboo grass」.">
+<transition to="textImageDisplay~16 tanzaku kamigoromo~4~[山下]: それはかみごろもです. Those are paper きものdecorations for good sewing skills." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~16 tanzaku kamigoromo~4~[山下]: それはかみごろもです. Those are paper きものdecorations for good sewing skills.">
+<transition to="textImageDisplay~17 orizuru kinchaku~4~[錦戸]: これはおりずるです。一千 of these paper cranes are hung with the hopes that the wishes will come true." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~17 orizuru kinchaku~4~[錦戸]: これはおりずるです。一千 of these paper cranes are hung with the hopes that the wishes will come true.">
+<transition to="textImageDisplay~17 orizuru kinchaku~4~[山下]: それはきんちゃくです. That is a purse that symbolizes good business." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~17 orizuru kinchaku~4~[山下]: それはきんちゃくです. That is a purse that symbolizes good business.">
+<transition to="textImageDisplay~18 toami kuzukago fukinagashi~4~[山下]: それはとあみです。These are paper net decors that symbolize good fishing." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~18 toami kuzukago fukinagashi~4~[山下]: それはとあみです。These are paper net decors that symbolize good fishing.">
+<transition to="textImageDisplay~18 toami kuzukago fukinagashi~4~[錦戸]: それはくずかごです. The paper trash bag decors are for cleanliness.これはふきながしです。This is a paper tubular streamer which is very colorful and attractive in the festival." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~18 toami kuzukago fukinagashi~4~[錦戸]: それはくずかごです. The paper trash bag decors are for cleanliness.これはふきながしです。This is a paper tubular streamer which is very colorful and attractive in the festival.">
+<transition to="imageTextDisplay~tanzaku~4~What do you call this たなばた symbol/decoration?" name="Any"></transition>
+</task-node>
+<task-node name="imageTextDisplay~tanzaku~4~What do you call this たなばた symbol/decoration?">
+<transition to="radioButtonsWithAnswer~4~What do you call that?Answer=1" name="Any"></transition>
+</task-node>
+<task-node name="radioButtonsWithAnswer~4~What do you call that?Answer=1">
+<task name="かみごろも"></task>
+<task name="たんざく"></task>
+<task name="おりずる"></task>
+<transition to="textImageDisplay~orihime and hikoboshi~4~山下さん and 錦戸さん further tell ミカ that たなばた is a まつしり「festival」 about おりひめ and ひこぼし, two star-crossed こいびと「lovers」 separated by the Milky Way and are only allowed to meet each other during たなばた, which will be on the following 月曜日。" name="Yes"></transition>
+<transition to="textDisplay~まちがいです。 Please answer correctly to proceed." name="No"></transition>
+</task-node>
+<task-node name="textDisplay~まちがいです。 Please answer correctly to proceed.">
+<transition to="textDisplay~please press back button and answer again" name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~orihime and hikoboshi~4~山下さん and 錦戸さん further tell ミカ that たなばた is a まつしり「festival」 about おりひめ and ひこぼし, two star-crossed こいびと「lovers」 separated by the Milky Way and are only allowed to meet each other during たなばた, which will be on the following 月曜日。">
+<transition to="textDisplay~At たなばたまつり, the three girls are having a good time. Suddenly, a parade passes between them, leaving ミカ lost and separated from the two ともだち." name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~At たなばたまつり, the three girls are having a good time. Suddenly, a parade passes between them, leaving ミカ lost and separated from the two ともだち.">
+<transition to="imageTextDisplay~22 42 47 48 both yukata~ミカstarted to worry, but then 山田晴樹approaches her.  " name="Any"></transition>
+</task-node>
+<task-node name="imageTextDisplay~22 42 47 48 both yukata~ミカstarted to worry, but then 山田晴樹approaches her.  ">
+<transition to="imageTextDisplay~22 42 47 48 both yukata~山田晴樹：ミカさん おひさしぶり。ミカさん のゆかたはかわいいです。" name="Any"></transition>
+</task-node>
+<task-node name="imageTextDisplay~22 42 47 48 both yukata~山田晴樹：ミカさん おひさしぶり。ミカさん のゆかたはかわいいです。">
+<transition to="imageTextDisplay~22 42 47 48 both yukata~ミカ：山田さん おひさしぶり。" name="Any"></transition>
+</task-node>
+<task-node name="imageTextDisplay~22 42 47 48 both yukata~ミカ：山田さん おひさしぶり。">
+<transition to="textDisplay~山田晴樹：錦戸さんと山下さんは?" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~山田晴樹：錦戸さんと山下さんは?">
+<transition to="textDisplay~ミカ：ミカ：しらない。私は一人." name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~ミカ：ミカ：しらない。私は一人.">
+<transition to="textDisplay~山田晴樹：おれも。" name="Any"></transition>
+</task-node>
+<task-node name="textDisplay~山田晴樹：おれも。">
+<transition to="textImageDisplay~01 23 49 walking yukata~Because they are both alone, they decided to enjoy the たなばたまつり together. The day turned into night and the streets are laden with wonderful lights—turning the festive mood into a romantic one." name="Any"></transition>
+</task-node>
+<task-node name="textImageDisplay~01 23 49 walking yukata~Because they are both alone, they decided to enjoy the たなばたまつり together. The day turned into night and the streets are laden with wonderful lights—turning the festive mood into a romantic one.">
+<transition to="imageTextDisplay~24 50 mh bamboograss~They find themselves in front of a ささ「bamboo grass」, and agreed on writing a wish on a たんざく." name="Any"></transition>
+</task-node>
+<task-node name="imageTextDisplay~24 50 mh bamboograss~They find themselves in front of a ささ「bamboo grass」, and agreed on writing a wish on a たんざく.">
+<transition to="imageDisplay~51 wish ending~end" name="Any"></transition>
+</task-node>
+<task-node name="imageDisplay~51 wish ending~end">
+<transition to="end-state1" name="Any"></transition>
+</task-node>
+<end-state name="end-state1"></end-state>
+</process-definition>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition  xmlns="urn:jbpm.org:jpdl-3.2" name="Izayoi_Ishida_debug">
+	<start-state name="start-state1">
+		<transition to="textDisplay~My dream ends...and so did the movie. Yoshi was not pleased at me, but I don't mind. He went home to rush his homework. Meanwhile, I thought about the possibility of entering the dream world again."></transition>
+	</start-state>
+	
+	<task-node name="textDisplay~My dream ends...and so did the movie. Yoshi was not pleased at me, but I don't mind. He went home to rush his homework. Meanwhile, I thought about the possibility of entering the dream world again.">
+		<transition to="end-state1"></transition>
+	</task-node>
+	
+	<end-state name="end-state1"></end-state>
+</process-definition>
