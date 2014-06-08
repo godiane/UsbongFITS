@@ -9,3 +9,6 @@ def get_usbong_response(username, password):
 
 	html = response.read()
 	return html
+	
+def boo():
+    return "BOOM!"

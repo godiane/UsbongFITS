@@ -13,7 +13,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.servers.basehttp import FileWrapper
 import json as simplejson
 
-
 from fitsapp import settings
 
 import os, mimetypes
@@ -129,18 +128,21 @@ def upload(request):
         else:
             newdoc = Document(docfile = request.FILES['docfile'], uploader = request.user, description = request.POST.get('docdesc'))
             newdoc.save()
+            messages.info(request, 'You have uploaded ' + newdoc.docfile.name.split('/')[-1] + '.')
+
 
         # Redirect to the document list after POST
         return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
 
     else:
+        documents = Document.objects.filter(uploader=request.user)
         form = DocumentForm() # A empty, unbound form
 
     # Load documents for the list page
-    if form.is_valid():
-        documents = Document.objects.filter(uploader=request.user)
-    else:
-        documents = Document.objects.all()
+    #if form.is_valid():
+    #    documents = Document.objects.filter(uploader=request.user)
+    #else:
+    #    documents = Document.objects.all()
 
     paginator = Paginator(documents, 10) # Show 10 documents per page
 

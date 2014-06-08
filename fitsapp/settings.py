@@ -139,7 +139,8 @@ TEMPLATE_LOADERS = (
 
 AUTHENTICATION_BACKENDS = (
     "mezzanine.core.auth_backends.MezzanineBackend",
-    "allauth.account.auth_backends.AuthenticationBackend"
+    "allauth.account.auth_backends.AuthenticationBackend",
+    "mobile.account.auth_backends.AuthenticationBackend",
 )
 
 # List of finder classes that know how to find static files in
@@ -259,6 +260,7 @@ INSTALLED_APPS = (
     #"mezzanine_file_collections",
     "upload",
     #'hitcount',
+    "mobile",
 )
 
 # List of processors used by RequestContext to populate the context.
