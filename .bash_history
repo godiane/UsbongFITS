@@ -1,7 +1,3 @@
-cat local_settings.py
-mv local_settings.py local_settings.py.bak
-ls
-python manage.py syncdb
 python manage.py migrate
 python manage.py shell
 ls
@@ -498,3 +494,7 @@ git pull origin master
 ls
 git pull origin master
 exit
+ls
+git add .
+git commit -m "latest source code from server"
+git push origin master

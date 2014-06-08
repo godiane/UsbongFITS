@@ -107,7 +107,7 @@ def locate(request):
             # Update count
             document.download_count += 1
             document.save()
-            newdownload = Download(document = document, downloader = document.uploader)
+            newdownload = Download(document = document, downloader = request.user)
             newdownload.save()
             return response
         else:
@@ -132,18 +132,13 @@ def upload(request):
 
 
         # Redirect to the document list after POST
-        return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
+        return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
 
     else:
         documents = Document.objects.filter(uploader=request.user)
         form = DocumentForm() # A empty, unbound form
 
     # Load documents for the list page
-    #if form.is_valid():
-    #    documents = Document.objects.filter(uploader=request.user)
-    #else:
-    #    documents = Document.objects.all()
-
     paginator = Paginator(documents, 10) # Show 10 documents per page
 
     page = request.GET.get('page')
@@ -184,12 +179,6 @@ def upload_edit(request, editee):
 
         form = DocumentForm()
         # Render list page with the documents and the form
-        # return render_to_response(
-        #     'upload/list.html',
-        #     {'documents': documents, 'form': form},
-        #     context_instance=RequestContext(request)
-        # )
-
         return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
     else:
         document = Document.objects.get(id=editee)
@@ -217,13 +206,7 @@ def upload_delete(request, deletee):
         # If page is out of range (e.g. 9999), deliver last page of results.
         documents = paginator.page(paginator.num_pages)
 
-    form = DocumentForm()
     # Render list page with the documents and the form
-    # return render_to_response(
-    #     'upload/list.html',
-    #     {'documents': documents, 'form': form},
-    #     context_instance=RequestContext(request)
-    # )
     return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
 
 def vote(request):
@@ -262,7 +245,7 @@ def vote(request):
                 newvote.save()
                 messages.info(request, 'You have voted ' + document.docfile.name.split('/')[-1] + '. Thanks for voting!')
                         # Redirect to the document list after POST
-            return HttpResponseRedirect(reverse('fitsapp.upload.views.upload'))
+            return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
         else:
             messages.error(request, 'Invalid vote.')
     else:
