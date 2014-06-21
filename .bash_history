@@ -1,31 +1,3 @@
-python manage.py migrate
-python manage.py shell
-ls
-cd ..
-ls
-git pull origin master
-ls
-cd fitsapp/
-ls
-cd templates/
-ls
-cd upload/
-ls
-vi list.html
-ls
-cd ..
-ls
-cd ..
-ls
-cd ..
-ls
-cd fitsapp/
-ls
-cd upload/
-ls
-vi forms.py
-ls
-cd ..
 ls
 cd templates/
 ls
@@ -497,4 +469,32 @@ exit
 ls
 git add .
 git commit -m "latest source code from server"
+git push origin master
+ls
+git pull origin master
+ls
+cd fitsapp/
+ls
+cd mobile/
+ls
+cd ls
+ls
+pwd
+workon djangon15
+workon django15
+ls
+cd ..
+ls
+cd ..
+ls
+./update.sh 
+cat update.sh 
+source /usr/local/bin/virtualenvwrapper.sh
+workon django15
+git pull origin master
+./update.sh 
+ls
+git add .
+git status
+git commit -m "sync from server"
 git push origin master
