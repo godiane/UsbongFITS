@@ -116,10 +116,10 @@ def locate(request):
                 return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
         else:
 		    messages.error(request, 'utree/xml file ' + location + ' not found.')
-            return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
+		    return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
     else:
 		messages.error(request, 'utree/xml file is invalid.')
-        return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
+		return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
 
 def upload(request):
     # Handle file upload
