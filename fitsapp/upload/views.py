@@ -111,7 +111,7 @@ def locate(request):
                 newdownload = Download(document = document, downloader = request.user)
                 newdownload.save()
                 return response
-             else:
+            else:
                 messages.error(request, 'Please login to your account to download the files.')
         else:
 		    messages.error(request, 'utree/xml file ' + location + ' not found.')
