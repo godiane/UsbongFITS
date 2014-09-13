@@ -95,7 +95,7 @@ def locate(request):
     if location:
         document = Document.objects.get(id=location)
         if (document):
-            if (request.user):
+            if request.user.is_authenticated():
                 # Prepare response file to be downloaded
                 path = '/home/usbong/fitsapp/static/media/'
                 filename = path + document.docfile.name
