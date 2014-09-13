@@ -113,12 +113,13 @@ def locate(request):
                 return response
             else:
                 messages.error(request, 'Please login to your account to download the files.')
+                return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
         else:
 		    messages.error(request, 'utree/xml file ' + location + ' not found.')
+            return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
     else:
 		messages.error(request, 'utree/xml file is invalid.')
-	# Render list page with the documents and the form
-    return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
+        return HttpResponseRedirect(reverse('fitsapp.upload.views.upload_search'))
 
 def upload(request):
     # Handle file upload
