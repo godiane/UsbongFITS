@@ -95,21 +95,24 @@ def locate(request):
     if location:
         document = Document.objects.get(id=location)
         if (document):
-            # Prepare response file to be downloaded
-            path = '/home/usbong/fitsapp/static/media/'
-            filename = path + document.docfile.name
-            utree = FileWrapper(open(filename))
-            mimetype = mimetypes.guess_type(os.path.basename(filename))[0]
-            response = HttpResponse(utree, mimetype=mimetype)
-            response['Content-Length']      = os.path.getsize(filename)
-            response['Content-Disposition'] = "attachment; filename=%s"%document.docfile.name.rpartition('/')[2]
+            if (request.user):
+                # Prepare response file to be downloaded
+                path = '/home/usbong/fitsapp/static/media/'
+                filename = path + document.docfile.name
+                utree = FileWrapper(open(filename))
+                mimetype = mimetypes.guess_type(os.path.basename(filename))[0]
+                response = HttpResponse(utree, mimetype=mimetype)
+                response['Content-Length']      = os.path.getsize(filename)
+                response['Content-Disposition'] = "attachment; filename=%s"%document.docfile.name.rpartition('/')[2]
 
-            # Update count
-            document.download_count += 1
-            document.save()
-            newdownload = Download(document = document, downloader = request.user)
-            newdownload.save()
-            return response
+                # Update count
+                document.download_count += 1
+                document.save()
+                newdownload = Download(document = document, downloader = request.user)
+                newdownload.save()
+                return response
+             else:
+                messages.error(request, 'Please login to your account to download the files.')
         else:
 		    messages.error(request, 'utree/xml file ' + location + ' not found.')
     else:
