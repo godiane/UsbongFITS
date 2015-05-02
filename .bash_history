@@ -1,8 +1,4 @@
 ls
-cd templates/
-ls
-cd upload/
-ls
 vi list.html
 ls
 cd ..
@@ -498,3 +494,7 @@ git add .
 git status
 git commit -m "sync from server"
 git push origin master
+ls
+git add .
+git status
+git commit -m "latest from server"

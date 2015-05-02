@@ -8,9 +8,9 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:q
 :wq
 :q!
-:q
 :w
 
 # Search String History (newest to oldest):
@@ -23,38 +23,47 @@
 
 # Registers:
 ""1	LINE	0
-	>>>>>>> 0e18e433a63b13e242da805a5edb3370117f1a5e
+	    erdd       downloader = User.objects.get(request.user.
 "2	LINE	0
-	    "mezzanine.conf.context_processors.settings",
+	            downloader = User.objects.get(request.user.
 "3	LINE	0
-	=======
+	>>>>>>> 0e18e433a63b13e242da805a5edb3370117f1a5e
 "4	LINE	0
-	<<<<<<< HEAD
-"5	LINE	0
 	    "mezzanine.conf.context_processors.settings",
+"5	LINE	0
+	=======
+"6	LINE	0
+	<<<<<<< HEAD
+"7	LINE	0
+	    "mezzanine.conf.context_processors.settings",
+"-	CHAR	0
+	 
 
 # File marks:
-'0  3  0  ~/.gitignore
-'1  2  4  ~/.gitignore
-'2  22  0  ~/fitsapp/upload/views.py
-'3  12  57  ~/fitsapp/upload/models.py
-'4  89  110  ~/fitsapp/upload/views.py
-'5  84  41  ~/fitsapp/upload/views.py
-'6  10  27  ~/fitsapp/upload/forms.py
-'7  10  0  ~/fitsapp/upload/models.py
-'8  1  14  ~/update.sh
-'9  46  0  /bin/user_wsgi_wrapper.py
+'0  110  26  ~/fitsapp/upload/views.py
+'1  111  85  ~/fitsapp/upload/views.py
+'2  22  57  ~/fitsapp/upload/models.py
+'3  3  0  ~/.gitignore
+'4  2  4  ~/.gitignore
+'5  23  0  ~/fitsapp/upload/views.py
+'6  12  57  ~/fitsapp/upload/models.py
+'7  90  110  ~/fitsapp/upload/views.py
+'8  85  41  ~/fitsapp/upload/views.py
+'9  10  27  ~/fitsapp/upload/forms.py
 
 # Jumplist (newest first):
+-'  110  26  ~/fitsapp/upload/views.py
+-'  111  85  ~/fitsapp/upload/views.py
+-'  22  57  ~/fitsapp/upload/models.py
+-'  12  57  ~/fitsapp/upload/models.py
+-'  23  0  ~/fitsapp/upload/views.py
 -'  3  0  ~/.gitignore
 -'  2  4  ~/.gitignore
 -'  1  0  ~/.gitignore
--'  22  0  ~/fitsapp/upload/views.py
--'  89  110  ~/fitsapp/upload/views.py
--'  12  57  ~/fitsapp/upload/models.py
+-'  90  110  ~/fitsapp/upload/views.py
 -'  10  0  ~/fitsapp/upload/models.py
--'  84  41  ~/fitsapp/upload/views.py
--'  25  3  ~/fitsapp/upload/views.py
+-'  85  41  ~/fitsapp/upload/views.py
+-'  26  3  ~/fitsapp/upload/views.py
 -'  10  27  ~/fitsapp/upload/forms.py
 -'  8  0  ~/fitsapp/upload/models.py
 -'  1  14  ~/update.sh
@@ -140,12 +149,32 @@
 -'  105  46  ~/fitsapp/templates/base.html
 -'  1  0  ~/fitsapp/templates/base.html
 -'  1  0  ~/fitsapp/templates/account/login.html
--'  105  46  ~/fitsapp/templates/base.html
--'  1  0  ~/fitsapp/templates/base.html
--'  105  46  ~/fitsapp/templates/base.html
--'  1  0  ~/fitsapp/templates/base.html
 
 # History of marks within files (newest to oldest):
+
+> ~/fitsapp/upload/views.py
+	"	110	26
+	^	111	86
+	.	111	85
+	+	26	64
+	+	85	44
+	+	84	53
+	+	85	51
+	+	90	110
+	+	21	0
+	+	23	0
+	+	18	0
+	+	8	42
+	+	111	55
+	+	8	39
+	+	111	85
+
+> ~/fitsapp/upload/models.py
+	"	22	57
+	^	12	58
+	.	12	57
+	+	11	56
+	+	12	57
 
 > ~/.gitignore
 	"	3	0
@@ -154,25 +183,6 @@
 	+	2	4
 	+	4	0
 	+	2	5
-
-> ~/fitsapp/upload/views.py
-	"	22	0
-	^	22	0
-	.	22	0
-	+	25	64
-	+	84	44
-	+	83	53
-	+	84	51
-	+	89	110
-	+	20	0
-	+	22	0
-
-> ~/fitsapp/upload/models.py
-	"	12	57
-	^	12	58
-	.	12	57
-	+	11	56
-	+	12	57
 
 > ~/fitsapp/upload/forms.py
 	"	10	27
